@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>DynamoUnchained.ZeroTouch</name>
+  </assembly>
+  <namespaces>
+    <namespace name="DynamoUnchained.ZeroTouch">
+      <category>Dynamo Unchained.Zero Touch</category>
+    </namespace>
+  </namespaces>
+</doc>
