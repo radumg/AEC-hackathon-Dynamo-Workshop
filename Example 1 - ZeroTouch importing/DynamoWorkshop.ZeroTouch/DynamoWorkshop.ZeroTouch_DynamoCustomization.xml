@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>DynamoWorkshop.ZeroTouch</name>
+  </assembly>
+  <namespaces>
+    <namespace name="DynamoWorkshop.ZeroTouch">
+      <category>DynamoWorkshop.Zero Touch</category>
+    </namespace>
+  </namespaces>
+</doc>
