@@ -88,9 +88,10 @@ This type of node (ZTN) needs to be compiled into a `DLL` every time you want to
 
 ## Visual Studio Setup - Part 1
 
-[Visual Studio Community 2017](https://www.visualstudio.com/downloads/) (VS) is going to be our IDE, it’s free and fully-featured for students, open-source and individual developers. In this part we are going to create a new project, add references and packages and all necessary files. It’s very important to set up the project correctly, it will take some time and it might look confusing at first but it will facilitate development and debugging, and so make you a better developer. Please note that this is how *I personally set up the environment*, there are of course many other ways to do it.
+[Visual Studio Community 2017](https://www.visualstudio.com/downloads/) (VS) is going to be our IDE, it’s free and fully-featured for students, open-source and individual developers. In this part we are going to create a new project, add references and packages and all necessary files. 
+It’s very important to set up the project correctly : although it will take some time and it might look confusing at first, it will facilitate development and debugging, making you a better developer. Please note that this is how *I personally set up the environment*, there are of course many other ways to do it.
 
-At the end of this part you'll have generated an empty boilerplate project which you can reuse in the future, you can find a the final files of this part inside the "*DynamoUnchained.ZeroTouch - part 1"* folder.
+At the end of this part you'll have generated an empty boilerplate project which you can reuse in the future. You can find a the final files of this part inside the "*DynamoWorkshop.ZeroTouch - part 1"* folder.
 
 ### New Project
 
@@ -98,13 +99,13 @@ Let’s create a new project:
 
 ![image alt text](assets/image_0.png)
 
-Latest versions of Revit (2017/2018) use .NET Framework 4.6 (4.6.1 or 4.6.2), if you are targeting a version prior 2017 [change it accordingly](https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/Revit-API/files/GUID-FEF0ED40-8658-4C69-934D-7F83FB5D5B63-htm.html). I used `DynamoUnchained.ZeroTouch` as Project Name and `DynamoUnchained` as Solution Name (a solution can contain multiple projects).
+The latest versions of Revit (2017/2018) use .NET Framework 4.6 (4.6.1 or 4.6.2), so if you are targeting a version prior to 2017, [change it accordingly](https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/Revit-API/files/GUID-FEF0ED40-8658-4C69-934D-7F83FB5D5B63-htm.html). I used `DynamoWorkshop.ZeroTouch` as Project Name and `DynamoWorkshop` as Solution Name (a solution can contain multiple projects).
 
 ![image alt text](assets/image_1.png)
 
 ### References
 
-To extend Dynamo at a very basic level (eg. manipulating native .NET data types as strings, numbers…) you don’t need to add any reference. But to interact with its geometry types we need to add a few. We’ll be using NuGet, as it makes referencing super easy and it lets you build your node even without Dynamo or Revit installed.
+To extend Dynamo at a very basic level (eg. manipulating native .NET data types like strings, numbers…) you don’t need to add any references. But if we want interact with Dynamo's geometry types, we need to add a few. We’ll be using NuGet, as it makes referencing super easy and it lets you build your node even without Dynamo or Revit installed.
 
 ![image alt text](assets/image_2.png)
 
@@ -124,21 +125,21 @@ This will avoid unnecessary files in our package.
 
 ### Package
 
-A zero touch node needs to be loaded by Dynamo manually each time or be added as a package. We’ll set it up as a **Local Package**, so that it will automatically load every time Dynamo starts. It will also make our life easier in case we decide to publish the packed in the future.
+A zero touch node needs to be loaded by Dynamo manually each time or be added as a package. We’ll set it up as a **Local Package**, so that it will automatically load every time Dynamo starts. It will also make our life easier in case we decide to publish it to the official Dynamo Package Manager in the future.
 
-Dynamo packages have the structure below:
+Dynamo packages have the structure as per below:
 
 ![image alt text](assets/image_6.png)
 
 * The *bin* folder houses .dll files created with C# or Zero-Touch libraries
 
-* The *dyf* folder houses the custom nodes, we won’t have any for this package
+* The *dyf* folder houses any custom nodes, we won’t have any for this package
 
 * The *extra* folder houses all additional files. These files are likely to be Dynamo Files (.dyn) or any additional files required (.svg, .xls, .jpeg, .sat, etc.)
 
-* The *pkg* file is a basic text file defining the package settings. [This is can be automated by Dynamo](http://dynamoprimer.com/en/10_Packages/10-4_Publishing.html), but we will make one from scratch
+* The *pkg.json* file is a basic text file defining the package settings. [This is can be automated by Dynamo](http://dynamoprimer.com/en/10_Packages/10-4_Publishing.html), but we will make one from scratch.
 
-We'll need to manually create the pkg.json file, but we'll automate the folder creation (we just need the _bin_ folder):
+We'll need to manually create this pkg.json file, but we'll automate the folder creation (we just need the _bin_ folder):
 
 * Right Click on the project > Add > New Item…
 
@@ -148,15 +149,15 @@ We'll need to manually create the pkg.json file, but we'll automate the folder c
 
 ![image alt text](assets/image_7.png)
 
-Then copy/paste the following package description, which is some boilerplate JSON code:
+Then copy/paste the following package description, which is some boilerplate JSON code, into your newly-created `pkg.json` file :
 
 ```json
 {
     "license": "",
     "file_hash": null,
-    "name": "Dynamo Unchained - ZeroTouch",
+    "name": "Dynamo Workshop - ZeroTouch",
     "version": "1.0.0",
-    "description": "ZeroTouch sample node for the Dynamo Unchained workshop",
+    "description": "ZeroTouch sample node for the Dynamo workshop",
     "group": "",
     "keywords": null,
     "dependencies": [],
@@ -168,21 +169,21 @@ Then copy/paste the following package description, which is some boilerplate JSO
     "repository_url": "",
     "contains_binaries": true,
     "node_libraries": [
-        "DynamoUnchained.ZeroTouch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        "DynamoWorkshop.ZeroTouch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
     ]
 }
 ```
 ### Build Events and Start Action
 
-Let’s finally configure the project so that the files are copied automatically into the Dynamo packages folder  after each build in order to Debug our dlls.
+Let’s finally configure the project so that the files are copied automatically into the Dynamo packages folder after each build, enabling us to debug our dlls after making changes.
 
-Right click on the project > Properties > Debug > Build Events > Post-build event command line > paste the two following lines:
+Right click on the project > `Properties` > `Build Events` > `Post-build event command line` > paste the two following lines:
 
 `xcopy /Y "$(TargetDir)*.*" "$(AppData)\Dynamo\Dynamo Core\1.3\packages\$(ProjectName)\bin\"`
 
 `xcopy /Y "$(ProjectDir)pkg.json" "$(AppData)\Dynamo\Dynamo Core\1.3\packages\$(ProjectName)"`
 
-These lines tell VS to copy the dlls we produce in the bin folder, and the pkg.json into the package folder.
+These lines tell VisualStudio to copy into the package folder the `dlls` produced in the bin folder and the `pkg.json`.
 
 > **Note:**
 > The commands above point to the current version of Dynamo Sandbox, if you’re using a different version update accordingly. If you are using Dynamo for Revit you should instead use the following commands:
@@ -190,7 +191,7 @@ These lines tell VS to copy the dlls we produce in the bin folder, and the pkg.j
 >
 > `xcopy /Y "$(ProjectDir)pkg.json" "$(AppData)\Dynamo\Dynamo Revit\1.3\packages\$(ProjectName)"`
 
-Now right click on the project > Properties > Debug > Start external program > Select
+Now right click on the project > `Properties` > `Debug` > `Start external program` > Select
 
 `C:\Program Files\Dynamo\Dynamo Revit\1.3\DynamoSandbox.exe`
 
@@ -211,7 +212,7 @@ Now right click on the project > Properties > Debug > Start external program > S
 It still looks a bit empty in here, let’s add some dummy code so that we can check everything is set up correctly. Add a new class named HelloDynamo.cs, or rename Class1.cs:
 
 ```c#
-namespace DynamoUnchained.ZeroTouch
+namespace DynamoWorkshop.ZeroTouch
 {
   public static class HelloDynamo
   {
@@ -228,11 +229,11 @@ Before going ahead to debug our code, we need to change a VS setting. This is no
 
 ![1505399901208](assets/1505399901208.png)
 
-Press F5 or click the green play button to start debugging, Dynamo Sandbox should start automatically. Create a new file, and you should see or new package being loaded:
+Press F5 or click the green play button to start debugging, Dynamo Sandbox should start automatically. Create a new file, and you should see our new package being loaded & appearing in the library :
 
 ![image alt text](assets/image_9.png)
 
-Now, if you put some breakpoints in VS you’ll be able to get great insights of what’s going on in your code, this will help you fix bugs quicker and improve your dev skills too!
+Now, if you put some breakpoints in VS you’ll be able to get great insights into what’s going on in your code, which will help you fix bugs quicker and improve your dev skills too!
 
 Since we set up our package as a local package, we can actually see it in the list of installed packages:
 
@@ -240,7 +241,7 @@ Since we set up our package as a local package, we can actually see it in the li
 
 ### Naming
 
-One last thing, annoyingly enough, Dynamo didn’t format the Node Name very well. Our node was nested inside DynamoUnchained > ZeroTouch > DynamoUnchained > ZeroTouch.
+One last thing, annoyingly enough, Dynamo didn’t format the Node Name very well. Our node was nested inside `DynamoWorkshop` > `ZeroTouch` > `DynamoWorkshop` > `ZeroTouch`.
 
 The first two are taken from the assembly name (the DLL), the last two from the namespace, which in our case are the same.
 
@@ -248,19 +249,19 @@ To  avoid this you can either do the following 2 things:
 
 * change assembly name (and change the corresponding value in pkg.json)
 
-* add a *DynamoUnchained.ZeroTouch_DynamoCustomization.xml* file
+* add a *DynamoWorkshop.ZeroTouch_DynamoCustomization.xml* file
 
-I prefer to keep my assembly names unchanged, so let’s add the XML file to the root of our project, then **remember to select it and set its *Build Action* to _Copy always_****.**
+I prefer to keep my assembly names unchanged, so let’s add the XML file to the root of our project, then **remember to select it in VisualStudio and set its *Build Action* to _Copy always_****.**
 
 ```xml
 <?xml version="1.0"?>
 <doc>
   <assembly>
-    <name>DynamoUnchained.ZeroTouch</name>
+    <name>DynamoWorkshop.ZeroTouch</name>
   </assembly>
   <namespaces>
-    <namespace name="DynamoUnchained.ZeroTouch">
-      <category>Dynamo Unchained.ZeroTouch</category>
+    <namespace name="DynamoWorkshop.ZeroTouch">
+      <category>DynamoWorkshop.ZeroTouch</category>
     </namespace>
   </namespaces>
 </doc>
@@ -271,11 +272,11 @@ Debug again, and it'll be much better now:
 
 
 
-We’ve now finally set up our project correctly, you can save the project and use it in the future as a template. In case you missed some steps you can find the complete project inside the "*DynamoUnchained.ZeroTouch - part 1"* folder.
+We’ve now finally set up our project correctly, you can save the project and use it in the future as a template. In case you missed some steps you can find the complete project inside the "*DynamoWorkshop.ZeroTouch - part 1"* folder.
 
 ## Dynamo Node Development - Part 2
 
-In this part we will develop a few sample nodes exploring inputs, outputs and Dynamo's geometry. Since we wont't be interacting with Revit just yet, development will target Dynamo Sandbox. As mentioned previously, each `public static` method that you have in your project will show up as a node in Dynamo. Let’s now see how to add more complex functionalities.
+In this part we will develop a few sample nodes exploring inputs, outputs and Dynamo's geometry. Since we wont't be interacting with Revit just yet, development will target Dynamo Sandbox. As mentioned previously, each `public` method that you have in your project will show up as a node in Dynamo. Let’s now see how to add more complex functionalities.
 
 ### I/O
 
@@ -296,7 +297,7 @@ public static double AverageNumbers(double Number1, double Number2)
 
 As you can clearly understand, the above will only accepts the declared input types, to accept any type you can use the `object` type. For lists/arrays, again, just follow normal C# conventions.
 
-But what happens if you don't know in advance the structure of the incoming data? If you want to handle inputs with variable nesting and single items as well? Use the `[ArbitraryDimensionArrayImport]` attribute (also, make sure you are have the `using Autodesk.DesignScript.Runtime;` directive in your file):
+But what happens if you don't know in advance the structure of the incoming data? What if you want to handle inputs with variable nesting and single items as well? Use the `[ArbitraryDimensionArrayImport]` attribute & make sure you  have the `using Autodesk.DesignScript.Runtime;` directive in your file:
 
 ```c#
 public static IList AddItemToEnd([ArbitraryDimensionArrayImport] object item, IList list)
@@ -309,7 +310,7 @@ public static IList AddItemToEnd([ArbitraryDimensionArrayImport] object item, IL
 ```
 #### Outputs
 
-Returning multiple values is a little bit more tricky, first add the `using Autodesk.DesignScript.Runtime;` directive. Then we need to add a `MultiReturn` attribute to the function and create a dictionary to store our outputs:
+Returning multiple values is a little bit more tricky, first you need the `using Autodesk.DesignScript.Runtime;` directive. Then we need to add a `MultiReturn` attribute to the function and create a dictionary to store our outputs:
 
 ```c#
 [MultiReturn(new[] { "evens", "odds" })]
@@ -399,13 +400,15 @@ public static Line ByCoordinates(double X1, double Y1, double Z1, double X2, dou
 ```
 ## Revit Node Development - Part 3
 
-Everything covered so far will run smoothly in Dynamo Sandbox and it's great to use it to get started developing nodes, but soon enough you'll want to be interacting with Revit elements too. A great thing of zero touch nodes is that they'll let you use the Revit and Dynamo API at the same time, this might be a bit confusing but we'll see soon how to do that, the [revitapidocs](http://www.revitapidocs.com/) website is great to get familiar with the Revit API. The Revit elements you access inside of Dynamo are not the native ones, but are *wrappers* around them, we'll also see more in detail what this means.
+Everything covered so far will run smoothly in Dynamo Sandbox and it's great to use it to get started developing nodes, but soon enough you'll want to be interacting with Revit elements too. A great feature of zero touch nodes is that they'll let you use the Revit and Dynamo API at the same time! This might be a bit confusing at first, but we'll see soon how to do that and the [revitapidocs](http://www.revitapidocs.com/) website is great to get familiar with the Revit API. 
+
+The Revit elements you access inside of Dynamo are not the native ones, but are *wrappers* around them, we'll also see more in detail what this means.
 
 ### References
 
 We need to add 3 more references manually, as these don't come as NuGet packages.
 
-Right click on references > Add Reference > Browse...
+In your VisualStudio project, right click on `References` > `Add Reference` > `Browse`...
 
 
 ![1501862943817](assets/1501862943817.png)
@@ -425,6 +428,9 @@ Again, remember to select these newly added references and to set *Copy Local* t
 ![1502201542252](assets/1501863170154.png)
 
 As mentioned earlier, since now we'll be building and debugging for Revit, you now need to update your [start action and build events](#Start-Action-and-Build-Events).
+
+> **Note:**
+> The Revit API libraries (dlls) are guaranteed to be valid for use only with the version of Revit they came with. This means that if you reference the `RevitAPI.dll` file from your Revit 2018 installation, your nodes will work with Revit 2018, might work with later versions (2019, etc) and will probably not work with older versions (2017). Targeting multiple versions of Revit is doable however, see [Konrad's excellent tutorial](http://archi-lab.net/how-to-maintain-revit-plug-ins-for-multiple-versions/) for more information.
 
 ### Code Example 1
 
@@ -447,11 +453,11 @@ Let's now explore how we can write a node that takes in some Walls and outputs t
 ```c#
 public static Autodesk.DesignScript.Geometry.Curve GetWallBaseline(Revit.Elements.Wall wall)
 {
-  //get Revit Wall
+  //get Revit Wall element from the Dynamo-wrapped object
   var revitWall = wall.InternalElement;
-  //revit API
+  //get the location curve of the wall using the Revit API
   var locationCurve =  revitWall.Location as LocationCurve;
-  //convert to Dynamo and return it
+  //convert the curve to Dynamo and return it
   return locationCurve.Curve.ToProtoType();
 }
 ```
@@ -518,7 +524,7 @@ using Autodesk.DesignScript.Geometry;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace DynamoUnchained.ZeroTouch
+namespace DynamoWorkshop.ZeroTouch
 {
   public static class TextUtils
   {
@@ -591,23 +597,27 @@ We don't need to get into detail, this class simply converts a string text into 
 
 ![1502715934084](assets/1502715934084.png)
 
-Add these two new functions to the `HelloRevit` class:
+Now we need to add a few more things to our class.
 
-```C#
-public static IEnumerable<Revit.Elements.Wall> SayHello(string text, double height, Revit.Elements.Level level, Revit.Elements.WallType wallType, int fontSize = 25)
-{
-
-}
-
+First, we add a `Document` member, which uses the Revit API to get a reference to the currently open document (`.rvt` file) inside Revit. Remember, collecting & creating elements always happens in the context of a Revit document.
+```c#
 internal static Autodesk.Revit.DB.Document Document
 {
   get { return DocumentManager.Instance.CurrentDBDocument; }
 }
 ```
 
-The `SayHello` method will take a string, a wall height, a level, a wall type and an optional font size. Before proceeding we need to make sure these are valid values:
+Now add a new `SayHello` method to the `HelloRevit` class, which will take a string, a wall height, a level, a wall type and an optional font size.
+```c#
+public static IEnumerable<Revit.Elements.Wall> SayHello(string text, double height, Revit.Elements.Level level, Revit.Elements.WallType wallType, int fontSize = 25)
+{
 
-```C#
+}
+```
+
+Before proceeding we need to make sure some of these input arguments are valid:
+
+```c#
   if (level == null)
   {
     throw new ArgumentNullException("level");
@@ -626,7 +636,7 @@ Now, you'd be very tempted to write something like the loop below, using the Dyn
 
 Dynamo API (wrong method):
 
-```C#
+```c#
   var walls = new List<Revit.Elements.Wall>();
   foreach (var curve in lines)
   {      
@@ -635,14 +645,23 @@ Dynamo API (wrong method):
 ```
 Revit API (right method):
 
-```C#
+```c#
   var walls = new List<Revit.Elements.Wall>();
   //elements creation and modification has to be inside of a transaction
   TransactionManager.Instance.EnsureInTransaction(Document);
   foreach (var curve in lines)
   {
-      var wall = Autodesk.Revit.DB.Wall.Create(Document, curve.ToRevitType(), wallType.InternalElement.Id, level.InternalElement.Id, height, 0.0, false, false);
-      walls.Add(wall.ToDSType(false) as Revit.Elements.Wall);
+    // use the Revit Wall.Create API to make a new wall element
+      var wall = Autodesk.Revit.DB.Wall.Create(
+        Document, // note the required reference to the Revid Document
+        curve.ToRevitType(), // also note we need to convert Dynamo curves to Revit types
+        wallType.InternalElement.Id, // Revit elements returned from Dynamo are wrapped, so we need to access the internal element directly
+        level.InternalElement.Id, 
+        height, 
+        0.0, 
+        false, 
+        false);
+      walls.Add(wall.ToDSType(false) as Revit.Elements.Wall); // notice we need to wrap Revit elements back so they can be used in Dynamo
   }
 ```
 Whenever you are using the Revit API to create or modify elements, these methods need to be wrapped inside a transaction. This is handled automatically when calling Dynamo methods.
@@ -736,7 +755,7 @@ If you build and run the application you'll see it behaves exactly how it did be
 
 ## Explicit custom nodes - part 1
 
-Let's now see how to use our User Control inside a custom UI node. Open the empty project inside `DynamoUnchained.ExplicitNode - start`, this was set up in the same way we did in the previous lab, the only additional dependency, which can be installed via NuGet, is the WpfUILibrary:
+Let's now see how to use our User Control inside a custom UI node. Open the empty project inside `DynamoWorkshop.ExplicitNode - start`, this was set up in the same way we did in the previous lab, the only additional dependency, which can be installed via NuGet, is the WpfUILibrary:
 
 ![DE81C792-8E23-4968-BFE9-6462BB3FFAFF](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/DE81C792-8E23-4968-BFE9-6462BB3FFAFF.png)
 
@@ -750,7 +769,7 @@ Create a new class named `HelloUI.cs`, then add the interface, directives and at
 /* dynamo directives */
 using Dynamo.Graph.Nodes;
 
-namespace DynamoUnchained.ExplicitNode
+namespace DynamoWorkshop.ExplicitNode
 {
   [NodeName("HelloUI")]
   [NodeDescription("Sample Explicit Node")]
@@ -775,7 +794,7 @@ We have already written a sample custom UI to implement in the sample WpfApp pro
 
 ![59925281-6DB0-4FAC-82BD-8C5BCD2ADBD4](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/59925281-6DB0-4FAC-82BD-8C5BCD2ADBD4.png)
 
-You'll also need to replace the namespace in those two files, from `WpfApp` to `DynamoUnchained.ExplicitNode`.
+You'll also need to replace the namespace in those two files, from `WpfApp` to `DynamoWorkshop.ExplicitNode`.
 
 ### The INodeViewCustomization Interface
 
@@ -786,7 +805,7 @@ Since our node has a custom UI, we need to create another class which implements
 using Dynamo.Controls;
 using Dynamo.Wpf;
 
-namespace DynamoUnchained.ExplicitNode
+namespace DynamoWorkshop.ExplicitNode
 {
   public class HelloUINodeView : INodeViewCustomization<HelloUI>
   {
@@ -806,7 +825,7 @@ namespace DynamoUnchained.ExplicitNode
 
 The code above is assigning the custom view to the HelloUI NodeModel and binding the data.
 
-If you debug, you'll see the node with the user control embedded, behaving as before, but without any input or output port. If you've missed any step you can find this completed part in the folder `DynamoUnchained.ExplicitNode - part 1`.
+If you debug, you'll see the node with the user control embedded, behaving as before, but without any input or output port. If you've missed any step you can find this completed part in the folder `DynamoWorkshop.ExplicitNode - part 1`.
 
 ![55804692-6DA3-4F3A-ADC3-1B7F4C9330B8](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/55804692-6DA3-4F3A-ADC3-1B7F4C9330B8.png)
 
@@ -828,7 +847,7 @@ Then let's add the `DynamoVisualProgramming.DynamoServices` NuGet package and a 
 
 ```c#
 using Autodesk.DesignScript.Runtime;
-namespace DynamoUnchained.ExplicitNode.Functions
+namespace DynamoWorkshop.ExplicitNode.Functions
 {
   [IsVisibleInDynamoLibrary(false)]
   public static class Functions
@@ -843,7 +862,7 @@ namespace DynamoUnchained.ExplicitNode.Functions
 
 #### The BuildOutputAst Method
 
-Now we can implement `BuildOutputAst` inside of `HelloUI.cs`. First right click on the`DynamoUnchained.ExplicitNode` project and add a reference to `DynamoUnchained.ExplicitNode.Functions`.
+Now we can implement `BuildOutputAst` inside of `HelloUI.cs`. First right click on the`DynamoWorkshop.ExplicitNode` project and add a reference to `DynamoWorkshop.ExplicitNode.Functions`.
 
 ![02707B01-3C9E-42EB-B684-37F7438F016F](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/02707B01-3C9E-42EB-B684-37F7438F016F.png)
 
@@ -858,11 +877,11 @@ using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 
-namespace DynamoUnchained.ExplicitNode
+namespace DynamoWorkshop.ExplicitNode
 {
   [NodeName("HelloUI")]
   [NodeDescription("Sample Explicit Node")]
-  [NodeCategory("DynamoUnchained")]
+  [NodeCategory("DynamoWorkshop")]
   [InPortNames("A")]
   [InPortTypes("double")]
   [InPortDescriptions("Number A")]
@@ -923,12 +942,12 @@ And the slider in MyCustomControl.XAML to:
   Value="{Binding SliderValue}" />
 ```
 
-And finally, we need to tell Dynamo to load `DynamoUnchained.ExplicitNode.Functions.dll` as well, and that's done by editing `pkg.json` adding at the end:
+And finally, we need to tell Dynamo to load `DynamoWorkshop.ExplicitNode.Functions.dll` as well, and that's done by editing `pkg.json` adding at the end:
 
 ```
 "node_libraries": [
-    "DynamoUnchained.ExplicitNode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-    "DynamoUnchained.ExplicitNode.Functions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "DynamoWorkshop.ExplicitNode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "DynamoWorkshop.ExplicitNode.Functions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
   ]
 ```
 
