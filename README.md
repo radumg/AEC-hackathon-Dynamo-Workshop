@@ -73,7 +73,7 @@ There are different types of custom nodes, for all levels and uses:
 ### Zero Touch Node
 
 A Zero Touch Node (ZTN), is a custom node written in C#. A ZTN can be obtained by simply [importing a DLL inside of Dynamo](http://dynamoprimer.com/en/10_Packages/10-5_Zero-Touch.html). It's called zero-touch because that's all you need to do : Dynamo is smart and will automatically map all methods & properties from public classes to nodes :
-- `public static` **methods** will appear as contructor nodes in Dynamo, identified with a green `+` icon
+- `public static` **methods** that return the class type will appear as contructor nodes in Dynamo, identified with a green `+` icon
 - `public` **methods** will appear as action nodes, identified with a red `⚡` icon
 - `public` **properties** will appear as query nodes, identified with a blue `?` icon
 
@@ -419,7 +419,7 @@ In C#, raising an exception is as simple as :
 throw new Exception("This is the message that will accompany the exception.");
 ```
 
-Doing this inside a Dynamo node is gracefully handled by Dynamo, turning the node yello and displaying the error message. Let's see an example :
+Doing this inside a Dynamo node is gracefully handled by Dynamo, turning the node yellow and displaying the error message. Let's see an example :
 
 ```c#
 public static string ThrowExceptionIfStringIsNull(string text)
@@ -431,7 +431,7 @@ public static string ThrowExceptionIfStringIsNull(string text)
 
 Which will be displayed like this in Dynamo :
 
-![ZT-ArgumentNullException](assets/ZT-ArgumentNullException.png)
+![ZT-ArgumentNullException](assets/ZT-RaiseException.png)
 
 
 ## Revit Node Development - Part 3
