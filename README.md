@@ -719,11 +719,11 @@ In the previous lab we have seen how to develop Zero Touch Nodes, which are grea
 
 Let's first make a simple WPF application, to see how it works. Open Visual Studio and create a new WPF App project:
 
-![EF6F428B-BF86-4DC9-AA38-707E0208525C](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/EF6F428B-BF86-4DC9-AA38-707E0208525C.png)
+![EF6F428B-BF86-4DC9-AA38-707E0208525C](assets/EF6F428B-BF86-4DC9-AA38-707E0208525C.png)
 
 Now double click on MainWindow.xaml, expand the toolbox panel and add some UI controls as a slider, a checkbox and a button:
 
-![82C06E05-2B95-40C2-A2C1-85C410770FCB](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/82C06E05-2B95-40C2-A2C1-85C410770FCB.png)
+![82C06E05-2B95-40C2-A2C1-85C410770FCB](assets/82C06E05-2B95-40C2-A2C1-85C410770FCB.png)
 
 As you see VS has automatically created XAML tags corresponding to these UI elements, let's now edit it so that from these controls we can call methods in the C# code behind. We are going to add names to the controls, set `Grid.RowDefinitions` to better layout the controls, change a few properties and add a `Click` event to the button:
 
@@ -760,7 +760,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 Run the application and you'll see it working!
 
-![C85A217B-F426-460F-BA7B-AF408FA4DAC7](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/C85A217B-F426-460F-BA7B-AF408FA4DAC7.png)
+![C85A217B-F426-460F-BA7B-AF408FA4DAC7](assets/C85A217B-F426-460F-BA7B-AF408FA4DAC7.png)
 
 ### WPF Binding
 
@@ -784,13 +784,13 @@ If you run the app you'll see that as the checkbox is unchecked the button becom
 
 Let's finally see how easy it is in WPF to create custom controls, right click on the project > Add > User Control and create a new one, I named mine `MyCustomControl.xaml`.
 
-![E788DDA4-40AD-4D54-BD46-D580D82B3BD6](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/E788DDA4-40AD-4D54-BD46-D580D82B3BD6.png)
+![E788DDA4-40AD-4D54-BD46-D580D82B3BD6](assets/E788DDA4-40AD-4D54-BD46-D580D82B3BD6.png)
 
 Now, from the XAML panel replace the content of `<Grid>...</Grid>` in `MyCustomControl.xaml` with the one in `MainWindow.xaml`. As do the same for our `Button_Click` function in `MainWindow.xaml.cs` and move it to `MyCustomControl.xaml.cs`.
 
 We have now created a reusable custom control that we can embed inside other WPF controls. To add it to `MainWindow.xaml` we just need to save and add the `  xmlns:local="clr-namespace:WpfApp"` attribute to the `<Window>` element as below and a  `<local:MyCustomControl/>` XAML tag for this custom component inside the XAML `<Grid>` :
 
-![0E420C84-413F-4BAA-9A59-70A65DE95E0B](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/0E420C84-413F-4BAA-9A59-70A65DE95E0B.png)
+![0E420C84-413F-4BAA-9A59-70A65DE95E0B](assets/0E420C84-413F-4BAA-9A59-70A65DE95E0B.png)
 
 If you build and run the application you'll see it behaves exactly how it did before.
 
@@ -798,7 +798,7 @@ If you build and run the application you'll see it behaves exactly how it did be
 
 Let's now see how to use our User Control inside a custom UI node. Open the empty project inside `DynamoWorkshop.ExplicitNode - start`, this was set up in the same way we did in the previous lab, the only additional dependency, which can be installed via NuGet, is the WpfUILibrary:
 
-![DE81C792-8E23-4968-BFE9-6462BB3FFAFF](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/DE81C792-8E23-4968-BFE9-6462BB3FFAFF.png)
+![DE81C792-8E23-4968-BFE9-6462BB3FFAFF](assets/DE81C792-8E23-4968-BFE9-6462BB3FFAFF.png)
 
 ### The NodeModel interface
 
@@ -827,13 +827,13 @@ namespace DynamoWorkshop.ExplicitNode
 
 ```
 
-In explicit nodes there is no need for a `_DynamoCustomization.xml` file, as the attributes on top of our class will define its category.
+In explicit nodes there is no need for a `_DynamoCustomization.xml` file, as the attributes on top of our class will define its category, name & whether it's usable in code blocks.
 
 ### The Custom UI
 
 We have already written a sample custom UI to implement in the sample WpfApp project, now we just need to copy `MyCustomControl.xaml` and `MyCustomControl.xaml.cs` to the current project folder and add them to the project, you can do this by dragging and dropping them:
 
-![59925281-6DB0-4FAC-82BD-8C5BCD2ADBD4](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/59925281-6DB0-4FAC-82BD-8C5BCD2ADBD4.png)
+![59925281-6DB0-4FAC-82BD-8C5BCD2ADBD4](assets/59925281-6DB0-4FAC-82BD-8C5BCD2ADBD4.png)
 
 You'll also need to replace the namespace in those two files, from `WpfApp` to `DynamoWorkshop.ExplicitNode`.
 
@@ -868,7 +868,7 @@ The code above is assigning the custom view to the HelloUI NodeModel and binding
 
 If you debug, you'll see the node with the user control embedded, behaving as before, but without any input or output port. If you've missed any step you can find this completed part in the folder `DynamoWorkshop.ExplicitNode - part 1`.
 
-![55804692-6DA3-4F3A-ADC3-1B7F4C9330B8](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/55804692-6DA3-4F3A-ADC3-1B7F4C9330B8.png)
+![55804692-6DA3-4F3A-ADC3-1B7F4C9330B8](assets/55804692-6DA3-4F3A-ADC3-1B7F4C9330B8.png)
 
 
 
@@ -882,7 +882,7 @@ In this final part we are going to add input and output ports to our node and in
 
 NodeModels when executed run a method called `BuildOutputAst` this method takes your inputs and passes them to a function **which has to live in a separate assembly** (in our case a separate project). Let's create it:
 
-![742DAFE2-BFA5-4FAA-9F36-66D27D5F9766](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/742DAFE2-BFA5-4FAA-9F36-66D27D5F9766.png)
+![742DAFE2-BFA5-4FAA-9F36-66D27D5F9766](assets/742DAFE2-BFA5-4FAA-9F36-66D27D5F9766.png)
 
 Then let's add the `DynamoVisualProgramming.DynamoServices` NuGet package and a new static class named `Functions.cs`:
 
@@ -905,9 +905,9 @@ namespace DynamoWorkshop.ExplicitNode.Functions
 
 Now we can implement `BuildOutputAst` inside of `HelloUI.cs`. First right click on the`DynamoWorkshop.ExplicitNode` project and add a reference to `DynamoWorkshop.ExplicitNode.Functions`.
 
-![02707B01-3C9E-42EB-B684-37F7438F016F](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/02707B01-3C9E-42EB-B684-37F7438F016F.png)
+![02707B01-3C9E-42EB-B684-37F7438F016F](assets/02707B01-3C9E-42EB-B684-37F7438F016F.png)
 
-![DFF7111D-51E8-405C-92FB-9533A2199833](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/DFF7111D-51E8-405C-92FB-9533A2199833.png)
+![DFF7111D-51E8-405C-92FB-9533A2199833](assets/DFF7111D-51E8-405C-92FB-9533A2199833.png)
 
 Then edit HelloUI.cs:
 
@@ -985,7 +985,7 @@ And the slider in MyCustomControl.XAML to:
 
 And finally, we need to tell Dynamo to load `DynamoWorkshop.ExplicitNode.Functions.dll` as well, and that's done by editing `pkg.json` adding at the end:
 
-```
+```json
 "node_libraries": [
     "DynamoWorkshop.ExplicitNode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
     "DynamoWorkshop.ExplicitNode.Functions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
@@ -994,7 +994,7 @@ And finally, we need to tell Dynamo to load `DynamoWorkshop.ExplicitNode.Functio
 
 You can now test your code and see how the input is multiplied by the value of the slider:
 
-![3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1.png)
+![3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1](assets/3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1.png)
 
 #### Affecting the graph
 
@@ -1010,7 +1010,7 @@ Publishing can only be done from Dynamo for Revit or Dynamo Studio, not from the
 
 Click on Packages > Manage Packages...
 
-![1510612119525](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/1510612119525.png)
+![1510612119525](assets/1510612119525.png)
 
 In the next screen make sure all the information is correct and that only the required dlls are being included (remember when we had to manually set `Copy Local` to `False` on the references?).
 
@@ -1018,7 +1018,7 @@ As you click Publish Online it will be on the Package Manager, to upload new ver
 
 Also note that packages cannot be deleted, but only deprecated.  
 
-![1510612834682](dynamo-unchained-2-learn-how-to-develop-explicit-nodes-in-csharp/assets/1510612834682.png)
+![1510612834682](assets/1510612834682.png)
 
 
 
