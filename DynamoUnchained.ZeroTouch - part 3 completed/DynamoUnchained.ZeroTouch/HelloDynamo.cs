@@ -2,10 +2,10 @@
 using Autodesk.DesignScript.Geometry;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 namespace DynamoUnchained.ZeroTouch
 {
-
   public static class HelloDynamo
   {
     public static string SayHello(string Name)
@@ -72,6 +72,12 @@ namespace DynamoUnchained.ZeroTouch
           return Line.ByStartPointEndPoint(p1, p2);
         }
       }
+    }
+
+    public static string ThrowExceptionIfStringIsNull(string text)
+    {
+      if (string.IsNullOrWhiteSpace(text)) throw new ArgumentNullException("text");
+      return text;
     }
   }
 }
