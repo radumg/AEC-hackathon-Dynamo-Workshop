@@ -1,20 +1,20 @@
 ﻿{
   "license": "",
   "file_hash": null,
-  "name": "Dynamo Unchained - ZeroTouch",
+  "name": "DynamoWorkshop - ZeroTouch",
   "version": "1.0.0",
-  "description": "ZeroTouch sample node for the Dynamo Unchained workshop",
+  "description": "ZeroTouch sample node for the Dynamo DynamoWorkshop workshop",
   "group": "",
   "keywords": null,
   "dependencies": [],
   "contents": "",
-  "engine_version": "1.3.0.0",
+  "engine_version": "2.0.1.0",
   "engine": "dynamo",
   "engine_metadata": "",
   "site_url": "",
   "repository_url": "",
   "contains_binaries": true,
   "node_libraries": [
-    "DynamoUnchained.ZeroTouch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "DynamoWorkshop.ZeroTouch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
   ]
 }
