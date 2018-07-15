@@ -23,7 +23,7 @@ By writing your own ZTN you will benefit from
 
 This type of node (ZTN) needs to be compiled into a `DLL` every time you want to make a change, which means your code is safer if you are going to distribute it, but it does make graphs dependant on this external `DLL` file. This means that for small tasks, Python nodes might still be a better solution as the code is embedded in the Dynamo `.dyn` file itself.
 
-## Visual Studio Setup - Part 1
+## 1 - Visual Studio Setup
 
 [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) (VS) is going to be our IDE, it’s free and fully-featured for students, open-source and individual developers. In this part we are going to create a new project, add references and packages and all necessary files. 
 It’s very important to set up the project correctly : although it will take some time and it might look confusing at first, it will facilitate development and debugging, making you a better developer. Please note that this is how *I personally set up the environment*, there are of course many other ways to do it.
@@ -211,9 +211,9 @@ Debug again, and it'll be much better now:
 
 We’ve now finally set up our project correctly, you can save the project and use it in the future as a template. In case you missed some steps you can find the complete project inside the "*DynamoWorkshop.ZeroTouch - part 1"* folder.
 
-## Dynamo Node Development - Part 2
+## 1 - Dynamo Node Development
 
-In this part we will develop a few sample nodes exploring inputs, outputs and Dynamo's geometry. Since we wont't be interacting with Revit just yet, development will target Dynamo Sandbox. As mentioned previously, each `public` method that you have in your project will show up as a node in Dynamo. Let’s now see how to add more complex functionalities.
+In this part we will develop a few sample nodes exploring inputs, outputs, Dynamo's geometry and handling error/exceptions. Since we wont't be interacting with Revit just yet, development will target Dynamo Sandbox. Let’s dive straight in and see how to add more complex functionalities to our package.
 
 ### Input & Output (I/O)
 
@@ -222,10 +222,19 @@ Most of your nodes will :
 - do something with them
 - and then return one or more outputs.
 
-#### Inputs
+Let's look at each of those in a bit more detail. 
 
-To accept multiple inputs, simply add more input parameters to your functions:
+### Inputs
 
+The first example is what we did in the previous exercise, a simple function that has 1 input text and returns a modified version of it :
+```c#
+public static string SayHello(string Name)
+    {
+      return "Hello " + Name + "!";
+    }
+```
+
+To accept multiple inputs, simply add more input parameters to your functions.
 ```c#
 public static double AverageNumbers(double Number1, double Number2)
 {
@@ -237,7 +246,17 @@ public static double AverageNumbers(double Number1, double Number2)
 
 As you can clearly understand, the above will only accepts the declared input types, to accept any type you can use the `object` type. For lists/arrays, again, just follow normal C# conventions.
 
-But what happens if you don't know in advance the structure of the incoming data? What if you want to handle inputs with variable nesting and single items as well? Use the `[ArbitraryDimensionArrayImport]` attribute & make sure you  have the `using Autodesk.DesignScript.Runtime;` directive in your file:
+What if your input is not one, or two values, but an entire list ?
+Let's see an example that handles a list as an input and returns that same list but without any of its contents :
+```c#
+public static IList ClearListContents(IList list)
+{
+  list.Clear();
+  return list;
+}
+```
+
+And then what happens if you don't know in advance the structure of the incoming data? What if you want to handle inputs with variable nesting and single items as well? Use the `[ArbitraryDimensionArrayImport]` attribute & make sure you  have the `using Autodesk.DesignScript.Runtime;` directive in your file:
 
 ```c#
 public static IList AddItemToEnd([ArbitraryDimensionArrayImport] object item, IList list)
@@ -248,12 +267,14 @@ public static IList AddItemToEnd([ArbitraryDimensionArrayImport] object item, IL
     };
 }
 ```
-#### Outputs
+### Outputs
 
 Returning multiple values is a little bit more tricky :
 - first you need the `using Autodesk.DesignScript.Runtime;` directive
 - then we need to add a `MultiReturn` attribute to the function
 - and finally create a dictionary to store our outputs
+
+Our first example that illustrates this is a function that takes in a list of integers and splits them into two distinct lists, each containing only odd or even numbers.
 
 ```c#
 [MultiReturn(new[] { "evens", "odds" })]
@@ -293,11 +314,12 @@ public static Dictionary<string, object> SplitOddEven(List<int> list)
 
 ### Dynamo Geometry
 
-To access native Dynamo geometry and methods, you just need to add the `using Autodesk.DesignScript.Geometry;` directive, we can now read element's properties:
+To access native Dynamo geometry and methods, you just need to add the `using Autodesk.DesignScript.Geometry;` directive, we can now read element's properties.
 
+The example below deconstructs a point into its X,Y & Z coordinates
 ```c#
 [MultiReturn(new[] { "X", "Y", "Z" })]
-public static Dictionary<string, object> PointCoordinates(Point point)
+public static Dictionary<string, object> DeconstructPoint(Point point)
 {
   return new Dictionary<string, object> { 
     { "X", point.X }, 
@@ -307,10 +329,10 @@ public static Dictionary<string, object> PointCoordinates(Point point)
 }
 ```
 
-And generate new geometry:
+And this one generates Dynamo geometry, creating a line from two X,Y,Z coordinates pairs.
 
 ```c#
-public static Line ByCoordinates(double X1, double Y1, double Z1, double X2, double Y2, double Z2)
+public static Line LineByCoordinatesPair(double X1, double Y1, double Z1, double X2, double Y2, double Z2)
 {
   var p1 = Point.ByCoordinates(X1, Y1, Z1);
   var p2 = Point.ByCoordinates(X2, Y2, Z2);
@@ -321,7 +343,7 @@ public static Line ByCoordinates(double X1, double Y1, double Z1, double X2, dou
 But **BE CAREFUL!** Each geometry object that you create in your functions will use Dynamo resources, therefore if it's not needed or returned by your methods it should be disposed, either like this:
 
 ```c#
-public static Line ByCoordinates(double X1, double Y1, double Z1, double X2, double Y2, double Z2)
+public static Line LineByCoordinatesPair(double X1, double Y1, double Z1, double X2, double Y2, double Z2)
 {
   var p1 = Point.ByCoordinates(X1, Y1, Z1);
   var p2 = Point.ByCoordinates(X2, Y2, Z2);
@@ -360,17 +382,51 @@ Doing this inside a Dynamo node is gracefully handled by Dynamo, turning the nod
 
 ```c#
 public static string ThrowExceptionIfStringIsNull(string text)
-    {
-      if (string.IsNullOrWhiteSpace(text)) throw new ArgumentNullException("text");
-      return text;
-    }
+{
+    if (string.IsNullOrWhiteSpace(text)) throw new ArgumentNullException("text");
+    return text;
+}
 ```
 
 Which will be displayed like this in Dynamo :
 
 ![ZT-ArgumentNullException](assets/ZT-RaiseException.png)
 
-### Mapping from C# to nodes
+If we were doing something a bit more complicated, we might want to handle errors & exceptions ourselves inside our node and only surface the error to the users when it can't be ignored, or with more detailed information about it.
+
+Here's an example that handles exceptions internally, but also surfaces them when needed. What it does is calculate the sum of all list members, but it skips over null values, which would otherwise cause an `Exception` to be thrown when trying to add them up.
+
+```c#
+public static int HandleListNullExceptionsInternally(List<object> list)
+{
+    // check input list is not empty
+    if (list == null || list.Count < 1) throw new ArgumentNullException("list");
+    var sum = 0;
+
+    foreach (var item in list)
+    {
+        try
+        {
+            // it's safe to throw inside a try block as the exception will be caught below
+            if (item == null) throw new NullReferenceException();
+
+            // if the object cannot be converted to an integer, this will throw an exception as well
+            int intValue = Convert.ToInt32(item);
+
+            // this only executes if the above checks did not throw
+            sum += intValue;
+        }
+        catch (Exception)
+        {
+            // this block of code would be executed whenever a null is found in the list
+        }
+    }
+
+    return sum;
+}
+```
+
+## 3 - ZeroTouch mapping
 
 As mentioned before, Dynamo will automatically map `public` properties and methods to nodes, so let's see a more applied example of this.
 
@@ -433,7 +489,7 @@ Let's visualise all these mappings from C# code to nodes to understand the direc
 ![ZT-ExampleMapping](assets/ZT-ExampleMapping.png)
 
 
-## Revit Node Development - Part 3
+## 4 - Revit Node Development
 
 Everything covered so far will run smoothly in Dynamo Sandbox and it's great to use it to get started developing nodes, but soon enough you'll want to be interacting with Revit elements too. A great feature of zero touch nodes is that they'll let you use the Revit and Dynamo API at the same time! This might be a bit confusing at first, but we'll see soon how to do that and the [revitapidocs](http://www.revitapidocs.com/) website is great to get familiar with the Revit API. 
 
@@ -530,7 +586,7 @@ Face.ToProtoType() > IEnumerable<Surface>
 Transform.ToCoordinateSystem() > CoordinateSystem
 BoundingBoxXYZ.ToProtoType() > BoundingBox
 ```
-#### From Revit to Dynamo
+#### From Dynamo to Revit
 
 ```c#
 //Elements

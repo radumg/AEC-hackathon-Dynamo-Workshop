@@ -8,6 +8,21 @@ namespace DynamoWorkshop.ZeroTouch
     public static class Geometry
     {
         /// <summary>
+        /// Deconstruct a point into its X,Y,Z coordinates
+        /// </summary>
+        /// <param name="point">The point to deconstruct</param>
+        /// <returns>Individual X,Y,Z coordinate values</returns>
+        [MultiReturn(new[] { "X", "Y", "Z" })]
+        public static Dictionary<string, object> DeconstructPoint(Point point)
+        {
+            return new Dictionary<string, object> {
+                { "X", point.X },
+                { "Y", point.Y },
+                { "Z", point.Z }
+            };
+        }
+
+        /// <summary>
         /// Create a line from a pair of X,Y,Z coordinates
         /// </summary>
         /// <param name="X1">start point X</param>
@@ -17,7 +32,7 @@ namespace DynamoWorkshop.ZeroTouch
         /// <param name="Y2">end point Y</param>
         /// <param name="Z2">end point Z</param>
         /// <returns>A new line</returns>
-        public static Line ByCoordinates(double X1, double Y1, double Z1, double X2, double Y2, double Z2)
+        public static Line LineByCoordinatesPair(double X1, double Y1, double Z1, double X2, double Y2, double Z2)
         {
             // build the start/end Dynamo points from the coordinates
             var startPoint = Point.ByCoordinates(X1, Y1, Z1);

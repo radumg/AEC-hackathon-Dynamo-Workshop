@@ -46,20 +46,5 @@ namespace DynamoWorkshop.ZeroTouch
             //the above can be simplified in one line with
             //return new Dictionary<string, object> { { "evens", evens }, { "odds", odds } };       
         }
-
-        /// <summary>
-        /// Deconstruct a point into its X,Y,Z coordinates
-        /// </summary>
-        /// <param name="point">The point to deconstruct</param>
-        /// <returns>Individual X,Y,Z coordinate values</returns>
-        [MultiReturn(new[] { "X", "Y", "Z" })]
-        public static Dictionary<string, object> DeconstructPoint(Point point)
-        {
-            return new Dictionary<string, object> {
-                { "X", point.X },
-                { "Y", point.Y },
-                { "Z", point.Z }
-            };
-        }
     }
 }
