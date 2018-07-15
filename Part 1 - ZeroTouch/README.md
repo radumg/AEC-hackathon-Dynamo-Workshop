@@ -454,9 +454,9 @@ Browse and add the following DLLs, the first to the Revit API:
 
 Then to the Dynamo Revit Nodes and Services
 
-`C:\Program Files\Dynamo\Dynamo Revit\1.3\Revit_2018\RevitNodes.dll`
+`C:\Program Files\Dynamo\Dynamo Revit\2.0\Revit_2018\RevitNodes.dll`
 
-`C:\Program Files\Dynamo\Dynamo Revit\1.3\Revit_2018\RevitServices.dll`
+`C:\Program Files\Dynamo\Dynamo Revit\2.0\Revit_2018\RevitServices.dll`
 
 Again, remember to select these newly added references and to set *Copy Local* to *False*.
 
@@ -504,6 +504,9 @@ This isn't too exciting, but hey, you wrote your first ZTN for Revit! The code a
 ### Wrapping, Unwrapping and Converting
 
 The following lists show some of the most common extension methods that you might need, they take care of conversion of Revit elements and geometry to Dynamo ones and vice-versa.
+
+You can find these extension methods in the `RevitNodes.dll` assembly that comes with every Dynamo installation. Again, this will be versioned due to Revit's API, so look for it in the folder below, adjusting for your version of Revit & Dynamo :
+`C:\Program Files\Dynamo\Dynamo Revit\2.0\Revit_2018\RevitNodes.dll`
 
 #### From Revit to Dynamo
 
