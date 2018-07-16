@@ -18,13 +18,13 @@ Get a high-level overview of the types of custom nodes you can create in Dynamo.
 
 
 2. [Part 1 - ZeroTouch nodes](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%201%20-%20ZeroTouch)</br>
-Learn to develop custom nodes in Dynamo using ZeroTouch.</br>
-![Dynamo ZeroTouch node](/Part 1 - ZeroTouch/assets/1501856889450.png)
+Learn to develop custom nodes in Dynamo using ZeroTouch.
+![Dynamo ZeroTouch node](assets/1501856889450.png)
 
 
 3. [Part 2 - Explicit nodes](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%202%20-%20Explicit%20nodes)</br>
-Learn to develop nodes with custom UI in Dynamo using ZeroTouch Explicit nodes.</br>
-![Dynamo ZeroTouch node](Part 2 - Explicit nodes/assets/3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1.png)
+Learn to develop nodes with custom UI in Dynamo using ZeroTouch Explicit nodes.
+![Dynamo ZeroTouch node](assets/3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1.png)
 
 
 ### Tools we’ll use
