@@ -7,8 +7,8 @@
     <ProjectGuid>{9D246048-9A6B-48B0-8D70-5BF7F0BCCC04}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DynamoUnchained.ExplicitNode</RootNamespace>
-    <AssemblyName>DynamoUnchained.ExplicitNode</AssemblyName>
+    <RootNamespace>DynamoWorkshop.ExplicitNode</RootNamespace>
+    <AssemblyName>DynamoWorkshop.ExplicitNode</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,21 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamoServices, Version=1.3.0.961, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.1.3.0\lib\net45\DynamoServices.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DynamoServices, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.2.0.1.5055\lib\net45\DynamoServices.dll</HintPath>
     </Reference>
-    <Reference Include="DynamoUnits, Version=1.3.0.961, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.1.3.0\lib\net45\DynamoUnits.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NodeServices2, Version=1.3.0.961, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.1.3.0\lib\net45\NodeServices2.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DynamoUnits, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.0.1.5055\lib\net45\DynamoUnits.dll</HintPath>
     </Reference>
     <Reference Include="ProtoGeometry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.1.3.0\lib\net45\ProtoGeometry.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.0.1.5055\lib\net45\ProtoGeometry.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -66,8 +59,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(TargetDir)*.*" "$(AppData)\Dynamo\Dynamo Core\1.3\packages\$(ProjectName)\bin\"
+    <PostBuildEvent>xcopy /Y "$(TargetDir)*.*" "$(AppData)\Dynamo\Dynamo Core\2.0\packages\$(ProjectName)\bin\"
 
-xcopy /Y "$(ProjectDir)pkg.json" "$(AppData)\Dynamo\Dynamo Core\1.3\packages\$(ProjectName)"</PostBuildEvent>
+xcopy /Y "$(ProjectDir)pkg.json" "$(AppData)\Dynamo\Dynamo Core\2.0\packages\$(ProjectName)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
