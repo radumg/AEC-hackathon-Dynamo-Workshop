@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DynamoUnchained.ZeroTouch")]
+[assembly: AssemblyTitle("DynamoWorkshop.ExplicitNode.Functions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("DynamoUnchained.ZeroTouch")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("DynamoWorkshop.ExplicitNode.Functions")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9d246048-9a6b-48b0-8d70-5bf7f0bccc04")]
+[assembly: Guid("5ecd7d97-d11c-4ea2-8a2e-0f096aa57dd3")]
 
 // Version information for an assembly consists of the following four values:
 //

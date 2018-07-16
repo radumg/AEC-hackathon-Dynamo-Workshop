@@ -33,12 +33,15 @@
   <ItemGroup>
     <Reference Include="DynamoServices, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.2.0.1.5055\lib\net45\DynamoServices.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DynamoUnits, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.0.1.5055\lib\net45\DynamoUnits.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ProtoGeometry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.0.1.5055\lib\net45\ProtoGeometry.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

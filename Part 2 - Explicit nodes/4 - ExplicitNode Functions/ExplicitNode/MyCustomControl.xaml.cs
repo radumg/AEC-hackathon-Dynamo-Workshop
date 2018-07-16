@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 
 
-namespace DynamoUnchained.ExplicitNode
+namespace DynamoWorkshop.ExplicitNode
 {
   /// <summary>
   /// Interaction logic for MyCustomControl.xaml

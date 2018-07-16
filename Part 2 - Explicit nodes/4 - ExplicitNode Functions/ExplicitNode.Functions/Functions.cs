@@ -1,6 +1,6 @@
 ﻿using Autodesk.DesignScript.Runtime;
 
-namespace DynamoUnchained.ExplicitNode.Functions
+namespace DynamoWorkshop.ExplicitNode.Functions
 {
   [IsVisibleInDynamoLibrary(false)]
   public static class Functions

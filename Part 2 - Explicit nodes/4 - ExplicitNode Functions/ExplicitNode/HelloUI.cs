@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 /* dynamo directives */
 using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 
-namespace DynamoUnchained.ExplicitNode
+namespace DynamoWorkshop.ExplicitNode
 {
   [NodeName("HelloUI")]
   [NodeDescription("Sample Explicit Node")]
-  [NodeCategory("Dynamo Unchained.Explicit Node")]
+  [NodeCategory("DynamoWorkshop.Explicit Node")]
   [InPortNames("A")]
   [InPortTypes("double")]
   [InPortDescriptions("Number A")]
@@ -39,7 +40,7 @@ namespace DynamoUnchained.ExplicitNode
 
     public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAstNodes)
     {
-      if (!HasConnectedInput(0))
+      if (!InPorts.Any() || InPorts[0]==null)
       {
         return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
       }

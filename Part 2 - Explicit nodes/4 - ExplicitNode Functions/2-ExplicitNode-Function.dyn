@@ -1,0 +1,187 @@
+{
+  "Uuid": "2b134078-3f1b-4380-b372-287d26e1d30d",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "2-ExplicitNode-Function",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DynamoWorkshop.ExplicitNode.HelloUI, DynamoWorkshop.ExplicitNode",
+      "SliderValue": 4.0,
+      "NodeType": "ExtensionNode",
+      "Id": "0625f142c25a40fd8d7487c5f32eccde",
+      "Inputs": [
+        {
+          "Id": "69f47fcc5a02403ca8b12729a103ba96",
+          "Name": "A",
+          "Description": "Number A",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f97b1e34a60a44059493cd078dbfc759",
+          "Name": "Output",
+          "Description": "Product of two numbers",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Sample Explicit Node"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 10.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 6.8000000000000007,
+      "Id": "8ec2647c246847e18da3c162dd932604",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "77bb4bf1fc3247419aa0bc6518b2819e",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "b7b272dfc660497eb6a755580d1c6313",
+      "Inputs": [
+        {
+          "Id": "1601b9a375b347ceae412a8bdd9a1a7c",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3f47e6d3051d4013a1c654fea7bf9d73",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f97b1e34a60a44059493cd078dbfc759",
+      "End": "1601b9a375b347ceae412a8bdd9a1a7c",
+      "Id": "b386f981c35d46e78d02cafaa2f2f1bb"
+    },
+    {
+      "Start": "77bb4bf1fc3247419aa0bc6518b2819e",
+      "End": "69f47fcc5a02403ca8b12729a103ba96",
+      "Id": "e2d66b959fa943aa8ef5f00a2e8f57ef"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.1.5055",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "HelloUI",
+        "Id": "0625f142c25a40fd8d7487c5f32eccde",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 235.21119622301649,
+        "Y": 361.70151713455607
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Number Slider",
+        "Id": "8ec2647c246847e18da3c162dd932604",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -164.28880377698351,
+        "Y": 361.70151713455607
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "b7b272dfc660497eb6a755580d1c6313",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 549.21119622301649,
+        "Y": 361.70151713455607
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "665bcdb97b3c4892991f73a8bf4b891d",
+        "Title": "HelloUI Multiplication",
+        "Nodes": [
+          "0625f142c25a40fd8d7487c5f32eccde",
+          "8ec2647c246847e18da3c162dd932604",
+          "b7b272dfc660497eb6a755580d1c6313"
+        ],
+        "Left": -174.28880377698351,
+        "Top": 308.70151713455607,
+        "Width": 812.5,
+        "Height": 227.5,
+        "FontSize": 36.0,
+        "InitialTop": 361.70151713455607,
+        "InitialHeight": 204.5,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 193.44011852233817,
+    "Y": 73.093919754136948,
+    "Zoom": 0.59376714062500013
+  }
+}
