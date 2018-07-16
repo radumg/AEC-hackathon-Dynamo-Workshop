@@ -1,0 +1,283 @@
+{
+  "Uuid": "91bccc0e-1649-466c-ad36-d01b804768f9",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "1-IO-Exceptions",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoWorkshop.ZeroTouch.Exceptions.ThrowExceptionIfStringIsNull@string",
+      "Id": "26d083ae96d2460d802528faea17218f",
+      "Inputs": [
+        {
+          "Id": "de907d830b134b3e965d4a70f887db2b",
+          "Name": "text",
+          "Description": "The text to test.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c1ff43da6f794c3ba5d00da4bd88ced0",
+          "Name": "string",
+          "Description": "Throws if null and returns original text if not.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Throws an Exception if the text is null and returns if if not.\n\nExceptions.ThrowExceptionIfStringIsNull (text: string): string"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "",
+      "Id": "c44704cf90fa43b6901826880ace3e2a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5edbbdf8bac1423f9aa27e09985e2d1a",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoWorkshop.ZeroTouch.Exceptions.HandleListNullExceptionsInternally@var[]",
+      "Id": "3b4871c8c78c49f78aab37dacbcc4d43",
+      "Inputs": [
+        {
+          "Id": "e33fa1a747b54d8c9b02a23d19796a51",
+          "Name": "list",
+          "Description": "The list to sum up.\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "956c61b34f4349d1aa2070f320b3494a",
+          "Name": "int",
+          "Description": "The total sum of list.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Calculate sum of all list members but handle nulls internally.\n\nExceptions.HandleListNullExceptionsInternally (list: var[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\n1,\n2,\n3,\nnull,\n0,\n3,\nnull,\n1\n];",
+      "Id": "1eec9d7750dc439893fa02f7d23c865a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "515d0a97648a4063a7a2a43758df12ac",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "e27fabd207c04c06b9d2f65bce78f635",
+      "Inputs": [
+        {
+          "Id": "e803552538a34a0cb4bb4369fe98a49b",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "50d4404db6a0476e9bac82f8364270f8",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "c33b27f68ead48eaaca4eea847d58713",
+      "Inputs": [
+        {
+          "Id": "0963482e787343f6bbe3107a2b4852a0",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8cd884e564b54dd9bfcefda1eaca5640",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c1ff43da6f794c3ba5d00da4bd88ced0",
+      "End": "e803552538a34a0cb4bb4369fe98a49b",
+      "Id": "490d0074f6ad40ee9a059cc2a4f1b1ba"
+    },
+    {
+      "Start": "5edbbdf8bac1423f9aa27e09985e2d1a",
+      "End": "de907d830b134b3e965d4a70f887db2b",
+      "Id": "1773ec886515441fb0c8b701487aab1c"
+    },
+    {
+      "Start": "956c61b34f4349d1aa2070f320b3494a",
+      "End": "0963482e787343f6bbe3107a2b4852a0",
+      "Id": "34bf5ea0f8f1426f84227fb5b3183c36"
+    },
+    {
+      "Start": "515d0a97648a4063a7a2a43758df12ac",
+      "End": "e33fa1a747b54d8c9b02a23d19796a51",
+      "Id": "3f518878b5684745b5eedd4e3f283c5a"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.1.5055",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -9.5789861928021836,
+      "EyeY": 117.0007891460084,
+      "EyeZ": 38.297963910142393,
+      "LookX": 13.440000000000001,
+      "LookY": -14.560000000000002,
+      "LookZ": -64.960000000000008,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Exceptions.ThrowExceptionIfStringIsNull",
+        "Id": "26d083ae96d2460d802528faea17218f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 576.0,
+        "Y": 271.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "c44704cf90fa43b6901826880ace3e2a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 416.5,
+        "Y": 271.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Exceptions.HandleListNullExceptionsInternally",
+        "Id": "3b4871c8c78c49f78aab37dacbcc4d43",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 542.23824095237251,
+        "Y": 438.95057981885611
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "1eec9d7750dc439893fa02f7d23c865a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 363.23824095237251,
+        "Y": 443.16391315218942
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "e27fabd207c04c06b9d2f65bce78f635",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 940.0,
+        "Y": 271.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "c33b27f68ead48eaaca4eea847d58713",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 944.23824095237251,
+        "Y": 438.95057981885611
+      }
+    ],
+    "Annotations": [],
+    "X": -163.13645000000002,
+    "Y": -11.512981250000024,
+    "Zoom": 0.70823125000000009
+  }
+}
