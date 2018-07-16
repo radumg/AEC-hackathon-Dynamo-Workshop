@@ -30,9 +30,9 @@ There are different types of custom nodes, for all levels and uses:
 
 * *[Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html)*, it’s a custom node containing python code, supports modules and packages. It is a very powerful and quick way to add custom functionalities, and you don’t need to compile your code. ([template](https://github.com/DynamoDS/Dynamo/pull/8034))
 
-* *Zero Touch Node*, create or import a custom node written in C#. It is a more complex choice but you will benefit of the .NET framework, a solid IDE, debugging tools and lots of libraries
+* *[Zero Touch Node](https://github.com/DynamoDS/Dynamo/wiki/Zero-Touch-Plugin-Development)*, create or import a custom node written in C#. It is a more complex choice but you will benefit of the .NET framework, a solid IDE, debugging tools and lots of libraries. Covered in [Part 1 of the workshop](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%201%20-%20ZeroTouch).
 
-* *Explicit Custom Node*, basically a native Dynamo node written in C#, it implements the NodeModel interface, can have a custom UI and affect the state of the graph
+* *[Explicit Custom Node](https://github.com/DynamoDS/Dynamo/wiki/How-To-Create-Your-Own-Nodes#method-3-nodes-with-custom-ui)*, basically a native Dynamo node written in C#, it implements the NodeModel interface, can have a custom UI and affect the state of the graph. Covered in [Part 2 of the workshop](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%202%20-%20Explicit%20nodes).
 
 ## Next
 Let's dive into custom node creation by learning to build ZeroTouch nodes !
