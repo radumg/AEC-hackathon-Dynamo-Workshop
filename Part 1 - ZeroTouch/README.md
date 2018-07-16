@@ -5,9 +5,38 @@ Learn how to develop Zero Touch Nodes in C#.
 ## Summary
 
 This workshop will teach you how to set your graph free by developing custom Dynamo nodes using the Zero Touch approach. It will go thorough the different types on nodes and their advantages, then it will teach you how to configure Visual Studio for development and debug. Finally, using simple examples, it will teach you how to build your own nodes.
-After this workshop you will be able to add new features, improve workflows and contribute to the Dynamo community.  The workshop will be using Visual Studio and C#, for information on getting started with C# please see the links in the [Additional Resources](#Additional Resources) section.
 
-## Zero Touch Node
+After this workshop you will be able to add new features, improve workflows and contribute to the Dynamo community. 
+
+The workshop will be using Visual Studio and C#, for information on getting started with C# please see the links in the [Additional Resources](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop#Additional Resources) section.
+
+## Table of Contents
+
+[Zero Touch Nodes](#Zero-Touch-Nodes)
+[1 - Visual Studio setup](#1---Visual-StudioSetup)
+  - [New project](#New-Project)
+  - [References](#References)
+  - [Package](#Package)
+  - [Build events & start action](#Build-Events-and-Start-Action)
+  - [Hello Dynamo](#Hello-Dynamo!)
+  - [Debugging](#Debugging)
+  - [Naming](#Naming)
+[2 - Dynamo Node Development](#2---Dynamo-Node-Development)
+  - [Inputs](#Inputs)
+  - [Outputs](#Outputs)
+  - [Dynamo geometry](#Dynamo-Geometry)
+  - [Exceptions](#Exceptions)
+[3 - ZeroTouch mapping](#3---ZeroTouch-mapping)
+  - [Properties](#Properties)
+  - [Methods : instance/static](#Methods)
+  - [Static constructors](#Static-constructors)
+[4 Revit Node Development](#4---Revit-Node-Development)
+  - [References](#References)
+  - [Code Example 1 - GetWallBaseline](#Code Example 1 - GetWallBaseline)
+  - [Wrapping, Unwrapping and Converting](#Wrapping, Unwrapping and Converting)
+  - [Code example 2 - TextToWalls](#Code Example 2 - TextToWalls)
+
+## Zero Touch Nodes
 
 A Zero Touch Node (ZTN), is a custom node written in C#. A ZTN can be obtained by simply [importing a DLL inside of Dynamo](http://dynamoprimer.com/en/10_Packages/10-5_Zero-Touch.html). It's called zero-touch because that's all you need to do : Dynamo is smart and will automatically map all methods & properties from public classes to nodes :
 - `public static` **methods** that return the class type will appear as contructor nodes in Dynamo, identified with a green `+` icon
@@ -211,7 +240,7 @@ Debug again, and it'll be much better now:
 
 We’ve now finally set up our project correctly, you can save the project and use it in the future as a template. In case you missed some steps you can find the complete project inside the "*DynamoWorkshop.ZeroTouch - part 1"* folder.
 
-## 1 - Dynamo Node Development
+## 2 - Dynamo Node Development
 
 In this part we will develop a few sample nodes exploring inputs, outputs, Dynamo's geometry and handling error/exceptions. Since we wont't be interacting with Revit just yet, development will target Dynamo Sandbox. Let’s dive straight in and see how to add more complex functionalities to our package.
 
@@ -433,6 +462,7 @@ As mentioned before, Dynamo will automatically map `public` properties and metho
 Open up the example solution and you should see this
 ![ZT-ExampleMappingSolution](assets/ZT-ExampleMappingSolution.png)
 
+### Properties
 Let's look at how properties get mapped to nodes.
 
 ```c#
@@ -444,6 +474,7 @@ public string ZeroTouchPublicProperty { get; set; }
 static string ZeroTouchPrivateProperty { get; set; }
 ```
 
+### Methods
 Methods all get mapped to nodes, as long they are `public`, whether `static` or not.
 
 Static methods are straight-forward :
@@ -469,6 +500,7 @@ public ExampleZeroTouchClass UpdatePublicPropertyAction(string text)
 Because this method is not static, notice how Dynamo adds another input to the resulting node, asking for an instance of ExampleZeroTouchClass :
 ![ZT-MappingInstanceNode](assets/ZT-MappingInstanceNode.png)
 
+### Static constructors
 Methods that return the same type as the the class they belong to are treated differently if they are also `static`, being rendered as constructor nodes.
 
 Let's see an example method :
@@ -768,3 +800,21 @@ Whenever you are using the Revit API to create or modify elements, these methods
 After this, the last code example is complete, you can now debug the project and see the node in action, mind to use the right units for *height* and *size*, as in my case where the project is in meters:
 
 ![1510609206559](assets/1510609206559.png)
+
+
+
+## Conclusion
+
+The boilerplate poject we have created in part 1, should get you jump-started in developing for Dynamo. Don't be afraid of Visual Studio, it's a friend and it can provide very helpful insights during development and debug. 
+
+We have also gone through sample code on how to interact with Dynamo and Revit geometry/elements, you should now be able to start developing your own nodes. 
+
+We recommend following Part 2 of this workshop next, teaching you how to develop Explicit nodes in Dynamo, but in the meantime, here's some additional things to be aware of:
+
+* Version updates - releasing updates to an existing node should be done carefully, it could brake existing user graphs and workflows. Most developers choose to use the [SemVer](https://semver.org/) method to number versions, which also helps aleviate & communicate the impacts of changes to users. 
+* Dll conflicts - if other nodes in use by Dynamo depend on external dlls, and your nodes too, there might be conflicts. Dynamo will report any conflicts in its `Notifications` panel, so check it out if something is misbehaving!
+
+
+## Next
+Let's kick this up a notch by learning to build Explicit nodes !
+Head over to [Part 2](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%202%20-%20Explicit%20nodes) of the workshop.
