@@ -4,9 +4,29 @@ Learn how to develop explicit Zero Touch Nodes in C#.
 
 ## Summary
 
-This workshop will teach you how to set your graph free by developing explicit nodes with a custom UI. This approach is more advanced and complicated than the Zero Touch one, but nodes built this way have the most flexibility and power. You will learn how to implement a custom UI, respond to other nodes and affect the state of the graph. You will also learn how to package your nodes and distribute them using the Dynamo Package Manager. The workshop be using Visual Studio and C#, an intermediate level of programming knowledge is needed, for additional information see the links in the [Additional Resources](#Additional Resources) section.
+This workshop will teach you how to set your graph free by developing explicit nodes with a custom UI. This approach is more advanced and complicated than the Zero Touch one, but nodes built this way have the most flexibility and power.
 
-## Getting started with WPF
+You will learn how to implement a custom UI, respond to other nodes and affect the state of the graph. You will also learn how to package your nodes and distribute them using the Dynamo Package Manager. 
+
+The workshop be using Visual Studio and C#, an intermediate level of programming knowledge is needed, for additional information see the links in the [Additional Resources](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop#Additional Resources) section.
+
+## Table of Contents
+
+[1 - Getting started with WPF](#1---Getting-started-with-WPF)
+  - [Sample app](#Sample-app)
+  - [WPF binding](#WPF-binding)
+  - [User controls](#User-controls)
+[2 - ExplicitNode Interfaces](#2---ExplicitNode-Interfaces)
+  - [The NodeModel interface](#The-NodeModel-interface)
+  - [The custom UI](#The-custom-UI)
+  - [The INodeViewCustomization interface](#The-INodeViewCustomization-interface)
+[3 - ExplicitNode Functions](#3---ExplicitNode-Functions)
+  - [Executing functions](#Executing-functions)
+  - [The BuildOutputAst method](#The-BuildOutputAst-method)
+  - [Affecting the graph](#Affecting-the-graph)
+[Publishing nodes to the Package Manager](#Publishing-nodes-to-the-Package-Manager)
+
+## 1- Getting started with WPF
 
 In the previous lab we have seen how to develop Zero Touch Nodes, which are great to add custom functionalities, but do not give us total control over the node's behaviour. In order to customize its UI, and to affect the state of the node and the graph an explicit custom node is needed. Explicit custom nodes are more complex and use Windows Presentation Foundation (WPF) a powerful framework for building Windows applications.
 
@@ -89,7 +109,7 @@ We have now created a reusable custom control that we can embed inside other WPF
 
 If you build and run the application you'll see it behaves exactly how it did before.
 
-## Explicit custom nodes - part 1
+## 2 - ExplicitNode Interfaces
 
 Let's now see how to use our User Control inside a custom UI node. Open the empty project inside `DynamoWorkshop.ExplicitNode - start`, this was set up in the same way we did in the previous lab, the only additional dependency, which can be installed via NuGet, is the WpfUILibrary:
 
@@ -169,11 +189,11 @@ If you debug, you'll see the node with the user control embedded, behaving as be
 
 
 
-## Explicit custom nodes - part 2
+## 3 - ExplicitNode Functions
 
 In this final part we are going to add input and output ports to our node and interact with the graph. The following part is going to sound a bit confusing, but that's how Dynamo works in the background.
 
-#### Executing functions
+### Executing functions
 
 NodeModels when executed run a method called `BuildOutputAst` this method takes your inputs and passes them to a function **which has to live in a separate assembly** (in our case a separate project). Let's create it:
 
@@ -196,7 +216,7 @@ namespace DynamoWorkshop.ExplicitNode.Functions
 }
 ```
 
-#### The BuildOutputAst Method
+### The BuildOutputAst method
 
 Now we can implement `BuildOutputAst` inside of `HelloUI.cs`. First right click on the`DynamoWorkshop.ExplicitNode` project and add a reference to `DynamoWorkshop.ExplicitNode.Functions`.
 
@@ -291,8 +311,37 @@ You can now test your code and see how the input is multiplied by the value of t
 
 ![3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1](assets/3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1.png)
 
-#### Affecting the graph
+### Affecting the graph
 
 You might have not noticed it, but with the current implementation the custom node is already affecting the graph. Every time the slider is moved its value changes, and it has a binding with the  `SliderValue` property in `HelloUI.cs` which then calls the `OnNodeModified()` method telling Dynamo that one of its nodes has changed and needs to be recomputed.
 
 There is much more you can do with NodeModels as dynamically add or remove ports, affect their state, show warning/error messages etc...
+
+
+## Publishing nodes to the Package Manager
+
+Publishing a package to the package manager is a very simple process especially given how we have set up our Visual Studio projects. Only publish packages that you own and that you have tested thoroughly!
+
+Publishing can only be done from Dynamo for Revit or Dynamo Studio, not from the Sandbox version.
+
+Click on Packages > Manage Packages...
+
+![1510612119525](assets/1510612119525.png)
+
+In the next screen make sure all the information is correct and that only the required dlls are being included (remember when we had to manually set `Copy Local` to `False` on the references?).
+
+As you click Publish Online it will be on the Package Manager, to upload new version use `Publish Version...` instead.
+
+Also note that packages cannot be deleted, but only deprecated.  
+
+![1510612834682](assets/1510612834682.png)
+
+## Conclusion
+
+We have seen the principles behind explicit custom nodes, and this workshop has given you the basis to get started with development. 
+
+There are some technical challenges but also great benefits if you decide to build and use this type of custom node. WPF is a very powerful and widely useful framework, you'll be able to find lots of resources online and existing UI components to reuse. 
+
+We have also seen how to publish your nodes online and contribute to the Dynamo community, if is a very straightforward process once you have set up your project correctly.
+
+Happy coding!
