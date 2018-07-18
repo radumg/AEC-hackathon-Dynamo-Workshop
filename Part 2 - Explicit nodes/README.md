@@ -10,7 +10,7 @@ This workshop will teach you how to develop explicit nodes with a custom UI. Thi
 
 You will learn how to implement a custom UI, respond to other nodes and affect the state of the graph. You will also learn how to package your nodes and distribute them using the Dynamo Package Manager. 
 
-The workshop will be using Visual Studio and C#, an intermediate level of programming knowledge is needed, for additional information see the links in the [Additional Resources](..\README.md#additional-resources) section.
+The workshop will be using Visual Studio and C#, an intermediate level of programming knowledge is needed, for additional information see the links in the [Additional Resources](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop#additional-resources) section.
 
 ## Table of Contents
 

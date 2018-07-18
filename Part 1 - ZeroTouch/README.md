@@ -10,7 +10,7 @@ This workshop will teach you how to set your graph free by developing custom Dyn
 
 After this workshop you will be able to add new features, improve workflows and contribute to the Dynamo community. 
 
-The workshop will be using Visual Studio and C#, for information on getting started with C# please see the links in the [Additional Resources](..\README.md#additional-resources) section.
+The workshop will be using Visual Studio and C#, for information on getting started with C# please see the links in the [Additional Resources](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop#additional-resources) section.
 
 ## Table of Contents
 
