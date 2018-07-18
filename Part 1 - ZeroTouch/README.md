@@ -21,7 +21,7 @@ The workshop will be using Visual Studio and C#, for information on getting star
   - [References](#references)
   - [Package](#package)
   - [Build events & start action](#build-events-and-start-action)
-  - [Hello Dynamo](#hello-dynamo!)
+  - [Hello Dynamo](#hello-dynamo)
   - [Debugging](#debugging)
   - [Naming](#naming)
 
@@ -36,11 +36,11 @@ The workshop will be using Visual Studio and C#, for information on getting star
   - [Methods : instance/static](#methods)
   - [Static constructors](#static-constructors)
 
-[4 Revit Node Development](#4---revit-node-development)
+[4 - Revit Node Development](#4---revit-node-development)
   - [References](#references)
-  - [Code Example 1 - GetWallBaseline](#code example 1 - getwallbaseline)
-  - [Wrapping, Unwrapping and Converting](#wrapping, unwrapping and converting)
-  - [Code example 2 - TextToWalls](#code example 2 - texttowalls)
+  - [Code Example 1 - GetWallBaseline](#code-example-1---getwallbaseline)
+  - [Wrapping, Unwrapping and Converting](#wrapping,-unwrapping-and-converting)
+  - [Code example 2 - TextToWalls](#code-example-2---texttowalls)
 
 ## Zero Touch Nodes
 
