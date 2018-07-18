@@ -1,7 +1,3 @@
----
-typora-copy-images-to: assets
----
-
 # AEC Hackathon Dynamo Workshop
 
 ## Part 2 - Explicit Nodes
