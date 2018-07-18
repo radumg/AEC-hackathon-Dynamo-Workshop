@@ -10,33 +10,37 @@ This workshop will teach you how to set your graph free by developing custom Dyn
 
 After this workshop you will be able to add new features, improve workflows and contribute to the Dynamo community. 
 
-The workshop will be using Visual Studio and C#, for information on getting started with C# please see the links in the [Additional Resources](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop#Additional Resources) section.
+The workshop will be using Visual Studio and C#, for information on getting started with C# please see the links in the [Additional Resources](..\README.md#additional-resources) section.
 
 ## Table of Contents
 
-[Zero Touch Nodes](#Zero-Touch-Nodes)
-[1 - Visual Studio setup](#1---Visual-StudioSetup)
-  - [New project](#New-Project)
-  - [References](#References)
-  - [Package](#Package)
-  - [Build events & start action](#Build-Events-and-Start-Action)
-  - [Hello Dynamo](#Hello-Dynamo!)
-  - [Debugging](#Debugging)
-  - [Naming](#Naming)
-[2 - Dynamo Node Development](#2---Dynamo-Node-Development)
-  - [Inputs](#Inputs)
-  - [Outputs](#Outputs)
-  - [Dynamo geometry](#Dynamo-Geometry)
-  - [Exceptions](#Exceptions)
-[3 - ZeroTouch mapping](#3---ZeroTouch-mapping)
-  - [Properties](#Properties)
-  - [Methods : instance/static](#Methods)
-  - [Static constructors](#Static-constructors)
-[4 Revit Node Development](#4---Revit-Node-Development)
-  - [References](#References)
-  - [Code Example 1 - GetWallBaseline](#Code Example 1 - GetWallBaseline)
-  - [Wrapping, Unwrapping and Converting](#Wrapping, Unwrapping and Converting)
-  - [Code example 2 - TextToWalls](#Code Example 2 - TextToWalls)
+[Zero Touch Nodes](#zero-touch-nodes)
+
+[1 - Visual Studio setup](#1---visual-studiosetup)
+  - [New project](#new-project)
+  - [References](#references)
+  - [Package](#package)
+  - [Build events & start action](#build-events-and-start-action)
+  - [Hello Dynamo](#hello-dynamo!)
+  - [Debugging](#debugging)
+  - [Naming](#naming)
+
+[2 - Dynamo Node Development](#2---dynamo-node-development)
+  - [Inputs](#inputs)
+  - [Outputs](#outputs)
+  - [Dynamo geometry](#dynamo-geometry)
+  - [Exceptions](#exceptions)
+
+[3 - ZeroTouch mapping](#3---zerotouch-mapping)
+  - [Properties](#properties)
+  - [Methods : instance/static](#methods)
+  - [Static constructors](#static-constructors)
+
+[4 Revit Node Development](#4---revit-node-development)
+  - [References](#references)
+  - [Code Example 1 - GetWallBaseline](#code example 1 - getwallbaseline)
+  - [Wrapping, Unwrapping and Converting](#wrapping, unwrapping and converting)
+  - [Code example 2 - TextToWalls](#code example 2 - texttowalls)
 
 ## Zero Touch Nodes
 
