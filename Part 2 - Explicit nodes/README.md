@@ -14,25 +14,28 @@ This workshop will teach you how to develop explicit nodes with a custom UI. Thi
 
 You will learn how to implement a custom UI, respond to other nodes and affect the state of the graph. You will also learn how to package your nodes and distribute them using the Dynamo Package Manager. 
 
-The workshop will be using Visual Studio and C#, an intermediate level of programming knowledge is needed, for additional information see the links in the [Additional Resources](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop#Additional Resources) section.
+The workshop will be using Visual Studio and C#, an intermediate level of programming knowledge is needed, for additional information see the links in the [Additional Resources](..\README.md#additional-resources) section.
 
 ## Table of Contents
 
-[1 - Getting started with WPF](#1---Getting-started-with-WPF)
-  - [Sample app](#Sample-app)
-  - [WPF binding](#WPF-binding)
-  - [User controls](#User-controls)
-[2 - ExplicitNode Interfaces](#2---ExplicitNode-Interfaces)
-  - [The NodeModel interface](#The-NodeModel-interface)
-  - [The custom UI](#The-custom-UI)
-  - [The INodeViewCustomization interface](#The-INodeViewCustomization-interface)
-[3 - ExplicitNode Functions](#3---ExplicitNode-Functions)
-  - [Executing functions](#Executing-functions)
-  - [The BuildOutputAst method](#The-BuildOutputAst-method)
-  - [Affecting the graph](#Affecting-the-graph)
-[Publishing nodes to the Package Manager](#Publishing-nodes-to-the-Package-Manager)
+[1 - Getting started with WPF](#1---getting-started-with-wpf)
+  - [Sample app](#sample-app)
+  - [WPF binding](#wpf-binding)
+  - [User controls](#user-controls)
 
-## 1- Getting started with WPF
+[2 - ExplicitNode Interfaces](#2---explicitnode-interfaces)
+  - [The NodeModel interface](#the-nodemodel-interface)
+  - [The Custom UI](#the-custom-ui)
+  - [The INodeViewCustomization interface](#the-inodeviewcustomization-interface)
+
+[3 - ExplicitNode Functions](#3---explicitnode-functions)
+  - [Executing functions](#executing-functions)
+  - [The BuildOutputAst method](#the-buildoutputast-method)
+  - [Affecting the graph](#affecting-the-graph)
+
+[Publishing nodes to the Package Manager](#publishing-nodes-to-the-package-manager)
+
+## 1 - Getting started with WPF
 
 In the previous lab we have seen how to develop Zero Touch Nodes, which are great to add custom functionalities, but do not give us total control over the node's behaviour. In order to customize its UI, and to affect the state of the node and the graph an explicit custom node is needed. Explicit custom nodes are more complex and use Windows Presentation Foundation (WPF) a powerful UI framework for building Windows applications.
 
