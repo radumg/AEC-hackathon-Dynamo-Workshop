@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>ASSEMBLY_NAME_HERE</name>
+  </assembly>
+  <namespaces>
+    <namespace name="Long.Namespace.Goes.Here">
+      <category>Short.Dynamo.Category.Goes.Here</category>
+    </namespace>
+  </namespaces>
+</doc>
