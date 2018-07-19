@@ -97,7 +97,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "515d0a97648a4063a7a2a43758df12ac",
+          "Id": "35aa9e0dd20c4248a2d3b63742239a20",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -166,6 +166,86 @@
       ],
       "Replication": "Disabled",
       "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Math.Sum@double[]",
+      "Id": "77de4d402e3d443cb8d39576c6b85454",
+      "Inputs": [
+        {
+          "Id": "2c468f86bcea426e8a308a9cc8c40243",
+          "Name": "values",
+          "Description": "The numbers to sum\n\ndouble[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f99660c7cb9044139a36240afeba3f06",
+          "Name": "sum",
+          "Description": "The sum of the values",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Find the sum of a series of numbers\n\nMath.Sum (values: double[]): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\n1,\n2,\n3,\n0,\n3,\n1\n];",
+      "Id": "9595e48f4e394ae69d1e3af4d3e6eaa7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "af62772449834904a809976dbeb56e79",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Math.Sum@double[]",
+      "Id": "a28a7f6d868949e9864f2cffb948f894",
+      "Inputs": [
+        {
+          "Id": "356595bc950543f1980fcdc8f1812aaa",
+          "Name": "values",
+          "Description": "The numbers to sum\n\ndouble[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "62256bab65cd4de092cf1e9c9e08d4ff",
+          "Name": "sum",
+          "Description": "The sum of the values",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Find the sum of a series of numbers\n\nMath.Sum (values: double[]): double"
     }
   ],
   "Connectors": [
@@ -185,9 +265,19 @@
       "Id": "34bf5ea0f8f1426f84227fb5b3183c36"
     },
     {
-      "Start": "515d0a97648a4063a7a2a43758df12ac",
+      "Start": "35aa9e0dd20c4248a2d3b63742239a20",
       "End": "e33fa1a747b54d8c9b02a23d19796a51",
       "Id": "3f518878b5684745b5eedd4e3f283c5a"
+    },
+    {
+      "Start": "35aa9e0dd20c4248a2d3b63742239a20",
+      "End": "2c468f86bcea426e8a308a9cc8c40243",
+      "Id": "b8726b47d69d49f18a5385841c1e632d"
+    },
+    {
+      "Start": "af62772449834904a809976dbeb56e79",
+      "End": "356595bc950543f1980fcdc8f1812aaa",
+      "Id": "13d36a23c64b4b359f02f590dd8ffc88"
     }
   ],
   "Dependencies": [],
@@ -198,7 +288,7 @@
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
       "Version": "2.0.1.5055",
-      "RunType": "Automatic",
+      "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
@@ -241,8 +331,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 542.23824095237251,
-        "Y": 438.95057981885611
+        "X": 594.481064182779,
+        "Y": 484.839546169889
       },
       {
         "ShowGeometry": true,
@@ -251,8 +341,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 363.23824095237251,
-        "Y": 443.16391315218942
+        "X": 415.481064182779,
+        "Y": 489.052879503222
       },
       {
         "ShowGeometry": true,
@@ -271,11 +361,96 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 944.23824095237251,
-        "Y": 438.95057981885611
+        "X": 996.481064182779,
+        "Y": 484.839546169889
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Math.Sum",
+        "Id": "77de4d402e3d443cb8d39576c6b85454",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 885.496721586346,
+        "Y": 852.141135045933
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "9595e48f4e394ae69d1e3af4d3e6eaa7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 419.1732109921719,
+        "Y": 902.99200602439771
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Math.Sum",
+        "Id": "a28a7f6d868949e9864f2cffb948f894",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 888.407476371594,
+        "Y": 978.154972334248
       }
     ],
-    "Annotations": [],
+    "Annotations": [
+      {
+        "Id": "517e3a844b3844ba890215bb532bdebf",
+        "Title": "ThrowExceptionIfStringIsNull\r\n",
+        "Nodes": [
+          "26d083ae96d2460d802528faea17218f",
+          "c44704cf90fa43b6901826880ace3e2a",
+          "e27fabd207c04c06b9d2f65bce78f635"
+        ],
+        "Left": 406.5,
+        "Top": 174.5,
+        "Width": 622.5,
+        "Height": 205.5,
+        "FontSize": 36.0,
+        "InitialTop": 271.0,
+        "InitialHeight": 124.0,
+        "TextblockHeight": 86.5,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "42e8af13878043ee9bccfca8ede9522f",
+        "Title": "HandleListNullExceptionsInternally",
+        "Nodes": [
+          "3b4871c8c78c49f78aab37dacbcc4d43",
+          "1eec9d7750dc439893fa02f7d23c865a",
+          "c33b27f68ead48eaaca4eea847d58713"
+        ],
+        "Left": 405.481064182779,
+        "Top": 431.839546169889,
+        "Width": 680.0,
+        "Height": 299.713333333333,
+        "FontSize": 36.0,
+        "InitialTop": 484.839546169889,
+        "InitialHeight": 276.713333333333,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "8125b7b9292f4ec08935ff87907f430b",
+        "Title": "Dynamo built-in sum\r\n",
+        "Nodes": [
+          "77de4d402e3d443cb8d39576c6b85454",
+          "9595e48f4e394ae69d1e3af4d3e6eaa7",
+          "a28a7f6d868949e9864f2cffb948f894"
+        ],
+        "Left": 409.1732109921719,
+        "Top": 755.641135045933,
+        "Width": 673.23426537942214,
+        "Height": 354.85087097846463,
+        "FontSize": 36.0,
+        "InitialTop": 852.141135045933,
+        "InitialHeight": 251.13178958144,
+        "TextblockHeight": 86.5,
+        "Background": "#FFBB87C6"
+      }
+    ],
     "X": -163.13645000000002,
     "Y": -11.512981250000024,
     "Zoom": 0.70823125000000009
