@@ -24,6 +24,9 @@ In Dynamo it is possible to add custom functionalities using special components,
 
 There are different types of custom nodes, for all levels and uses:
 
+![Dynamo custom nodes](assets/Node%20types%20image.png "Part 0 - Custom nodes")
+
+
 * *[Dynamo Custom Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-2_Creating.html)*, it’s done by nesting existing nodes into a container, the custom node is saved as a DYF file and can be easily shared
 
 * *[Code Node](http://dynamobim.org/cbns-for-dummies/)*, this one basically consists in having a formula inside a code node, you can’t do complex things but if can be very handy. The code is in Design Script

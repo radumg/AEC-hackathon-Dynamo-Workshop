@@ -1,0 +1,424 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Custom nodes types",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "x;\ny=\"Dynamo code\";\n// This is a code block node",
+      "Id": "10d90e6f64f64b2bad98f9bc84fffd72",
+      "Inputs": [
+        {
+          "Id": "102b9edaec894efea3b67f8b54737abc",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9c9200a2e5a5480eb732ae3cff657b9c",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "012372f9a8554d7ebb19ff9d09deb9f8",
+          "Name": "",
+          "Description": "y",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "06d88b9e-1dbd-4417-bf73-f34facb5f6cc",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "fedff4ee0aae448f8eafec0b09120be1",
+      "Inputs": [
+        {
+          "Id": "9a6b434e34474409bdf3c6c1fcf0a32f",
+          "Name": "",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f790a9afc20e4065a9852cb2a6f044f6",
+          "Name": "",
+          "Description": "Output #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\nclr.AddReference('ProtoGeometry')\nfrom Autodesk.DesignScript.Geometry import *\n#The inputs to this node will be stored as a list in the IN variables.\ndataEnteringNode = IN\n\n#Assign your output to the OUT variable.\nOUT = IN[0]",
+      "VariableInputPorts": true,
+      "Id": "edcb1d89971144d7bcc21d9b6d110914",
+      "Inputs": [
+        {
+          "Id": "c2d08a57bc4a4b14a2dae1666652c7f4",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "20d7c2820a744795a619e9810265122d",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "ThisIsEasy=0;",
+      "Id": "46d2130fc21740cf8153a87a1b341f1a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "dfb7b5113fe14d458cc1493dbd442a78",
+          "Name": "",
+          "Description": "ThisIsEasy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "ThisIsHard;",
+      "Id": "56a69ea82f034f73baf75ebb7989febd",
+      "Inputs": [
+        {
+          "Id": "07a1c97103d24409ab6295f959862776",
+          "Name": "ThisIsHard",
+          "Description": "ThisIsHard",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "09c8a5c781c9470e8bf111af0588c488",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoWorkshop.ZeroTouch.HelloDynamo.SayHello@string",
+      "Id": "55d2cc33c1e4445e9bc995225b0ff843",
+      "Inputs": [
+        {
+          "Id": "def6e4ab63e04159b525fec277f9d7a7",
+          "Name": "Name",
+          "Description": "Name of the person to greet\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1a26c67d6c5b438e8c69375612f136ac",
+          "Name": "string",
+          "Description": "A greeting",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Prints a friendly greeting\n\nHelloDynamo.SayHello (Name: string): string"
+    },
+    {
+      "ConcreteType": "SpeckleDynamo.Receiver, SpeckleDynamo",
+      "DocumentName": "Code Group node types 2",
+      "DocumentGuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+      "OldStreamId": "Hello Dynamo code!",
+      "myReceiver": "dZA9T8MwEIadkqQRMDEwdXDFGiV0RcpAw0DVBfWDtTLJSbVytSN/FPW3M1Af6dCFs3xn+Z57zz4WMcZ+g1Ekux8FN1/30HQItTaQ808wVmpVzYpnWjmvPTpvoFLgnRGY8w//hbJZwmmjO1CV8ogJCU6udIrL+bWXNUpQLgnAeC4sbA1ma2dAHBZtvNIIWWD+lLKBXLRRFEejx2u1IUM0PZh2ehPc09653r6U5R6sk6KwQ0nxrU1nS9HL8jhL4wA+vAOi5m8nJQ6aN7qFafIT5vBPE/rN+CjQw27HMmpHN2lKI7u9OwM=",
+      "RestApi": "https://hestia.speckle.works/api/v1",
+      "Email": "georgios@grimshaw.global",
+      "Server": "Speckle Hestia",
+      "StreamId": "Hello Dynamo code!",
+      "Transmitting": true,
+      "Paused": false,
+      "StreamTextBoxEnabled": false,
+      "NodeType": "ExtensionNode",
+      "Id": "1a0ce200b36b460ba62e3c2708af5217",
+      "Inputs": [
+        {
+          "Id": "a140aee644304ac3a6a1b0fddc593f38",
+          "Name": "ID",
+          "Description": "Stream ID",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Receives data from Speckle."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "012372f9a8554d7ebb19ff9d09deb9f8",
+      "End": "c2d08a57bc4a4b14a2dae1666652c7f4",
+      "Id": "7487791793024288aee0f19707120698"
+    },
+    {
+      "Start": "f790a9afc20e4065a9852cb2a6f044f6",
+      "End": "102b9edaec894efea3b67f8b54737abc",
+      "Id": "7da08185106f48f5a8818bdbd0d8ee90"
+    },
+    {
+      "Start": "20d7c2820a744795a619e9810265122d",
+      "End": "def6e4ab63e04159b525fec277f9d7a7",
+      "Id": "42a32ef72c6241e49e8c2a0626a360e2"
+    },
+    {
+      "Start": "dfb7b5113fe14d458cc1493dbd442a78",
+      "End": "07a1c97103d24409ab6295f959862776",
+      "Id": "8be09bbfa6f04ba188d157b6872ee7ff"
+    },
+    {
+      "Start": "1a26c67d6c5b438e8c69375612f136ac",
+      "End": "a140aee644304ac3a6a1b0fddc593f38",
+      "Id": "d1df0f893d73476e9ab2b6cfedfafdc6"
+    }
+  ],
+  "Dependencies": [
+    "06d88b9e-1dbd-4417-bf73-f34facb5f6cc"
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.1.5055",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "10d90e6f64f64b2bad98f9bc84fffd72",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 436.661698143263,
+        "Y": 130.3949541489672
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "This is a custom node",
+        "Id": "fedff4ee0aae448f8eafec0b09120be1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 103.18898488121,
+        "Y": 130.3949541489672
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "edcb1d89971144d7bcc21d9b6d110914",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 840.796877640676,
+        "Y": 130.3949541489672
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "46d2130fc21740cf8153a87a1b341f1a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 108.362315295292,
+        "Y": -93.929522670741
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "56a69ea82f034f73baf75ebb7989febd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1520.34202583308,
+        "Y": -98.7156677034936
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "HelloDynamo.SayHello",
+        "Id": "55d2cc33c1e4445e9bc995225b0ff843",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1095.9469114467274,
+        "Y": 130.3949541489672
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Speckle Receiver",
+        "Id": "1a0ce200b36b460ba62e3c2708af5217",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1458.2679490332268,
+        "Y": 142.16704376647687
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "8de7ae93b5cb4362a543420bbf22a85e",
+        "Title": "This is a node containing python code, supports modules and packages. It is a very powerful and quick way to add custom functionalities, and you don’t need to compile your code",
+        "Nodes": [],
+        "Left": 762.320156545706,
+        "Top": -0.815980544394534,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "e1dfb596b1344ce6b54ec72d2f986a22",
+        "Title": "create or import custom code written in C#. It is a more complex choice but you will benefit of the .NET framework, a solid IDE, debugging tools and lots of libraries. \r\nDynamo maps methods and classes to nodes automatically, so you have little to do on the C# side to make nodes.",
+        "Nodes": [],
+        "Left": 1090.72861494815,
+        "Top": -0.815980544394534,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "863bcae2557f4213af32ec1c46a75390",
+        "Title": "basically a native Dynamo node written in C#, it implements the NodeModel interface, can have a custom UI and affect the state of the graph. \r\nThis is the uber-advanced option, requiring functionality in separate assemblies, messing with WPF UI etc.",
+        "Nodes": [],
+        "Left": 1439.13707335059,
+        "Top": -0.815980544394534,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "3d02c000bd0c4a6b9ddd5e8f2b1be95b",
+        "Title": "group existing nodes into a container called \"custom node\".\r\nThis is saved as a DYF file and can be easily shared, but is not contained within the DYN file.",
+        "Nodes": [],
+        "Left": 101.503239740821,
+        "Top": -0.81598054439457,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "032c43e0f7aa40fbb4d89acda0753301",
+        "Title": "This node accepts DesignScript, which is a full programming language like Python. \r\nUsually used for simple operations & scripts.",
+        "Nodes": [],
+        "Left": 446.161698143263,
+        "Top": -0.81598054439457,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -38.978910653106965,
+    "Y": 336.15837182846474,
+    "Zoom": 0.67957348779446
+  }
+}
