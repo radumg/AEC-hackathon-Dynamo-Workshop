@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 /* dynamo directives */
 using Dynamo.Graph.Nodes;
+using Newtonsoft.Json;
 using ProtoCore.AST.AssociativeAST;
 
 namespace DynamoWorkshop.ExplicitNode
@@ -10,45 +11,44 @@ namespace DynamoWorkshop.ExplicitNode
   [NodeName("HelloUI")]
   [NodeDescription("Sample Explicit Node")]
   [NodeCategory("DynamoWorkshop.Explicit Node")]
-  [InPortNames("A")]
-  [InPortTypes("double")]
-  [InPortDescriptions("Number A")]
-  [OutPortNames("Output")]
-  [OutPortTypes("double")]
-  [OutPortDescriptions("Product of two numbers")]
+  [OutPortNames("Color")]
+  [OutPortTypes("color")]
+  [OutPortDescriptions("Selected Color")]
   [IsDesignScriptCompatible]
   public class HelloUI : NodeModel
   {
+    //Json Constructor for Dynamo 2.0 nodes
+    [JsonConstructor]
+    private HelloUI(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+    {
+
+    }
+
     public HelloUI()
     {
       RegisterAllPorts();
     }
 
-    private double _sliderValue;
-
-
-    public double SliderValue
-    {
-      get { return _sliderValue; }
-      set
-      {
-        _sliderValue = value;
-        RaisePropertyChanged("SliderValue");
-        OnNodeModified(false);
-      }
-    }
+    private int _sliderValueA;
+    private int _sliderValueR;
+    private int _sliderValueB;
+    private int _sliderValueG;
+    public int SliderValueA { get => _sliderValueA;  set { _sliderValueA = value; RaisePropertyChanged("SliderValueA"); OnNodeModified(); }}
+    public int SliderValueR { get => _sliderValueR;  set { _sliderValueR = value; RaisePropertyChanged("SliderValueR"); OnNodeModified(); } }
+    public int SliderValueB { get => _sliderValueB;  set { _sliderValueB = value; RaisePropertyChanged("SliderValueB"); OnNodeModified(); } }
+    public int SliderValueG { get => _sliderValueG;  set { _sliderValueG = value; RaisePropertyChanged("SliderValueG"); OnNodeModified(); } }
 
     public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAstNodes)
     {
-      if (!InPorts.Any() || InPorts[0]==null)
-      {
-        return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
-      }
-      var sliderValue = AstFactory.BuildDoubleNode(SliderValue);
+      var sliderValueA = AstFactory.BuildDoubleNode(SliderValueA);
+      var sliderValueR = AstFactory.BuildDoubleNode(SliderValueR);
+      var sliderValueG = AstFactory.BuildDoubleNode(SliderValueG);
+      var sliderValueB = AstFactory.BuildDoubleNode(SliderValueB);
+
       var functionCall =
         AstFactory.BuildFunctionCall(
-          new Func<double, double, double>(Functions.Functions.MultiplyTwoNumbers),
-          new List<AssociativeNode> { inputAstNodes[0], sliderValue });
+          new Func<int, int, int, int, System.Drawing.Color>(Functions.Functions.ColorByARGB),
+          new List<AssociativeNode> { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
 
       return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };
     }

@@ -1,5 +1,7 @@
 ﻿/* dynamo directives */
 using Dynamo.Graph.Nodes;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace DynamoWorkshop.ExplicitNode
 {
@@ -9,6 +11,11 @@ namespace DynamoWorkshop.ExplicitNode
   [IsDesignScriptCompatible]
   public class HelloUI : NodeModel
   {
+    [JsonConstructor]
+    private HelloUI(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+    {
+    }
+
     public HelloUI()
     {
 

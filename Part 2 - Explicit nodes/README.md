@@ -1,40 +1,47 @@
 # AEC Hackathon Dynamo Workshop
 
-Learn how to develop explicit Zero Touch Nodes in C#.
+## Part 2 - Explicit Nodes
+
+Learn how to develop Explicit Nodes in C#.
 
 ## Summary
 
-This workshop will teach you how to set your graph free by developing explicit nodes with a custom UI. This approach is more advanced and complicated than the Zero Touch one, but nodes built this way have the most flexibility and power.
+This workshop will teach you how to develop explicit nodes with a custom UI. This approach is more advanced and complicated than the Zero Touch one, but nodes built this way have the most flexibility and power.
 
 You will learn how to implement a custom UI, respond to other nodes and affect the state of the graph. You will also learn how to package your nodes and distribute them using the Dynamo Package Manager. 
 
-The workshop be using Visual Studio and C#, an intermediate level of programming knowledge is needed, for additional information see the links in the [Additional Resources](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop#Additional Resources) section.
+The workshop will be using Visual Studio and C#, an intermediate level of programming knowledge is needed, for additional information see the links in the [Additional Resources](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop#additional-resources) section.
 
 ## Table of Contents
 
-[1 - Getting started with WPF](#1---Getting-started-with-WPF)
-  - [Sample app](#Sample-app)
-  - [WPF binding](#WPF-binding)
-  - [User controls](#User-controls)
-[2 - ExplicitNode Interfaces](#2---ExplicitNode-Interfaces)
-  - [The NodeModel interface](#The-NodeModel-interface)
-  - [The custom UI](#The-custom-UI)
-  - [The INodeViewCustomization interface](#The-INodeViewCustomization-interface)
-[3 - ExplicitNode Functions](#3---ExplicitNode-Functions)
-  - [Executing functions](#Executing-functions)
-  - [The BuildOutputAst method](#The-BuildOutputAst-method)
-  - [Affecting the graph](#Affecting-the-graph)
-[Publishing nodes to the Package Manager](#Publishing-nodes-to-the-Package-Manager)
+[1 - Getting started with WPF](#1---getting-started-with-wpf)
+  - [Sample app](#sample-app)
+  - [WPF binding](#wpf-binding)
+  - [User controls](#user-controls)
 
-## 1- Getting started with WPF
+[2 - ExplicitNode Interfaces](#2---explicitnode-interfaces)
+  - [The NodeModel interface](#the-nodemodel-interface)
+  - [The Custom UI](#the-custom-ui)
+  - [The INodeViewCustomization interface](#the-inodeviewcustomization-interface)
 
-In the previous lab we have seen how to develop Zero Touch Nodes, which are great to add custom functionalities, but do not give us total control over the node's behaviour. In order to customize its UI, and to affect the state of the node and the graph an explicit custom node is needed. Explicit custom nodes are more complex and use Windows Presentation Foundation (WPF) a powerful framework for building Windows applications.
+[3 - ExplicitNode Functions](#3---explicitnode-functions)
+  - [Executing functions](#executing-functions)
+  - [The BuildOutputAst method](#the-buildoutputast-method)
+  - [Affecting the graph](#affecting-the-graph)
+
+[Publishing nodes to the Package Manager](#publishing-nodes-to-the-package-manager)
+
+## 1 - Getting started with WPF
+
+In the previous lab we have seen how to develop Zero Touch Nodes, which are great to add custom functionalities, but do not give us total control over the node's behaviour. In order to customize its UI, and to affect the state of the node and the graph an explicit custom node is needed. Explicit custom nodes are more complex and use Windows Presentation Foundation (WPF) a powerful UI framework for building Windows applications.
 
 ### Sample App
 
 Let's first make a simple WPF application, to see how it works. Open Visual Studio and create a new WPF App project:
 
 ![EF6F428B-BF86-4DC9-AA38-707E0208525C](assets/EF6F428B-BF86-4DC9-AA38-707E0208525C.png)
+
+You'll see a MainWindow.cs and a MainWindow.xaml, XAML (eXtensible Application Markup Language) is Microsoft's variant of XML for describing a GUI.
 
 Now double click on MainWindow.xaml, expand the toolbox panel and add some UI controls as a slider, a checkbox and a button:
 
@@ -111,7 +118,7 @@ If you build and run the application you'll see it behaves exactly how it did be
 
 ## 2 - ExplicitNode Interfaces
 
-Let's now see how to use our User Control inside a custom UI node. Open the empty project inside `DynamoWorkshop.ExplicitNode - start`, this was set up in the same way we did in the previous lab, the only additional dependency, which can be installed via NuGet, is the WpfUILibrary:
+Let's now see how to use our User Control inside a custom UI node. Open the empty project inside `2 - ExplicitNode Start`, this was set up in the same way we did in the previous lab, the only additional dependency, which can be installed via NuGet, is the WpfUILibrary:
 
 ![DE81C792-8E23-4968-BFE9-6462BB3FFAFF](assets/DE81C792-8E23-4968-BFE9-6462BB3FFAFF.png)
 
@@ -124,15 +131,23 @@ Create a new class named `HelloUI.cs`, then add the interface, directives and at
 ```c#
 /* dynamo directives */
 using Dynamo.Graph.Nodes;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace DynamoWorkshop.ExplicitNode
 {
   [NodeName("HelloUI")]
   [NodeDescription("Sample Explicit Node")]
-  [NodeCategory("Dynamo Unchained.Explicit Node")]
+  [NodeCategory("DynamoWorkshop.Explicit Node")]
   [IsDesignScriptCompatible]
   public class HelloUI : NodeModel
   {
+    //Json Constructor for Dynamo 2.0 nodes
+    [JsonConstructor]
+    private HelloUI(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+    {
+    }
+
     public HelloUI()
     {
 
@@ -142,15 +157,114 @@ namespace DynamoWorkshop.ExplicitNode
 
 ```
 
+As you can see in Dynamo 2.0 there are 2 constructors:  the original parameterless constructor is used to initialize a new nodes created within Dynamo (via the library for example). The JSON constructor is required to initialize a node that is deserialized *(loaded)* from a saved .dyn or .dyf file. 
+
+More on JSON constructors can be found here: [github.com/DynamoDS/Dynamo/wiki/Update-Packages-from-1.3-to-2.0](https://github.com/DynamoDS/Dynamo/wiki/Update-Packages-from-1.3-to-2.0#json-constructors)
+
 In explicit nodes there is no need for a `_DynamoCustomization.xml` file, as the attributes on top of our class will define its category, name & whether it's usable in code blocks.
 
 ### The Custom UI
 
-We have already written a sample custom UI to implement in the sample WpfApp project, now we just need to copy `MyCustomControl.xaml` and `MyCustomControl.xaml.cs` to the current project folder and add them to the project, you can do this by dragging and dropping them:
+We have seen in the previous chapter how to create a WPF control, we'll now create a similar one that the node will use as UI.
 
-![59925281-6DB0-4FAC-82BD-8C5BCD2ADBD4](assets/59925281-6DB0-4FAC-82BD-8C5BCD2ADBD4.png)
+Create a new UserControl `ColorSelector.xaml` with the code below:
 
-You'll also need to replace the namespace in those two files, from `WpfApp` to `DynamoWorkshop.ExplicitNode`.
+```c#
+<UserControl
+  x:Class="DynamoWorkshop.ExplicitNode.ColorSelector"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:local="clr-namespace:DynamoWorkshop.ExplicitNode"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d">
+  <Grid Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <Label
+      Grid.Row="0"
+      Grid.Column="0"
+      Content="Alpha:" />
+    <Label
+      Grid.Row="1"
+      Grid.Column="0"
+      Content="Red:" />
+    <Label
+      Grid.Row="2"
+      Grid.Column="0"
+      Content="Green:" />
+    <Label
+      Grid.Row="3"
+      Grid.Column="0"
+      Content="Blue:" />
+    <Slider
+      Name="SliderA"
+      Grid.Row="0"
+      Grid.Column="1"
+      Width="100"
+      Margin="5"
+      HorizontalAlignment="Left"
+      VerticalAlignment="Top"
+      IsSnapToTickEnabled="True"
+      Maximum="255"
+      Minimum="0"
+      TickFrequency="1"
+      Value="{Binding SliderValueA}" />
+    <Slider
+      Name="SliderR"
+      Grid.Row="1"
+      Grid.Column="1"
+      Width="100"
+      Margin="5"
+      HorizontalAlignment="Left"
+      VerticalAlignment="Top"
+      IsSnapToTickEnabled="True"
+      Maximum="255"
+      Minimum="0"
+      TickFrequency="1"
+      Value="{Binding SliderValueR}" />
+    <Slider
+      Name="SliderG"
+      Grid.Row="2"
+      Grid.Column="1"
+      Width="100"
+      Margin="5"
+      HorizontalAlignment="Left"
+      VerticalAlignment="Top"
+      IsSnapToTickEnabled="True"
+      Maximum="255"
+      Minimum="0"
+      TickFrequency="1"
+      Value="{Binding SliderValueG}" />
+    <Slider
+      Name="SliderB"
+      Grid.Row="3"
+      Grid.Column="1"
+      Width="100"
+      Margin="5"
+      HorizontalAlignment="Left"
+      VerticalAlignment="Top"
+      IsSnapToTickEnabled="True"
+      Maximum="255"
+      Minimum="0"
+      TickFrequency="1"
+      Value="{Binding SliderValueB}" />
+  </Grid>
+</UserControl>
+
+```
+
+As you can see from the preview, it's just a grid with 4 sliders.
+
+![1531852850948](assets/1531852850948.png)
 
 ### The INodeViewCustomization Interface
 
@@ -159,15 +273,21 @@ Since our node has a custom UI, we need to create another class which implements
 ```c#
 /* dynamo directives */
 using Dynamo.Controls;
+using Dynamo.ViewModels;
 using Dynamo.Wpf;
 
 namespace DynamoWorkshop.ExplicitNode
 {
   public class HelloUINodeView : INodeViewCustomization<HelloUI>
   {
+    private DynamoViewModel dynamoViewModel;
+    private HelloUI helloUiNode;
+
     public void CustomizeView(HelloUI model, NodeView nodeView)
     {
-      var ui = new MyCustomControl();
+      dynamoViewModel = nodeView.ViewModel.DynamoViewModel;
+      helloUiNode = model;
+      var ui = new ColorSelector();
       nodeView.inputGrid.Children.Add(ui);
       ui.DataContext = model;
     }
@@ -179,38 +299,63 @@ namespace DynamoWorkshop.ExplicitNode
 }
 ```
 
-The code above is assigning the custom view to the HelloUI NodeModel and binding the data.
+The code above is very important:
 
-If you debug, you'll see the node with the user control embedded, behaving as before, but without any input or output port. If you've missed any step you can find this completed part in the folder `DynamoWorkshop.ExplicitNode - part 1`.
+- `nodeView.inputGrid.Children.Add(ui);` is adding our custom control to the node UI
+- `ui.DataContext = model;` is binding our HelloUI class as view model of the custom UI
+- we are not using the `dynamoViewModel` but it's really powerful as it's the view model of the entire Dynamo application
 
-![55804692-6DA3-4F3A-ADC3-1B7F4C9330B8](assets/55804692-6DA3-4F3A-ADC3-1B7F4C9330B8.png)
+If you debug, you'll see the node with the user control embedded, behaving as before, but without any input or output port.
 
+ If you've missed any step you can find this completed part in the folder `3 - ExplicitNode Interfaces`.
 
+![1531853018374](assets/1531853018374.png)
 
 
 
 ## 3 - ExplicitNode Functions
 
-In this final part we are going to add input and output ports to our node and interact with the graph. The following part is going to sound a bit confusing, but that's how Dynamo works in the background.
+In this final part we are going to add more bindings to the UI, add an output port, and have our node return something. 
+
+### More bindings
+
+Add the following fields and properties to `HelloUI.cs`:
+
+```c#
+    private int _sliderValueA;
+    private int _sliderValueR;
+    private int _sliderValueB;
+    private int _sliderValueG;
+    public int SliderValueA { get => _sliderValueA;  set { _sliderValueA = value; RaisePropertyChanged("SliderValueA"); }}
+    public int SliderValueR { get => _sliderValueR;  set { _sliderValueR = value; RaisePropertyChanged("SliderValueR"); } }
+    public int SliderValueB { get => _sliderValueB;  set { _sliderValueB = value; RaisePropertyChanged("SliderValueB"); }}
+    public int SliderValueG { get => _sliderValueG;  set { _sliderValueG = value; RaisePropertyChanged("SliderValueG"); } }
+```
+
+If you debug your code now you'll see the binding to the UI sliders.
 
 ### Executing functions
 
 NodeModels when executed run a method called `BuildOutputAst` this method takes your inputs and passes them to a function **which has to live in a separate assembly** (in our case a separate project). Let's create it:
 
-![742DAFE2-BFA5-4FAA-9F36-66D27D5F9766](assets/742DAFE2-BFA5-4FAA-9F36-66D27D5F9766.png)
+![1531853891415](assets/1531853891415.png)
 
-Then let's add the `DynamoVisualProgramming.DynamoServices` NuGet package and a new static class named `Functions.cs`:
+Then let's add the `DynamoVisualProgramming.DynamoServices` NuGet package and the `System.Drawing ` reference.
+
+Then create a new static class named `Functions.cs`:
 
 ```c#
 using Autodesk.DesignScript.Runtime;
+using System.Drawing;
+
 namespace DynamoWorkshop.ExplicitNode.Functions
 {
   [IsVisibleInDynamoLibrary(false)]
   public static class Functions
   {
-    public static double MultiplyTwoNumbers(double a, double b)
+    public static Color ColorByARGB(int a, int r, int g, int b)
     {
-      return a * b;
+      return Color.FromArgb(a, r, g, b);
     }
   }
 }
@@ -220,82 +365,95 @@ namespace DynamoWorkshop.ExplicitNode.Functions
 
 Now we can implement `BuildOutputAst` inside of `HelloUI.cs`. First right click on the`DynamoWorkshop.ExplicitNode` project and add a reference to `DynamoWorkshop.ExplicitNode.Functions`.
 
-![02707B01-3C9E-42EB-B684-37F7438F016F](assets/02707B01-3C9E-42EB-B684-37F7438F016F.png)
+![1531854050057](assets/1531854050057.png)
 
-![DFF7111D-51E8-405C-92FB-9533A2199833](assets/DFF7111D-51E8-405C-92FB-9533A2199833.png)
+![1531854008439](assets/1531854008439.png)
 
-Then edit HelloUI.cs:
+Then add the `BuildOutputAst` function to HelloUI.cs:
+
+```c#
+    public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAstNodes)
+    {
+      var sliderValueA = AstFactory.BuildDoubleNode(SliderValueA);
+      var sliderValueR = AstFactory.BuildDoubleNode(SliderValueR);
+      var sliderValueG = AstFactory.BuildDoubleNode(SliderValueG);
+      var sliderValueB = AstFactory.BuildDoubleNode(SliderValueB);
+
+      var functionCall =
+        AstFactory.BuildFunctionCall(
+          new Func<int, int, int, int, System.Drawing.Color>(Functions.Functions.ColorByARGB),
+          new List<AssociativeNode> { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
+
+      return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };
+    }
+```
+
+And the `OutPort` attributes on the node:
+
+```c#
+  [OutPortNames("Color")]
+  [OutPortTypes("color")]
+  [OutPortDescriptions("Selected Color")]
+```
+
+Your `HelloUI.cs` should look like this:
 
 ```c#
 using System;
 using System.Collections.Generic;
+using System.Linq;
 /* dynamo directives */
 using Dynamo.Graph.Nodes;
+using Newtonsoft.Json;
 using ProtoCore.AST.AssociativeAST;
 
 namespace DynamoWorkshop.ExplicitNode
 {
   [NodeName("HelloUI")]
   [NodeDescription("Sample Explicit Node")]
-  [NodeCategory("DynamoWorkshop")]
-  [InPortNames("A")]
-  [InPortTypes("double")]
-  [InPortDescriptions("Number A")]
-  [OutPortNames("Output")]
-  [OutPortTypes("double")]
-  [OutPortDescriptions("Product of two numbers")]
+  [NodeCategory("DynamoWorkshop.Explicit Node")]
+  [OutPortNames("Color")]
+  [OutPortTypes("color")]
+  [OutPortDescriptions("Selected Color")]
   [IsDesignScriptCompatible]
   public class HelloUI : NodeModel
   {
+    //Json Constructor for Dynamo 2.0 nodes
+    [JsonConstructor]
+    private HelloUI(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+    {
+    }
+
     public HelloUI()
     {
       RegisterAllPorts();
     }
 
-    private double _sliderValue;
-
-    public double SliderValue
-    {
-      get { return _sliderValue; }
-      set
-      {
-        _sliderValue = value;
-        RaisePropertyChanged("SliderValue");
-        OnNodeModified(false);
-      }
-    }
+    private int _sliderValueA;
+    private int _sliderValueR;
+    private int _sliderValueB;
+    private int _sliderValueG;
+    public int SliderValueA { get => _sliderValueA;  set { _sliderValueA = value; RaisePropertyChanged("SliderValueA"); }}
+    public int SliderValueR { get => _sliderValueR;  set { _sliderValueR = value; RaisePropertyChanged("SliderValueR"); } }
+    public int SliderValueB { get => _sliderValueB;  set { _sliderValueB = value; RaisePropertyChanged("SliderValueB"); }}
+    public int SliderValueG { get => _sliderValueG;  set { _sliderValueG = value; RaisePropertyChanged("SliderValueG"); } }
 
     public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAstNodes)
     {
-      if (!HasConnectedInput(0))
-      {
-        return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
-      }
-      var sliderValue = AstFactory.BuildDoubleNode(SliderValue);
+      var sliderValueA = AstFactory.BuildDoubleNode(SliderValueA);
+      var sliderValueR = AstFactory.BuildDoubleNode(SliderValueR);
+      var sliderValueG = AstFactory.BuildDoubleNode(SliderValueG);
+      var sliderValueB = AstFactory.BuildDoubleNode(SliderValueB);
+
       var functionCall =
         AstFactory.BuildFunctionCall(
-          new Func<double, double, double>(Functions.Functions.MultiplyTwoNumbers),
-          new List<AssociativeNode> { inputAstNodes[0], sliderValue });
+          new Func<int, int, int, int, System.Drawing.Color>(Functions.Functions.ColorByARGB),
+          new List<AssociativeNode> { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
 
       return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };
     }
   }
 }
-```
-
-And the slider in MyCustomControl.XAML to:
-
-```xml
-<Slider
-  Name="ValueSlider"
-  Grid.Row="1"
-  Width="100"
-  Margin="5"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Top"
-  IsSnapToTickEnabled="True"
-  TickFrequency="1"
-  Value="{Binding SliderValue}" />
 ```
 
 And finally, we need to tell Dynamo to load `DynamoWorkshop.ExplicitNode.Functions.dll` as well, and that's done by editing `pkg.json` adding at the end:
@@ -307,34 +465,91 @@ And finally, we need to tell Dynamo to load `DynamoWorkshop.ExplicitNode.Functio
   ]
 ```
 
-You can now test your code and see how the input is multiplied by the value of the slider:
+If we test the code we can see the OutPort, but it's not changing when the sliders change. We need to Expire the node for it to happen!
 
-![3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1](assets/3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1.png)
+![1531854428895](assets/1531854428895.png)
 
-### Affecting the graph
+### Expiring the node
 
-You might have not noticed it, but with the current implementation the custom node is already affecting the graph. Every time the slider is moved its value changes, and it has a binding with the  `SliderValue` property in `HelloUI.cs` which then calls the `OnNodeModified()` method telling Dynamo that one of its nodes has changed and needs to be recomputed.
+Fortunately enough, expiring the node is easy. Just call `OnNodeModified()` to do so. In our case we'll add that to the setter methods of each or our SliderValues:
 
-There is much more you can do with NodeModels as dynamically add or remove ports, affect their state, show warning/error messages etc...
+```c#
+    public int SliderValueA { get => _sliderValueA;  set { _sliderValueA = value; RaisePropertyChanged("SliderValueA"); OnNodeModified(); }}
+    public int SliderValueR { get => _sliderValueR;  set { _sliderValueR = value; RaisePropertyChanged("SliderValueR"); OnNodeModified(); } }
+    public int SliderValueB { get => _sliderValueB;  set { _sliderValueB = value; RaisePropertyChanged("SliderValueB"); OnNodeModified(); } }
+    public int SliderValueG { get => _sliderValueG;  set { _sliderValueG = value; RaisePropertyChanged("SliderValueG"); OnNodeModified(); } }
+```
+
+It could be cleaner, but it'll work for now.
+
+### Final touch
+
+As a final touch, let's preview the color generated by the sliders in the Node UI. This can be done with `INodeViewCustomization` as it gives us access to the Dynamo `NodeView`, the class that defines the nodes default appearance.
+
+In `HelloUINodeView.cs` add to `CustomizeView` the following event handlers to track when the sliders are moved.
+
+```c#
+      ui.SliderA.ValueChanged += Slider_ValueChanged;
+      ui.SliderR.ValueChanged += Slider_ValueChanged;
+      ui.SliderG.ValueChanged += Slider_ValueChanged;
+      ui.SliderB.ValueChanged += Slider_ValueChanged;
+```
+
+and then add the following method:
+
+```c#
+private void Slider_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
+{
+
+  ((Rectangle)_nodeview.grid.FindName("nodeBackground")).Fill = new SolidColorBrush(Color.FromArgb(
+                                                Convert.ToByte(_model.SliderValueA), 
+                                                Convert.ToByte(_model.SliderValueR),
+                                                Convert.ToByte(_model.SliderValueG), 
+                                                Convert.ToByte(_model.SliderValueB)));
+}
+```
+The node background color will now change accordingly.
+
+![explicitnode](assets/explicitnode.gif)
+
+### Serializing / Deserializing nodes
+
+If you save the custom node in a definition and load it again you will see that the sliders value persisted, that's because it's being serialized with the node.
+
+Dynamo 2.0 makes it very easy to serialize / deserialize variables on custom nodes. To do that, a variable needs to be `public`, and it will be automatically saved and loaded.
+
+To ignore a property or a field, use the `[JsonIgnore]` attribute and it'll be skipped.
+
+
 
 
 ## Publishing nodes to the Package Manager
 
-Publishing a package to the package manager is a very simple process especially given how we have set up our Visual Studio projects. Only publish packages that you own and that you have tested thoroughly!
+Publishing a package to the package manager is a very simple process especially given how we have set up our Visual Studio projects. 
+
+**Only publish packages that you own and that you have tested thoroughly!**
 
 Publishing can only be done from Dynamo for Revit or Dynamo Studio, not from the Sandbox version.
 
 Click on Packages > Manage Packages...
 
-![1510612119525](assets/1510612119525.png)
+![1531855382947](assets/1531855382947.png)
 
-In the next screen make sure all the information is correct and that only the required dlls are being included (remember when we had to manually set `Copy Local` to `False` on the references?).
 
-As you click Publish Online it will be on the Package Manager, to upload new version use `Publish Version...` instead.
 
-Also note that packages cannot be deleted, but only deprecated.  
+Next to your package, click the 3 dots and then Publish:
 
-![1510612834682](assets/1510612834682.png)
+![1531855462579](assets/1531855462579.png)
+
+In the next screen make sure all the information are correct and that only the required dlls are being included (remember when we had to manually set `Copy Local` to `False` on the references?). These field can be modified in pkg.json.
+
+![1531855653842](assets/1531855653842.png)
+
+
+
+As you click Publish Online it will be on the Package Manager, to upload new version use Publish Version... instead.
+
+Note that packages **cannot be deleted or renamed**, but only deprecated.  
 
 ## Conclusion
 

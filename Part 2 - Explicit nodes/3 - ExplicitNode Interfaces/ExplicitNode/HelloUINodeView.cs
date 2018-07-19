@@ -7,14 +7,17 @@ namespace DynamoWorkshop.ExplicitNode
 {
   public class HelloUINodeView : INodeViewCustomization<HelloUI>
   {
-    private DynamoViewModel dynamoViewModel;
-    private HelloUI helloUiNode;
+    DynamoViewModel _dynamoViewModel;
+    NodeView _nodeview;
+    HelloUI _model;
 
     public void CustomizeView(HelloUI model, NodeView nodeView)
     {
-      dynamoViewModel = nodeView.ViewModel.DynamoViewModel;
-      helloUiNode = model;
-      var ui = new MyCustomControl();
+      _dynamoViewModel = nodeView.ViewModel.DynamoViewModel;
+      _nodeview = nodeView;
+      _model = model;
+
+      var ui = new ColorSelector();
       nodeView.inputGrid.Children.Add(ui);
       ui.DataContext = model;
     }
