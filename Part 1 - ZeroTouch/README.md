@@ -57,7 +57,7 @@ This type of node (ZTN) needs to be compiled into a `DLL` every time you want to
 [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) (VS) is going to be our IDE, it’s free and fully-featured for students, open-source and individual developers. In this part we are going to create a new project, add references and packages and all necessary files. 
 It’s very important to set up the project correctly : although it will take some time and it might look confusing at first, it will facilitate development and debugging, making you a better developer. Please note that this is how *I personally set up the environment*, there are of course many other ways to do it.
 
-At the end of this part you'll have generated an empty boilerplate project which you can reuse in the future. You can find a the final files of this part inside the "*DynamoWorkshop.ZeroTouch - part 1"* folder.
+At the end of this part you'll have generated an empty boilerplate project which you can reuse in the future. You can find a the final files of this part inside the *"1 - Setup"* folder.
 
 ### New Project
 
@@ -65,7 +65,7 @@ Let’s create a new project:
 
 ![image alt text](assets/image_0.png)
 
-The latest versions of Revit (2017/2018) use .NET Framework 4.6 (4.6.1 or 4.6.2), so if you are targeting a version prior to 2017, [change it accordingly](https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/Revit-API/files/GUID-FEF0ED40-8658-4C69-934D-7F83FB5D5B63-htm.html). I used `DynamoWorkshop.ZeroTouch` as Project Name and `DynamoWorkshop` as Solution Name (a solution can contain multiple projects).
+The latest versions of Revit (2017/2018) use .NET Framework 4.6 (4.6.1 or 4.6.2), so if you are targeting a version prior to 2017, [change it accordingly](https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/2016/ENU/Revit-API/files/GUID-FEF0ED40-8658-4C69-934D-7F83FB5D5B63-htm.html). I used `ZeroTouch` as Project Name and `DynamoWorkshop` as Solution Name (a solution can contain multiple projects).
 
 ![image alt text](assets/image_1.png)
 
@@ -75,7 +75,7 @@ To extend Dynamo at a very basic level (eg. manipulating native .NET data types 
 
 ![image alt text](assets/image_2.png)
 
-For now we need `DynamoVisualProgramming.ZeroTouchLibrary` which depends on `DynamoVisualProgramming.DynamoServices` and will be downloaded automatically. Make sure they match your Dynamo version.
+For now we need `DynamoVisualProgramming.ZeroTouchLibrary` which depends on `DynamoVisualProgramming.DynamoServices` and will be downloaded automatically. Make sure they match your Dynamo version, in our case it's `2.0.1`.
 
 ![image alt text](assets/image_3.png)
 
@@ -83,27 +83,27 @@ You can see that 4 new dlls have been referenced:
 
 ![image alt text](assets/image_4.png)
 
-Select them and set *Copy Local* to *False* in the properties:
+Select them, right click and set *Copy Local* to *False* in the properties:
 
 ![image alt text](assets/image_5.png)
 
-This will avoid unnecessary files in our package.
+This will avoid unnecessary files in our package. Also note that Dynamo will not launch or debug properly if these DLLs are present in a package directory.
 
 ### Package
 
-A zero touch node needs to be loaded by Dynamo manually each time or be added as a package. We’ll set it up as a **Local Package**, so that it will automatically load every time Dynamo starts. It will also make our life easier in case we decide to publish it to the official Dynamo Package Manager in the future.
+A zero touch node needs to be loaded in Dynamo manually each time or be added as a package. We’ll set it up as a **Local Package**, so that it will automatically load every time Dynamo starts. It will also make our life easier in case we decide to publish it to the official Dynamo Package Manager in the future.
 
 Dynamo packages have the structure as per below:
 
 ![image alt text](assets/image_6.png)
 
-* The *bin* folder houses .dll files created with C# or Zero-Touch libraries
+* The *bin* folder houses .dll files created with C# or Zero-Touch libraries. This includes any external libraries you might need to reference in your code, such as Json.NET, RestSharp etc.
 
-* The *dyf* folder houses any custom nodes, we won’t have any for this package
+* The *dyf* folder houses any custom nodes, we won’t have any for this package.
 
 * The *extra* folder houses all additional files. These files are likely to be Dynamo Files (.dyn) or any additional files required (.svg, .xls, .jpeg, .sat, etc.)
 
-* The *pkg.json* file is a basic text file defining the package settings. [This is can be automated by Dynamo](http://dynamoprimer.com/en/10_Packages/10-4_Publishing.html), but we will make one from scratch.
+* The *pkg.json* file is a basic text file defining the package settings. [This can be created by Dynamo](http://dynamoprimer.com/en/10_Packages/10-4_Publishing.html), but we will make one from scratch.
 
 We'll need to manually create this pkg.json file, but we'll automate the folder creation (we just need the _bin_ folder):
 
@@ -128,11 +128,11 @@ Then copy/paste the following package description, which is some boilerplate JSO
     "keywords": null,
     "dependencies": [],
     "contents": "",
-    "engine_version": "1.3.0.0",
+    "engine_version": "2.0.1.0",
     "engine": "dynamo",
     "engine_metadata": "",
     "site_url": "",
-    "repository_url": "",
+    "repository_url": "https://github.com/radumg/AEC-hackathon-Dynamo-Workshop",
     "contains_binaries": true,
     "node_libraries": [
         "DynamoWorkshop.ZeroTouch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"

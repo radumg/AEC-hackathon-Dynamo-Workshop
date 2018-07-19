@@ -468,6 +468,123 @@
       ],
       "Replication": "Auto",
       "Description": "Deletes all the contents of a list.\n\nInput.ClearListContents (list: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoWorkshop.ZeroTouch.Output.SplitOddEven@int[]",
+      "Id": "ed80df2424224fd1aec7aa3aa47bc54b",
+      "Inputs": [
+        {
+          "Id": "b9b407146892447095a791809974c7cf",
+          "Name": "list",
+          "Description": "The list to split.\n\nint[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d23b0893e462435a8f7dd3c62150765d",
+          "Name": "evens",
+          "Description": "The two lists containing only even and odd numbers respectively.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "62faa30ea8c348b196b9c7617be80012",
+          "Name": "odds",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Splits odd and even elements from a list into two separate lists.\n\nOutput.SplitOddEven (list: int[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "01a926aba0d44b57b7453301b8f9e94e",
+      "Inputs": [
+        {
+          "Id": "3851b1c7924c4ea5bf0d91ea3998b6e2",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "253373e7947948ba983c13c47c6888ab",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "e9c0261f44d14f95b3a009cd7feea99c",
+      "Inputs": [
+        {
+          "Id": "27fc7896939348f19496999a46d43964",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "00ae887469a64d8281a87ca3c35e64c8",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\n1,\n2,\n3,\n4,\n5,\n6,\n7\n];",
+      "Id": "8126b95813ee4c2988ed2b3e68b1bf78",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ce095e9595a14a8f9674cbdfb03d341f",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
     }
   ],
   "Connectors": [
@@ -535,6 +652,21 @@
       "Start": "0331ae51ad754afb84131136d228041e",
       "End": "770dda37e9f247e99c907e1039deed6d",
       "Id": "62b34e78b00c4a3e9fee58509c079b6b"
+    },
+    {
+      "Start": "d23b0893e462435a8f7dd3c62150765d",
+      "End": "3851b1c7924c4ea5bf0d91ea3998b6e2",
+      "Id": "40494103fb054089bc7623b6c3d570f4"
+    },
+    {
+      "Start": "62faa30ea8c348b196b9c7617be80012",
+      "End": "27fc7896939348f19496999a46d43964",
+      "Id": "c5f5196de45e4268923507ec484ef2ca"
+    },
+    {
+      "Start": "ce095e9595a14a8f9674cbdfb03d341f",
+      "End": "b9b407146892447095a791809974c7cf",
+      "Id": "acff087013144e83bf0aae2f9fec43e0"
     }
   ],
   "Dependencies": [],
@@ -720,12 +852,52 @@
         "Excluded": false,
         "X": 295.05519220766814,
         "Y": 1179.0647037346598
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output.SplitOddEven",
+        "Id": "ed80df2424224fd1aec7aa3aa47bc54b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 949.49716215660283,
+        "Y": 47.0940984399208
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "01a926aba0d44b57b7453301b8f9e94e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1180.7083337952834,
+        "Y": 47.377187246744484
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "e9c0261f44d14f95b3a009cd7feea99c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1284.3547740937108,
+        "Y": 49.720714112719236
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "8126b95813ee4c2988ed2b3e68b1bf78",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 797.47443581987432,
+        "Y": 52.979934328804916
       }
     ],
     "Annotations": [
       {
         "Id": "440df36230ea4392a6165ab9ca47deef",
-        "Title": "AverageNumbers\r\n",
+        "Title": "Input - AverageNumbers\r\n",
         "Nodes": [
           "5037259c78af47788166ed95543ff428",
           "9b7c7298f36f44d387a82ea48005ff9f",
@@ -746,7 +918,7 @@
       },
       {
         "Id": "76c1d6265216419bbf1465dfeef748be",
-        "Title": "AddItemToEnd\r\n",
+        "Title": "Input - AddItemToEnd\r\n",
         "Nodes": [
           "d5019ade13b446e58944a4a199091f6b",
           "7bcc15dae6474cf08ec25b9a99e1b007",
@@ -765,7 +937,7 @@
       },
       {
         "Id": "87b77381b86242a293d40292b38b157e",
-        "Title": "ClearListContents\r\n",
+        "Title": "Input - ClearListContents\r\n",
         "Nodes": [
           "c1538ebe266e40c7bffc0bd8c5e90e32",
           "7d11b377fd2a4117ab87c32953eaf118",
@@ -780,7 +952,26 @@
         "Height": 401.78367262022346,
         "FontSize": 36.0,
         "InitialTop": 986.78103111443636,
-        "InitialHeight": 255.95797912527814,
+        "InitialHeight": 341.49700595355682,
+        "TextblockHeight": 86.5,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7d7ece605aa7453eadbc2da14d617cf6",
+        "Title": "Output - SplitOddEven\r\n",
+        "Nodes": [
+          "ed80df2424224fd1aec7aa3aa47bc54b",
+          "01a926aba0d44b57b7453301b8f9e94e",
+          "e9c0261f44d14f95b3a009cd7feea99c",
+          "8126b95813ee4c2988ed2b3e68b1bf78"
+        ],
+        "Left": 787.47443581987432,
+        "Top": -49.4059015600792,
+        "Width": 592.38033827383651,
+        "Height": 327.38583588888412,
+        "FontSize": 36.0,
+        "InitialTop": 47.0940984399208,
+        "InitialHeight": 260.88583588888412,
         "TextblockHeight": 86.5,
         "Background": "#FFC1D676"
       }
