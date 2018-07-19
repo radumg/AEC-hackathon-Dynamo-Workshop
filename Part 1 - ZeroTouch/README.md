@@ -16,7 +16,7 @@ The workshop will be using Visual Studio and C#, for information on getting star
 
 [Zero Touch Nodes](#zero-touch-nodes)
 
-[1 - Visual Studio setup](#1---visual-studiosetup)
+[1 - Visual Studio setup](#1---visual-studio-setup)
   - [New project](#new-project)
   - [References](#references)
   - [Package](#package)
@@ -39,7 +39,7 @@ The workshop will be using Visual Studio and C#, for information on getting star
 [4 - Revit Node Development](#4---revit-node-development)
   - [References](#references)
   - [Code Example 1 - GetWallBaseline](#code-example-1---getwallbaseline)
-  - [Wrapping, Unwrapping and Converting](#wrapping,-unwrapping-and-converting)
+  - [Wrapping, Unwrapping and Converting](#wrapping-unwrapping-and-converting)
   - [Code example 2 - TextToWalls](#code-example-2---texttowalls)
 
 ## Zero Touch Nodes
@@ -159,13 +159,13 @@ These lines tell VisualStudio to copy into the package folder the `dlls` produce
 
 > **Note:**
 > The commands above point to the current version of Dynamo Sandbox, if you’re using a different version update accordingly. If you are using Dynamo for Revit you should instead use the following commands:
-> `xcopy /Y "$(TargetDir)*.*" "$(AppData)\Dynamo\Dynamo Revit\1.3\packages\$(ProjectName)\bin\"`
+> `xcopy /Y "$(TargetDir)*.*" "$(AppData)\Dynamo\Dynamo Revit\2.0\packages\$(ProjectName)\bin\"`
 >
-> `xcopy /Y "$(ProjectDir)pkg.json" "$(AppData)\Dynamo\Dynamo Revit\1.3\packages\$(ProjectName)"`
+> `xcopy /Y "$(ProjectDir)pkg.json" "$(AppData)\Dynamo\Dynamo Revit\2.0\packages\$(ProjectName)"`
 
 Now right click on the project > `Properties` > `Debug` > `Start external program` > Select
 
-`C:\Program Files\Dynamo\Dynamo Revit\1.3\DynamoSandbox.exe`
+`C:\Program Files\Dynamo\Dynamo Core\2\DynamoSandbox.exe`
 
 > **Note:**
 > The path above points to the current version of Dynamo Sandbox, if you’re using a different version edit accordingly. We are using Sandbox because it’s simpler and faster than Dynamo for Revit.
@@ -244,7 +244,7 @@ Debug again, and it'll be much better now:
 
 
 
-We’ve now finally set up our project correctly, you can save the project and use it in the future as a template. In case you missed some steps you can find the complete project inside the "*DynamoWorkshop.ZeroTouch - part 1"* folder.
+We’ve now finally set up our project correctly, you can save the project and use it in the future as a template. In case you missed some steps you can find the complete project inside the *"1 - Setup"* folder.
 
 ## 2 - Dynamo Node Development
 
@@ -461,6 +461,8 @@ public static int HandleListNullExceptionsInternally(List<object> list)
 }
 ```
 
+In case you missed some steps you can find the complete project inside the *"2 - Input Output"* folder.
+
 ## 3 - ZeroTouch mapping
 
 As mentioned before, Dynamo will automatically map `public` properties and methods to nodes, so let's see a more applied example of this.
@@ -525,6 +527,8 @@ In Dynamo, this will look like this :
 
 Let's visualise all these mappings from C# code to nodes to understand the direct relationship :
 ![ZT-ExampleMapping](assets/ZT-ExampleMapping.png)
+
+In case you missed some steps you can find the complete project inside the *"3 - ZeroTouch mapping"* folder.
 
 
 ## 4 - Revit Node Development
@@ -807,17 +811,19 @@ After this, the last code example is complete, you can now debug the project and
 
 ![1510609206559](assets/1510609206559.png)
 
+In case you missed some steps you can find the complete project inside the *"4 - Revit nodes"* folder.
 
 
 ## Conclusion
 
-The boilerplate poject we have created in part 1, should get you jump-started in developing for Dynamo. Don't be afraid of Visual Studio, it's a friend and it can provide very helpful insights during development and debug. 
+The boilerplate project we have created in part 1 should get you jump-started in developing for Dynamo. Don't be afraid of Visual Studio, it's a friend and it can provide very helpful insights during development and debugging. 
 
-We have also gone through sample code on how to interact with Dynamo and Revit geometry/elements, you should now be able to start developing your own nodes. 
+We have also gone through sample code on how to interact with Dynamo and Revit geometry/elements, so you should now be able to start developing your own nodes. 
 
 We recommend following Part 2 of this workshop next, teaching you how to develop Explicit nodes in Dynamo, but in the meantime, here's some additional things to be aware of:
 
 * Version updates - releasing updates to an existing node should be done carefully, it could brake existing user graphs and workflows. Most developers choose to use the [SemVer](https://semver.org/) method to number versions, which also helps aleviate & communicate the impacts of changes to users. 
+
 * Dll conflicts - if other nodes in use by Dynamo depend on external dlls, and your nodes too, there might be conflicts. Dynamo will report any conflicts in its `Notifications` panel, so check it out if something is misbehaving!
 
 
