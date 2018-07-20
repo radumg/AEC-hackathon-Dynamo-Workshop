@@ -353,9 +353,9 @@ namespace DynamoWorkshop.ExplicitNode.Functions
   [IsVisibleInDynamoLibrary(false)]
   public static class Functions
   {
-    public static Color ColorByARGB(int a, int r, int g, int b)
+    public static DSCore.Color ColorByARGB(int a, int r, int g, int b)
     {
-      return Color.FromArgb(a, r, g, b);
+      return DSCore.Color.ByARGB(a, r, g, b);
     }
   }
 }
@@ -381,7 +381,7 @@ Then add the `BuildOutputAst` function to HelloUI.cs:
 
       var functionCall =
         AstFactory.BuildFunctionCall(
-          new Func<int, int, int, int, System.Drawing.Color>(Functions.Functions.ColorByARGB),
+          new Func<int, int, int, int, DSCore.Color>(Functions.Functions.ColorByARGB),
           new List<AssociativeNode> { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
 
       return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };
@@ -447,7 +447,7 @@ namespace DynamoWorkshop.ExplicitNode
 
       var functionCall =
         AstFactory.BuildFunctionCall(
-          new Func<int, int, int, int, System.Drawing.Color>(Functions.Functions.ColorByARGB),
+          new Func<int, int, int, int, DSCore.Color>(Functions.Functions.ColorByARGB),
           new List<AssociativeNode> { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
 
       return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };
