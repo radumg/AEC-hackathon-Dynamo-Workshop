@@ -47,7 +47,7 @@ namespace DynamoWorkshop.ExplicitNode
 
       var functionCall =
         AstFactory.BuildFunctionCall(
-          new Func<int, int, int, int, System.Drawing.Color>(Functions.Functions.ColorByARGB),
+          new Func<int, int, int, int, DSCore.Color>(Functions.Functions.ColorByARGB),
           new List<AssociativeNode> { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
 
       return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };

@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Analysis, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamoVisualProgramming.DynamoCoreNodes.2.0.1.5055\lib\net45\Analysis.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="CoreNodeModels, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamoVisualProgramming.WpfUILibrary.2.0.1.5055\lib\net45\CoreNodeModels.dll</HintPath>
       <Private>False</Private>
@@ -43,6 +47,10 @@
     </Reference>
     <Reference Include="DesignScriptBuiltin, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamoVisualProgramming.Core.2.0.1.5055\lib\net45\DesignScriptBuiltin.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DSCoreNodes, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamoVisualProgramming.DynamoCoreNodes.2.0.1.5055\lib\net45\DSCoreNodes.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DSIronPython, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
@@ -79,6 +87,10 @@
     </Reference>
     <Reference Include="DynamoUtilities, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamoVisualProgramming.Core.2.0.1.5055\lib\net45\DynamoUtilities.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GeometryColor, Version=2.0.1.5055, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamoVisualProgramming.DynamoCoreNodes.2.0.1.5055\lib\net45\GeometryColor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -158,6 +170,7 @@
     <ProjectReference Include="..\ExplicitNode.Functions\ExplicitNode.Functions.csproj">
       <Project>{5ecd7d97-d11c-4ea2-8a2e-0f096aa57dd3}</Project>
       <Name>ExplicitNode.Functions</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
