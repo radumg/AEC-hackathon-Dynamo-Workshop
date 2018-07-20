@@ -134,11 +134,7 @@ Then copy/paste the following package description, which is some boilerplate JSO
     "keywords": null,
     "dependencies": [],
     "contents": "",
-<<<<<<< HEAD
     "engine_version": "2.0.1.0",
-=======
-    "engine_version": "2.0.1.5055",
->>>>>>> Readme update
     "engine": "dynamo",
     "engine_metadata": "",
     "site_url": "",
