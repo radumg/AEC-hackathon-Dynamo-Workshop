@@ -6,7 +6,7 @@ Learn how to develop Zero Touch Nodes in C#.
 
 ## Summary
 
-This workshop will teach you how to set your graph free by developing custom Dynamo nodes using the Zero Touch approach. It will go thorough the different types on nodes and their advantages, then it will teach you how to configure Visual Studio for development and debug. Finally, using simple examples, it will teach you how to build your own nodes.
+This workshop will teach you how to set your graph free by developing custom Dynamo nodes using the Zero Touch approach. It will go through the different types on nodes and their advantages, then it will teach you how to configure Visual Studio for development and debug. Finally, using simple examples, it will teach you how to build your own nodes.
 
 After this workshop you will be able to add new features, improve workflows and contribute to the Dynamo community. 
 
@@ -151,9 +151,9 @@ Let’s finally configure the project so that the files are copied automatically
 
 Right click on the project > `Properties` > `Build Events` > `Post-build event command line` > paste the two following lines:
 
-`xcopy /Y "$(TargetDir)*.*" "$(AppData)\Dynamo\Dynamo Core\1.3\packages\$(ProjectName)\bin\"`
+`xcopy /Y "$(TargetDir)*.*" "$(AppData)\Dynamo\Dynamo Core\2.0\packages\$(ProjectName)\bin\"`
 
-`xcopy /Y "$(ProjectDir)pkg.json" "$(AppData)\Dynamo\Dynamo Core\1.3\packages\$(ProjectName)"`
+`xcopy /Y "$(ProjectDir)pkg.json" "$(AppData)\Dynamo\Dynamo Core\2.0\packages\$(ProjectName)"`
 
 These lines tell VisualStudio to copy into the package folder the `dlls` produced in the bin folder and the `pkg.json`.
 
