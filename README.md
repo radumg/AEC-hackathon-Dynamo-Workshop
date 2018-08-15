@@ -13,7 +13,7 @@ Learn how to develop for Dynamo in C# by building ZeroTouch & Explicit Nodes.
 
 ## Table of Contents
 
-### [What are custom nodes ?](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/blob/master/Part%200%20-%20Custom%20nodes/Custom%20Nodes.md)</br>
+### [What are custom nodes ?](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%200%20-%20Custom%20nodes/)</br>
 Get a high-level overview of the types of custom nodes you can create in Dynamo.<br>[Read more about custom nodes](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%200%20-%20Custom%20nodes/)
 
 ### [Part 1 - ZeroTouch nodes](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%201%20-%20ZeroTouch)</br>
