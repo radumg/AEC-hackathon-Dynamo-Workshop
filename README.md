@@ -1,4 +1,4 @@
-# Dynamo Hackathon London 2019 - Development Training
+# Dynamo Development - London Hackathon 2019
 
 There are multiple ways to improve Dynamo creating your custom functionality, with varying levels of difficulty. Learn the basic of custom development and more advance improvement using c#.
 
