@@ -1,4 +1,4 @@
-# Dynamo Hackathon London 2019 - Development Training
+# Dynamo Development - London Hackathon 2019
 
 There are multiple ways to improve Dynamo creating your custom functionality, with varying levels of difficulty. Learn the basic of custom development and more advance improvement using c#.
 
@@ -14,18 +14,19 @@ There are multiple ways to improve Dynamo creating your custom functionality, wi
 ## Table of Contents
 
 ### [Development in Dynamo](./00-DevelopmentInDynamo/00-Introduction.md)
+Get a high-level understanding of the different approaches to follow in order to customize and create new features on Dynamo.
 
-Get a high-level overview of the types of custom nodes you can create in Dynamo.
+### [Custom Nested Nodes](./01-CustomNodes/00-Introduction.md)
+Section to briefly introduce and/or refresh what **Custom Nested Nodes** are and their benefits/disadvantages.
 
-[Read more about custom nodes](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%200%20-%20Custom%20nodes/)
+### [Python Script](./02-PythonScript/00-Introduction.md)
+Python is one of the best first options to use *text-base* programming within the Dynamo environment.
 
-### [Part 1 - ZeroTouch nodes](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%201%20-%20ZeroTouch)</br>
+### [ZeroTouch Nodes](./03-ZeroTouch/00-Introduction.md)
 Learn to develop custom nodes in Dynamo using ZeroTouch.
-[![Dynamo ZeroTouch node](assets/1501856889450.png "Part 1 - ZeroTouch nodes")](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%201%20-%20ZeroTouch)
 
-### [Part 2 - Explicit nodes](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%202%20-%20Explicit%20nodes)</br>
-Learn to develop nodes with custom UI in Dynamo using ZeroTouch Explicit nodes.
-[![Dynamo Explicit node with Custom UI](assets/3E85FA44-C52F-41F8-8B3B-BAD5ED4FE0E1.png "Part 2 - Explicit nodes")](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%202%20-%20Explicit%20nodes)
+### [Explicit Nodes](./04-ExplicitNodes/00-Introduction.md)
+Learn to develop nodes with custom UI in Dynamo using Explicit nodes.
 
 ### Tools we’ll use
 
