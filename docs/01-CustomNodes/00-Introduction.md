@@ -1,6 +1,6 @@
-![CNN Icon](assets/00-CNN-icon.png)
-
 # Custom Nested Nodes <!-- omit in toc --> 
+
+![CNN Icon](assets/00-CNN-icon.png)
 
 This is easiest method to create custom functionality in Dynamo that can be shared as a package.
 

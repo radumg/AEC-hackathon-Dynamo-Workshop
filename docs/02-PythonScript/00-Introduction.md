@@ -1,6 +1,6 @@
-![Python Icon](assets/00-Python-icon.png)
-
 # Python in Dynamo
+
+![Python Icon](assets/00-Python-icon.png)
 
 This section will go through the basics on how to write custom python code within Dynamo.
 
