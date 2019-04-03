@@ -1,4 +1,4 @@
-## What are custom nodes?
+## Development in Dynamo
 
 In Dynamo it is possible to add custom functionalities using special components, these are called custom nodes. They can be really useful for frequently used routines or for adding completely new and advanced features.
 
@@ -27,16 +27,20 @@ There are different types of custom nodes, for all levels and uses:
 ![Dynamo custom nodes](assets/Node%20types%20image.png "Part 0 - Custom nodes")
 
 
-* *[Dynamo Custom Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-2_Creating.html)*, it’s done by nesting existing nodes into a container, the custom node is saved as a DYF file and can be easily shared
+- *[Code Node](http://dynamobim.org/cbns-for-dummies/)*, this one basically consists on having a formula inside a code node, you can’t do complex things but if can be very handy. The code is in Design Script.
+  
+- *[Dynamo Custom Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-2_Creating.html)*, it’s done by nesting existing nodes into a container, the custom node is saved as a DYF file and can be easily shared.
+  
+- *[Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html)*, it’s a custom node containing python code, supports modules and packages. It is a very powerful and quick way to add custom functionalities, and you don’t need to compile your code.
 
-* *[Code Node](http://dynamobim.org/cbns-for-dummies/)*, this one basically consists in having a formula inside a code node, you can’t do complex things but if can be very handy. The code is in Design Script
+- *[Zero Touch Node](https://github.com/DynamoDS/Dynamo/wiki/Zero-Touch-Plugin-Development)*, create or import a custom node written in C#. It is a more complex choice but you will benefit of the .NET framework, a solid IDE, debugging tools and lots of libraries.
 
-* *[Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html)*, it’s a custom node containing python code, supports modules and packages. It is a very powerful and quick way to add custom functionalities, and you don’t need to compile your code. ([template](https://github.com/DynamoDS/Dynamo/pull/8034))
+- *[Explicit Custom Node](https://github.com/DynamoDS/Dynamo/wiki/How-To-Create-Your-Own-Nodes#method-3-nodes-with-custom-ui)*, basically a native Dynamo node written in C#, it implements the NodeModel interface, can have a custom UI and affect the state of the graph.
 
-* *[Zero Touch Node](https://github.com/DynamoDS/Dynamo/wiki/Zero-Touch-Plugin-Development)*, create or import a custom node written in C#. It is a more complex choice but you will benefit of the .NET framework, a solid IDE, debugging tools and lots of libraries. Covered in [Part 1 of the workshop](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%201%20-%20ZeroTouch).
+### Other types of development
 
-* *[Explicit Custom Node](https://github.com/DynamoDS/Dynamo/wiki/How-To-Create-Your-Own-Nodes#method-3-nodes-with-custom-ui)*, basically a native Dynamo node written in C#, it implements the NodeModel interface, can have a custom UI and affect the state of the graph. Covered in [Part 2 of the workshop](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%202%20-%20Explicit%20nodes).
+Around January 2018, the Dynamo team released a new approach of developing in Dynamo, slightly different than creating your own nodes.
 
-## Next
-Let's dive into custom node creation by learning to build ZeroTouch nodes !
-Head over to [Part 1](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop/tree/master/Part%201%20-%20ZeroTouch) of the workshop.
+**Extensions** and **ViewExtensions** allow the developer to *"tap"* into Dynamo itself and make use of its API to drive custom functionality, respond to events and add your own UI on top od Dynamo. 
+
+For more info, visit the [blog post](https://dynamobim.org/extending-dynamo-a-london-workshop-on-extensions/) or watch the [recording](https://www.youtube.com/watch?v=qLGsRcIOwzc&feature=youtu.be) from the workshop held in London on February 2018.
