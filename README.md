@@ -49,3 +49,8 @@ Learn to develop nodes with custom UI in Dynamo using Explicit nodes.
 * How to Create Your Own Nodes: [https://github.com/DynamoDS/Dynamo/wiki/How-To-Create-Your-Own-Nodes](https://github.com/DynamoDS/Dynamo/wiki/How-To-Create-Your-Own-Nodes)
 * Zero Touch Plugin Development: [https://github.com/DynamoDS/Dynamo/wiki/Zero-Touch-Plugin-Development](https://github.com/DynamoDS/Dynamo/wiki/Zero-Touch-Plugin-Development)
 * Adding Icons for a Zero Touch Assembly: https://github.com/DynamoDS/Dynamo/wiki/Add-Icons-for-a-Zero-Touch-Assembly
+
+
+## Acknowledgment
+
+Big part of this material is based and reused from the [AEC Hackathon Dynamo Workshop](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop), which in turn is an extended version from the original [Dynamo User Group Computational Design Workshop](https://github.com/teocomi/dug-dynamo-unchained). 
