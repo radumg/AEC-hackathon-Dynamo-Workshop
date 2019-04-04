@@ -14,7 +14,7 @@ Custom UI nodes implement the NodeModel **interface**, the same way native nodes
 
 Create a new class named `HelloUI.cs`, then add the interface, directives and attributes as below:
 
-```c#
+```csharp
 /* dynamo directives */
 using Dynamo.Graph.Nodes;
 using Newtonsoft.Json;
@@ -55,7 +55,7 @@ We have seen in the previous chapter how to create a WPF control, we'll now crea
 
 Create a new UserControl `ColorSelector.xaml` with the code below:
 
-```c#
+```csharp
 <UserControl
   x:Class="DynamoWorkshop.ExplicitNode.ColorSelector"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -156,7 +156,7 @@ As you can see from the preview, it's just a grid with 4 sliders.
 
 Since our node has a custom UI, we need to create another class which implements the INodeViewCustomization interface. Create a new class named `HelloUINodeView.cs` and add:
 
-```c#
+```csharp
 /* dynamo directives */
 using Dynamo.Controls;
 using Dynamo.ViewModels;

@@ -12,7 +12,7 @@ Open up the example solution and you should see this
 ## Properties
 Let's look at how properties get mapped to nodes.
 
-```c#
+```csharp
 // This property is public and hence visible in Dynamo as a node.
 // This displays in Dynamo as a Query node, identified with a blue ? icon.
 public string ZeroTouchPublicProperty { get; set; }
@@ -25,7 +25,7 @@ static string ZeroTouchPrivateProperty { get; set; }
 Methods all get mapped to nodes, as long they are `public`, whether `static` or not.
 
 Static methods are straight-forward :
-```c#
+```csharp
 // This public static method returns a random number every time it's executed.
 // Notice how the node Dynamo creates does not require an instance of an ExampleZeroTouchClass as input.
 public static int GetRandomNumberFromAStaticMethod()
@@ -37,7 +37,7 @@ results in this node
 ![ZT-MappingStaticNode](assets/ZT-MappingStaticNode.png)
 
 Non-static methods are also turned into node. Let's see an example :
-```c#
+```csharp
 public ExampleZeroTouchClass UpdatePublicPropertyAction(string text)
 {
   this.ZeroTouchPublicProperty = text;
@@ -51,7 +51,7 @@ Because this method is not static, notice how Dynamo adds another input to the r
 Methods that return the same type as the the class they belong to are treated differently if they are also `static`, being rendered as constructor nodes.
 
 Let's see an example method :
-```c#
+```csharp
 // This static method will return a new instance of the ExampleZeroTouchClass, with the ZeroTouchPublicProperty set to the text provided.
 // This displays in Dynamo as a Constructor node, identified with a green + icon.
 public static ExampleZeroTouchClass ByUserTextConstructor(string text)

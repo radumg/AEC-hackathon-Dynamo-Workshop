@@ -166,7 +166,7 @@ To tell VS to open Dynamo when debugging, we need to set up the `Start Action` t
 
 It still looks a bit empty in here, let’s add some dummy code so that we can check everything is set up correctly. Add a new class named HelloDynamo.cs, or rename Class1.cs:
 
-```c#
+```csharp
 namespace DynamoWorkshop.ZeroTouch
 {
   public static class HelloDynamo

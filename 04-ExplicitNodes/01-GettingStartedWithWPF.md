@@ -44,7 +44,7 @@ As you see VS has automatically created XAML tags corresponding to these UI elem
 
 Now in the code behind (MainWindow.cs) we can add the following function that will show up a 'MessageBox' with the slider value when the button is clicked:
 
-```c#
+```csharp
 private void Button_Click(object sender, RoutedEventArgs e)
 {
   MessageBox.Show("Value is " + ValueSlider.Value);
