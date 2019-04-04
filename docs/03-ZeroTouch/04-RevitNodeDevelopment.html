@@ -1,0 +1,706 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.4 - Revit Node Development · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="05-Conclusion.html" />
+    
+    
+    <link rel="prev" href="03-DynamoNodeDevelopment.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                <a href="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                    
+                    0 - Development in Dynamo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../01-CustomNodes/00-Introduction.html">
+            
+                <a href="../01-CustomNodes/00-Introduction.html">
+            
+                    
+                    1 - Custom Nested Nodes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../02-PythonScript/00-Introduction.html">
+            
+                <a href="../02-PythonScript/00-Introduction.html">
+            
+                    
+                    2 - Python Scripts
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../02-PythonScript/01-DynamoInteraction.html">
+            
+                <a href="../02-PythonScript/01-DynamoInteraction.html">
+            
+                    
+                    2.1 - Interaction with Dynamo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="00-Introduction.html">
+            
+                <a href="00-Introduction.html">
+            
+                    
+                    3 - ZeroTouch Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="01-Setup.html">
+            
+                <a href="01-Setup.html">
+            
+                    
+                    3.1 - Visual Studio Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="02-ZeroTouchMapping.html">
+            
+                <a href="02-ZeroTouchMapping.html">
+            
+                    
+                    3.2 - Zero Touch Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="03-DynamoNodeDevelopment.html">
+            
+                <a href="03-DynamoNodeDevelopment.html">
+            
+                    
+                    3.3 - Dynamo Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="04-RevitNodeDevelopment.html">
+            
+                <a href="04-RevitNodeDevelopment.html">
+            
+                    
+                    3.4 - Revit Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="05-Conclusion.html">
+            
+                <a href="05-Conclusion.html">
+            
+                    
+                    3.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../04-ExplicitNodes/00-Introduction.html">
+            
+                <a href="../04-ExplicitNodes/00-Introduction.html">
+            
+                    
+                    4 - Explicit Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../04-ExplicitNodes/01-GettingStartedWithWPF.html">
+            
+                <a href="../04-ExplicitNodes/01-GettingStartedWithWPF.html">
+            
+                    
+                    4.1 - Getting started with WPF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../04-ExplicitNodes/02-Interfaces.html">
+            
+                <a href="../04-ExplicitNodes/02-Interfaces.html">
+            
+                    
+                    4.2 - Explicit Node Interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../04-ExplicitNodes/03-Functions.html">
+            
+                <a href="../04-ExplicitNodes/03-Functions.html">
+            
+                    
+                    4.3 - Explicit Node Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../04-ExplicitNodes/04-PublishNodesToPM.html">
+            
+                <a href="../04-ExplicitNodes/04-PublishNodesToPM.html">
+            
+                    
+                    4.4 - Publishing to the Package Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../04-ExplicitNodes/05-Conclusion.html">
+            
+                <a href="../04-ExplicitNodes/05-Conclusion.html">
+            
+                    
+                    4.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.4 - Revit Node Development</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="4---revit-node-development">4 - Revit Node Development<!-- omit in toc --></h1>
+<p>Everything covered so far will run smoothly in Dynamo Sandbox and it&apos;s great to use it to get started developing nodes, but soon enough you&apos;ll want to be interacting with Revit elements too. A great feature of zero touch nodes is that they&apos;ll let you use the Revit and Dynamo API at the same time! This might be a bit confusing at first, but we&apos;ll see soon how to do that and the <a href="http://www.revitapidocs.com/" target="_blank">revitapidocs</a> website is great to get familiar with the Revit API. </p>
+<p>The Revit elements you access inside of Dynamo are not the native ones, but are <em>wrappers</em> around them, we&apos;ll also see more in detail what this means.</p>
+<ul>
+<li><a href="#references">References</a></li>
+<li><a href="#code-example-1---getwallbaseline">Code Example 1 - GetWallBaseline</a></li>
+<li><a href="#wrapping-unwrapping-and-converting">Wrapping, Unwrapping and Converting</a><ul>
+<li><a href="#from-revit-to-dynamo">From Revit to Dynamo</a></li>
+<li><a href="#from-dynamo-to-revit">From Dynamo to Revit</a></li>
+</ul>
+</li>
+<li><a href="#code-example-2---texttowalls">Code Example 2 - TextToWalls</a></li>
+</ul>
+<h2 id="references">References</h2>
+<p>We need to add 3 more references manually, as these don&apos;t come as NuGet packages.</p>
+<p>In your VisualStudio project, right click on <code>References</code> &gt; <code>Add Reference</code> &gt; <code>Browse</code>...</p>
+<p><img src="assets/1501862943817.png" alt="1501862943817"></p>
+<p>Browse and add the following DLLs, the first to the Revit API:</p>
+<p><code>C:\Program Files\Autodesk\Revit 2019\RevitAPI.dll</code></p>
+<p>Then to the Dynamo Revit Nodes and Services</p>
+<p><code>C:\Program Files\Dynamo\Dynamo Revit\2.0\Revit_2018\RevitNodes.dll</code></p>
+<p><code>C:\Program Files\Dynamo\Dynamo Revit\2.0\Revit_2018\RevitServices.dll</code></p>
+<p>Again, remember to select these newly added references and to set <em>Copy Local</em> to <em>False</em>.</p>
+<p><img src="assets/1501863170154.png" alt="1502201542252"></p>
+<p>As mentioned earlier, since now we&apos;ll be building and debugging for Revit, you now need to update your <a href="#Start-Action-and-Build-Events">start action and build events</a>.</p>
+<blockquote>
+<p><strong>Note:</strong>
+The Revit API libraries (dlls) are guaranteed to be valid for use only with the version of Revit they came with. This means that if you reference the <code>RevitAPI.dll</code> file from your Revit 2019 installation, your nodes will work with Revit 2019, might work with later versions (2019, etc) and will probably not work with older versions (2017). Targeting multiple versions of Revit is doable however, see <a href="http://archi-lab.net/how-to-maintain-revit-plug-ins-for-multiple-versions/" target="_blank">Konrad&apos;s excellent tutorial</a> for more information.</p>
+</blockquote>
+<h2 id="code-example-1---getwallbaseline">Code Example 1 - GetWallBaseline</h2>
+<p>In this example, we&apos;ll write a node that takes in a Revit wall and outputs its baseline as a Dynamo curve.</p>
+<p>Let&apos;s create a new <code>public static class</code> named <code>HelloRevit</code>. We will need to add the following directives corresponding to the new references:</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> Autodesk.Revit.DB;
+<span class="hljs-keyword">using</span> Revit.Elements;
+<span class="hljs-keyword">using</span> RevitServices.Persistence;
+</code></pre>
+<p>If now you create a new method that uses the <code>Wall</code> object, for instance, you&apos;ll see the following error:</p>
+<p><img src="assets/1502277935072.png" alt="1502277935072"></p>
+<p>Visual Studio, isn&apos;t sure if we mean a native Revit wall or a Dynamo wall. We can fix that by typing the full namespace as:</p>
+<p><img src="assets/1502278037199.png" alt="1502278037199"></p>
+<p>Let&apos;s now explore how we can write a node that takes in some Walls and outputs their baseline curves. Write a new function:</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Autodesk.DesignScript.Geometry.<span class="hljs-function">Curve <span class="hljs-title">GetWallBaseline</span>(<span class="hljs-params">Revit.Elements.Wall wall</span>)
+</span>{
+  <span class="hljs-comment">//get Revit Wall element from the Dynamo-wrapped object</span>
+  <span class="hljs-keyword">var</span> revitWall = wall.InternalElement;
+  <span class="hljs-comment">//get the location curve of the wall using the Revit API</span>
+  <span class="hljs-keyword">var</span> locationCurve =  revitWall.Location <span class="hljs-keyword">as</span> LocationCurve;
+  <span class="hljs-comment">//convert the curve to Dynamo and return it</span>
+  <span class="hljs-keyword">return</span> locationCurve.Curve.ToProtoType();
+}
+</code></pre>
+<p>This isn&apos;t too exciting, but hey, you wrote your first ZTN for Revit! The code also shows us how to <em>unwrap</em> a Dynamo wall to get the native Revit one, and how to <em>convert</em> a Revit curve into a Dynamo one, a fundamental part of zero touch nodes.</p>
+<h2 id="wrapping-unwrapping-and-converting">Wrapping, Unwrapping and Converting</h2>
+<p>The following lists show some of the most common extension methods that you might need, they take care of conversion of Revit elements and geometry to Dynamo ones and vice-versa.</p>
+<p>You can find these extension methods in the <code>RevitNodes.dll</code> assembly that comes with every Dynamo installation. Again, this will be versioned due to Revit&apos;s API, so look for it in the folder below, adjusting for your version of Revit &amp; Dynamo :
+<code>C:\Program Files\Dynamo\Dynamo Revit\2.0\Revit_2018\RevitNodes.dll</code></p>
+<h3 id="from-revit-to-dynamo">From Revit to Dynamo</h3>
+<pre><code class="lang-csharp"><span class="hljs-comment">//Elements</span>
+Element.ToDSType(<span class="hljs-keyword">bool</span>); <span class="hljs-comment">//true if it&apos;s an element generated by Revit</span>
+<span class="hljs-comment">//Geometry</span>
+XYZ.ToPoint() &gt; Point
+XYZ.ToVector() &gt; Vector
+Point.ToProtoType() &gt; Point
+List&lt;XYZ&gt;.ToPoints() &gt; List&lt;Point&gt;
+UV.ToProtoType() &gt; UV
+Curve.ToProtoType() &gt; Curve
+CurveArray.ToProtoType() &gt; PolyCurve
+PolyLine.ToProtoType() &gt; PolyCurve
+Plane.ToPlane() &gt; Plane
+Solid.ToProtoType() &gt; Solid
+Mesh.ToProtoType() &gt; Mesh
+IEnumerable&lt;Mesh&gt;.ToProtoType() &gt; Mesh[]
+Face.ToProtoType() &gt; IEnumerable&lt;Surface&gt;
+Transform.ToCoordinateSystem() &gt; CoordinateSystem
+BoundingBoxXYZ.ToProtoType() &gt; BoundingBox
+</code></pre>
+<h3 id="from-dynamo-to-revit">From Dynamo to Revit</h3>
+<pre><code class="lang-csharp"><span class="hljs-comment">//Elements</span>
+Element.InternalElement
+<span class="hljs-comment">//Geometry</span>
+Point.ToRevitType() &gt; XYZ
+Vector.ToRevitType() &gt; XYZ
+Plane.ToPlane() &gt; Plane
+List&lt;Point&gt;.ToXyzs() &gt; List&lt;XYZ&gt;
+Curve.ToRevitType() &gt; Curve
+PolyCurve.ToRevitType() &gt; CurveLoop
+Surface.ToRevitType() &gt; IList&lt;GeometryObject&gt;
+Solid.ToRevitType() &gt; IList&lt;GeometryObject&gt;
+Mesh.ToRevitType() &gt; IList&lt;GeometryObject&gt;
+CoordinateSystem.ToTransform() &gt; Transform
+CoordinateSystem.ToRevitBoundingBox() &gt; BoundingBoxXYZ
+BoundingBox.ToRevitType() &gt; BoundingBoxXYZ
+</code></pre>
+<h2 id="code-example-2---texttowalls">Code Example 2 - TextToWalls</h2>
+<p>We&apos;re now going to do something more complex, we will write a custom node that takes in a string, converts the text shape into lines and uses those lines to place walls.</p>
+<p>Create a new <code>TextUtils</code> class as below:</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> System.Linq;
+<span class="hljs-keyword">using</span> Autodesk.DesignScript.Runtime;
+<span class="hljs-keyword">using</span> Autodesk.DesignScript.Geometry;
+<span class="hljs-keyword">using</span> System.Drawing;
+<span class="hljs-keyword">using</span> System.Drawing.Drawing2D;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DynamoWorkshop.ZeroTouch</span>
+{
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">TextUtils</span>
+  {
+    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span>
+    <span class="hljs-comment"><span class="hljs-doctag">///</span> Converts a string into a list of segments</span>
+    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span>
+    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name=&quot;text&quot;&gt;</span>String to convert<span class="hljs-doctag">&lt;/param&gt;</span></span>
+    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name=&quot;size&quot;&gt;</span>Text size<span class="hljs-doctag">&lt;/param&gt;</span></span>
+    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;returns&gt;</span><span class="hljs-doctag">&lt;/returns&gt;</span></span>
+    [IsVisibleInDynamoLibrary(<span class="hljs-keyword">false</span>)] <span class="hljs-comment">// this attribute will prevent this method from showing up in Dynamo as a node</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> IEnumerable&lt;Line&gt; <span class="hljs-title">TextToLines</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> text, <span class="hljs-keyword">int</span> size</span>)
+    </span>{
+      List&lt;Line&gt; lines = <span class="hljs-keyword">new</span> List&lt;Line&gt;();
+
+      <span class="hljs-comment">//using System.Drawing for the conversion to font points</span>
+      <span class="hljs-keyword">using</span> (Font font = <span class="hljs-keyword">new</span> System.Drawing.Font(<span class="hljs-string">&quot;Arial&quot;</span>, size, FontStyle.Regular))
+      <span class="hljs-keyword">using</span> (GraphicsPath gp = <span class="hljs-keyword">new</span> GraphicsPath())
+      <span class="hljs-keyword">using</span> (StringFormat sf = <span class="hljs-keyword">new</span> StringFormat())
+      {
+        sf.Alignment = StringAlignment.Center;
+        sf.LineAlignment = StringAlignment.Center;
+
+        gp.AddString(text, font.FontFamily, (<span class="hljs-keyword">int</span>)font.Style, font.Size, <span class="hljs-keyword">new</span> PointF(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), sf);
+
+        <span class="hljs-comment">//convert font points to Dynamo points</span>
+        <span class="hljs-keyword">var</span> points = gp.PathPoints.Select(p =&gt; Autodesk.DesignScript.Geometry.Point.ByCoordinates(p.X, -p.Y, <span class="hljs-number">0</span>)).ToList();
+        <span class="hljs-keyword">var</span> types = gp.PathTypes;
+
+        Autodesk.DesignScript.Geometry.Point start = <span class="hljs-keyword">null</span>;
+        <span class="hljs-comment">//create lines</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; types.Count(); i++)
+        {
+          <span class="hljs-comment">//Types:</span>
+          <span class="hljs-comment">//0 start of a shape</span>
+          <span class="hljs-comment">//1 point in line</span>
+          <span class="hljs-comment">//3 point in curve</span>
+          <span class="hljs-comment">//129 partial line end</span>
+          <span class="hljs-comment">//131 partial curve end</span>
+          <span class="hljs-comment">//161 end of line</span>
+          <span class="hljs-comment">//163 end of curve</span>
+          <span class="hljs-keyword">if</span> (types[i] == <span class="hljs-number">0</span>)
+          {
+            start = points[i];
+          }
+          <span class="hljs-comment">//some letters need to be closed other no</span>
+          <span class="hljs-keyword">if</span> (types[i] &gt; <span class="hljs-number">100</span>)
+          {
+            <span class="hljs-keyword">if</span> (!points[i].IsAlmostEqualTo(start))
+            {
+              lines.Add(Line.ByStartPointEndPoint(points[i], start));
+            }
+          }
+          <span class="hljs-keyword">else</span>
+          {
+            lines.Add(Line.ByStartPointEndPoint(points[i], points[i + <span class="hljs-number">1</span>]));
+          }
+        }
+        <span class="hljs-comment">//dispose points</span>
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> point <span class="hljs-keyword">in</span> points)
+        {
+          point.Dispose();
+        }
+        <span class="hljs-keyword">return</span> lines;
+      }
+    }
+  }
+}
+</code></pre>
+<p>We don&apos;t need to get into detail, this class simply converts a string text into lines, note the <code>[IsVisibleInDynamoLibrary(false)]</code> attribute that prevents it from showing up in Dynamo. For it to work you need to add a reference to <code>System.Drawing</code> in References &gt; Add Reference... &gt; Assemblies &gt; Framework.</p>
+<p><img src="assets/1502715934084.png" alt="1502715934084"></p>
+<p>Now we need to add a few more things to our class.</p>
+<p>First, we add a <code>Document</code> member, which uses the Revit API to get a reference to the currently open document (<code>.rvt</code> file) inside Revit. Remember, collecting &amp; creating elements always happens in the context of a Revit document.</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">internal</span> <span class="hljs-keyword">static</span> Autodesk.Revit.DB.Document Document
+{
+  <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> DocumentManager.Instance.CurrentDBDocument; }
+}
+</code></pre>
+<p>Now add a new <code>SayHello</code> method to the <code>HelloRevit</code> class, which will take a string, a wall height, a level, a wall type and an optional font size.</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> IEnumerable&lt;Revit.Elements.Wall&gt; SayHello(<span class="hljs-keyword">string</span> text, <span class="hljs-keyword">double</span> height, Revit.Elements.Level level, Revit.Elements.WallType wallType, <span class="hljs-keyword">int</span> fontSize = <span class="hljs-number">25</span>)
+{
+
+}
+</code></pre>
+<p>Before proceeding we need to make sure some of these input arguments are valid:</p>
+<pre><code class="lang-csharp">  <span class="hljs-keyword">if</span> (level == <span class="hljs-keyword">null</span>)
+  {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ArgumentNullException(<span class="hljs-string">&quot;level&quot;</span>);
+  }
+
+  <span class="hljs-keyword">if</span> (wallType == <span class="hljs-keyword">null</span>)
+  {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ArgumentNullException(<span class="hljs-string">&quot;wallType&quot;</span>);
+  }
+</code></pre>
+<p>Then we can call our utility method to generate the lines from the text with:</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">var</span> lines = TextUtils.TextToLines(text, fontSize);
+</code></pre>
+<p>Now, you&apos;d be very tempted to write something like the loop below, using the Dynamo API for generating new walls, but beware! Because of an intrinsic mechanism called <em>element binding</em> (that can&apos;t be turned off), the loop would only return a single element.  The right way to loop and generate multiple elements is using the Revit API.</p>
+<p>Dynamo API (wrong method):</p>
+<pre><code class="lang-csharp">  <span class="hljs-keyword">var</span> walls = <span class="hljs-keyword">new</span> List&lt;Revit.Elements.Wall&gt;();
+  <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> curve <span class="hljs-keyword">in</span> lines)
+  {      
+      walls.Add(Revit.Elements.Wall.ByCurveAndHeight(curve, height, level, wallType));
+  }
+</code></pre>
+<p>Revit API (right method):</p>
+<pre><code class="lang-csharp">  <span class="hljs-keyword">var</span> walls = <span class="hljs-keyword">new</span> List&lt;Revit.Elements.Wall&gt;();
+  <span class="hljs-comment">//elements creation and modification has to be inside of a transaction</span>
+  TransactionManager.Instance.EnsureInTransaction(Document);
+  <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> curve <span class="hljs-keyword">in</span> lines)
+  {
+    <span class="hljs-comment">// use the Revit Wall.Create API to make a new wall element</span>
+      <span class="hljs-keyword">var</span> wall = Autodesk.Revit.DB.Wall.Create(
+        Document, <span class="hljs-comment">// note the required reference to the Revid Document</span>
+        curve.ToRevitType(), <span class="hljs-comment">// also note we need to convert Dynamo curves to Revit types</span>
+        wallType.InternalElement.Id, <span class="hljs-comment">// Revit elements returned from Dynamo are wrapped, so we need to access the internal element directly</span>
+        level.InternalElement.Id, 
+        height, 
+        <span class="hljs-number">0.0</span>, 
+        <span class="hljs-keyword">false</span>, 
+        <span class="hljs-keyword">false</span>);
+      walls.Add(wall.ToDSType(<span class="hljs-keyword">false</span>) <span class="hljs-keyword">as</span> Revit.Elements.Wall); <span class="hljs-comment">// notice we need to wrap Revit elements back so they can be used in Dynamo</span>
+  }
+</code></pre>
+<p>Whenever you are using the Revit API to create or modify elements, these methods need to be wrapped inside a transaction. This is handled automatically when calling Dynamo methods.</p>
+<p>After this, the last code example is complete, you can now debug the project and see the node in action, mind to use the right units for <em>height</em> and <em>size</em>, as in my case where the project is in meters:</p>
+<p><img src="assets/1510609206559.png" alt="1510609206559"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03-DynamoNodeDevelopment.html" class="navigation navigation-prev " aria-label="Previous page: 3.3 - Dynamo Node Development">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="05-Conclusion.html" class="navigation navigation-next " aria-label="Next page: 3.5 - Conclusions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.4 - Revit Node Development","level":"1.5.4","depth":2,"next":{"title":"3.5 - Conclusions","level":"1.5.5","depth":2,"path":"03-ZeroTouch/05-Conclusion.md","ref":"./03-ZeroTouch/05-Conclusion.md","articles":[]},"previous":{"title":"3.3 - Dynamo Node Development","level":"1.5.3","depth":2,"path":"03-ZeroTouch/03-DynamoNodeDevelopment.md","ref":"./03-ZeroTouch/03-DynamoNodeDevelopment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Intro.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"03-ZeroTouch/04-RevitNodeDevelopment.md","mtime":"2019-04-04T07:25:39.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-04T07:46:14.562Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

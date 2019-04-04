@@ -1,0 +1,648 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.2 - Explicit Node Interfaces · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-Functions.html" />
+    
+    
+    <link rel="prev" href="01-GettingStartedWithWPF.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                <a href="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                    
+                    0 - Development in Dynamo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../01-CustomNodes/00-Introduction.html">
+            
+                <a href="../01-CustomNodes/00-Introduction.html">
+            
+                    
+                    1 - Custom Nested Nodes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../02-PythonScript/00-Introduction.html">
+            
+                <a href="../02-PythonScript/00-Introduction.html">
+            
+                    
+                    2 - Python Scripts
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../02-PythonScript/01-DynamoInteraction.html">
+            
+                <a href="../02-PythonScript/01-DynamoInteraction.html">
+            
+                    
+                    2.1 - Interaction with Dynamo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../03-ZeroTouch/00-Introduction.html">
+            
+                <a href="../03-ZeroTouch/00-Introduction.html">
+            
+                    
+                    3 - ZeroTouch Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../03-ZeroTouch/01-Setup.html">
+            
+                <a href="../03-ZeroTouch/01-Setup.html">
+            
+                    
+                    3.1 - Visual Studio Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../03-ZeroTouch/02-ZeroTouchMapping.html">
+            
+                <a href="../03-ZeroTouch/02-ZeroTouchMapping.html">
+            
+                    
+                    3.2 - Zero Touch Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../03-ZeroTouch/03-DynamoNodeDevelopment.html">
+            
+                <a href="../03-ZeroTouch/03-DynamoNodeDevelopment.html">
+            
+                    
+                    3.3 - Dynamo Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../03-ZeroTouch/04-RevitNodeDevelopment.html">
+            
+                <a href="../03-ZeroTouch/04-RevitNodeDevelopment.html">
+            
+                    
+                    3.4 - Revit Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../03-ZeroTouch/05-Conclusion.html">
+            
+                <a href="../03-ZeroTouch/05-Conclusion.html">
+            
+                    
+                    3.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="00-Introduction.html">
+            
+                <a href="00-Introduction.html">
+            
+                    
+                    4 - Explicit Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="01-GettingStartedWithWPF.html">
+            
+                <a href="01-GettingStartedWithWPF.html">
+            
+                    
+                    4.1 - Getting started with WPF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="02-Interfaces.html">
+            
+                <a href="02-Interfaces.html">
+            
+                    
+                    4.2 - Explicit Node Interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="03-Functions.html">
+            
+                <a href="03-Functions.html">
+            
+                    
+                    4.3 - Explicit Node Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="04-PublishNodesToPM.html">
+            
+                <a href="04-PublishNodesToPM.html">
+            
+                    
+                    4.4 - Publishing to the Package Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="05-Conclusion.html">
+            
+                <a href="05-Conclusion.html">
+            
+                    
+                    4.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.2 - Explicit Node Interfaces</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2---explicit-node-interfaces">2 - Explicit Node Interfaces<!-- omit in toc --></h1>
+<p>Let&apos;s now see how to use our User Control inside a custom UI node. Open the empty project inside <code>2 - ExplicitNode Start</code>, this was set up in the same way we did in the previous lab, the only additional dependency, which can be installed via NuGet, is the WpfUILibrary:</p>
+<p><img src="assets/DE81C792-8E23-4968-BFE9-6462BB3FFAFF.png" alt="DE81C792-8E23-4968-BFE9-6462BB3FFAFF"></p>
+<ul>
+<li><a href="#the-nodemodel-interface">The NodeModel interface</a></li>
+<li><a href="#the-custom-ui">The Custom UI</a></li>
+<li><a href="#the-inodeviewcustomization-interface">The INodeViewCustomization Interface</a></li>
+</ul>
+<h2 id="the-nodemodel-interface">The NodeModel interface</h2>
+<p>Custom UI nodes implement the NodeModel <strong>interface</strong>, the same way native nodes do. An interface is like an abstract base class, any class that implements the interface must implement all its members. Basically you&apos;ll just have to add  <code>:NodeModel</code> after the class name, and have certain functions in your class.</p>
+<p>Create a new class named <code>HelloUI.cs</code>, then add the interface, directives and attributes as below:</p>
+<pre><code class="lang-csharp"><span class="hljs-comment">/* dynamo directives */</span>
+<span class="hljs-keyword">using</span> Dynamo.Graph.Nodes;
+<span class="hljs-keyword">using</span> Newtonsoft.Json;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DynamoWorkshop.ExplicitNode</span>
+{
+  [NodeName(<span class="hljs-string">&quot;HelloUI&quot;</span>)]
+  [NodeDescription(<span class="hljs-string">&quot;Sample Explicit Node&quot;</span>)]
+  [NodeCategory(<span class="hljs-string">&quot;DynamoWorkshop.Explicit Node&quot;</span>)]
+  [IsDesignScriptCompatible]
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">HelloUI</span> : <span class="hljs-title">NodeModel</span>
+  {
+    <span class="hljs-comment">//Json Constructor for Dynamo 2.0 nodes</span>
+    [JsonConstructor]
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">HelloUI</span>(<span class="hljs-params">IEnumerable&lt;PortModel&gt; inPorts, IEnumerable&lt;PortModel&gt; outPorts</span>) : <span class="hljs-title">base</span>(<span class="hljs-params">inPorts, outPorts</span>)
+    </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HelloUI</span>(<span class="hljs-params"></span>)
+    </span>{
+
+    }
+  }
+}
+</code></pre>
+<p>As you can see in Dynamo 2.0 there are 2 constructors:  the original parameterless constructor is used to initialize a new nodes created within Dynamo (via the library for example). The JSON constructor is required to initialize a node that is deserialized <em>(loaded)</em> from a saved .dyn or .dyf file. </p>
+<p>More on JSON constructors can be found here: <a href="https://github.com/DynamoDS/Dynamo/wiki/Update-Packages-from-1.3-to-2.0#json-constructors" target="_blank">github.com/DynamoDS/Dynamo/wiki/Update-Packages-from-1.3-to-2.0</a></p>
+<p>In explicit nodes there is no need for a <code>_DynamoCustomization.xml</code> file, as the attributes on top of our class will define its category, name &amp; whether it&apos;s usable in code blocks.</p>
+<h2 id="the-custom-ui">The Custom UI</h2>
+<p>We have seen in the previous chapter how to create a WPF control, we&apos;ll now create a similar one that the node will use as UI.</p>
+<p>Create a new UserControl <code>ColorSelector.xaml</code> with the code below:</p>
+<pre><code class="lang-csharp">&lt;UserControl
+  x:Class=<span class="hljs-string">&quot;DynamoWorkshop.ExplicitNode.ColorSelector&quot;</span>
+  xmlns=<span class="hljs-string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>
+  xmlns:x=<span class="hljs-string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>
+  xmlns:d=<span class="hljs-string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span>
+  xmlns:local=<span class="hljs-string">&quot;clr-namespace:DynamoWorkshop.ExplicitNode&quot;</span>
+  xmlns:mc=<span class="hljs-string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span>
+  mc:Ignorable=<span class="hljs-string">&quot;d&quot;</span>&gt;
+  &lt;Grid Margin=<span class="hljs-string">&quot;10&quot;</span>&gt;
+    &lt;Grid.RowDefinitions&gt;
+      &lt;RowDefinition Height=<span class="hljs-string">&quot;Auto&quot;</span> /&gt;
+      &lt;RowDefinition Height=<span class="hljs-string">&quot;Auto&quot;</span> /&gt;
+      &lt;RowDefinition Height=<span class="hljs-string">&quot;Auto&quot;</span> /&gt;
+      &lt;RowDefinition Height=<span class="hljs-string">&quot;Auto&quot;</span> /&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;Grid.ColumnDefinitions&gt;
+      &lt;ColumnDefinition Width=<span class="hljs-string">&quot;Auto&quot;</span> /&gt;
+      &lt;ColumnDefinition Width=<span class="hljs-string">&quot;Auto&quot;</span> /&gt;
+    &lt;/Grid.ColumnDefinitions&gt;
+    &lt;Label
+      Grid.Row=<span class="hljs-string">&quot;0&quot;</span>
+      Grid.Column=<span class="hljs-string">&quot;0&quot;</span>
+      Content=<span class="hljs-string">&quot;Alpha:&quot;</span> /&gt;
+    &lt;Label
+      Grid.Row=<span class="hljs-string">&quot;1&quot;</span>
+      Grid.Column=<span class="hljs-string">&quot;0&quot;</span>
+      Content=<span class="hljs-string">&quot;Red:&quot;</span> /&gt;
+    &lt;Label
+      Grid.Row=<span class="hljs-string">&quot;2&quot;</span>
+      Grid.Column=<span class="hljs-string">&quot;0&quot;</span>
+      Content=<span class="hljs-string">&quot;Green:&quot;</span> /&gt;
+    &lt;Label
+      Grid.Row=<span class="hljs-string">&quot;3&quot;</span>
+      Grid.Column=<span class="hljs-string">&quot;0&quot;</span>
+      Content=<span class="hljs-string">&quot;Blue:&quot;</span> /&gt;
+    &lt;Slider
+      Name=<span class="hljs-string">&quot;SliderA&quot;</span>
+      Grid.Row=<span class="hljs-string">&quot;0&quot;</span>
+      Grid.Column=<span class="hljs-string">&quot;1&quot;</span>
+      Width=<span class="hljs-string">&quot;100&quot;</span>
+      Margin=<span class="hljs-string">&quot;5&quot;</span>
+      HorizontalAlignment=<span class="hljs-string">&quot;Left&quot;</span>
+      VerticalAlignment=<span class="hljs-string">&quot;Top&quot;</span>
+      IsSnapToTickEnabled=<span class="hljs-string">&quot;True&quot;</span>
+      Maximum=<span class="hljs-string">&quot;255&quot;</span>
+      Minimum=<span class="hljs-string">&quot;0&quot;</span>
+      TickFrequency=<span class="hljs-string">&quot;1&quot;</span>
+      Value=<span class="hljs-string">&quot;{Binding SliderValueA}&quot;</span> /&gt;
+    &lt;Slider
+      Name=<span class="hljs-string">&quot;SliderR&quot;</span>
+      Grid.Row=<span class="hljs-string">&quot;1&quot;</span>
+      Grid.Column=<span class="hljs-string">&quot;1&quot;</span>
+      Width=<span class="hljs-string">&quot;100&quot;</span>
+      Margin=<span class="hljs-string">&quot;5&quot;</span>
+      HorizontalAlignment=<span class="hljs-string">&quot;Left&quot;</span>
+      VerticalAlignment=<span class="hljs-string">&quot;Top&quot;</span>
+      IsSnapToTickEnabled=<span class="hljs-string">&quot;True&quot;</span>
+      Maximum=<span class="hljs-string">&quot;255&quot;</span>
+      Minimum=<span class="hljs-string">&quot;0&quot;</span>
+      TickFrequency=<span class="hljs-string">&quot;1&quot;</span>
+      Value=<span class="hljs-string">&quot;{Binding SliderValueR}&quot;</span> /&gt;
+    &lt;Slider
+      Name=<span class="hljs-string">&quot;SliderG&quot;</span>
+      Grid.Row=<span class="hljs-string">&quot;2&quot;</span>
+      Grid.Column=<span class="hljs-string">&quot;1&quot;</span>
+      Width=<span class="hljs-string">&quot;100&quot;</span>
+      Margin=<span class="hljs-string">&quot;5&quot;</span>
+      HorizontalAlignment=<span class="hljs-string">&quot;Left&quot;</span>
+      VerticalAlignment=<span class="hljs-string">&quot;Top&quot;</span>
+      IsSnapToTickEnabled=<span class="hljs-string">&quot;True&quot;</span>
+      Maximum=<span class="hljs-string">&quot;255&quot;</span>
+      Minimum=<span class="hljs-string">&quot;0&quot;</span>
+      TickFrequency=<span class="hljs-string">&quot;1&quot;</span>
+      Value=<span class="hljs-string">&quot;{Binding SliderValueG}&quot;</span> /&gt;
+    &lt;Slider
+      Name=<span class="hljs-string">&quot;SliderB&quot;</span>
+      Grid.Row=<span class="hljs-string">&quot;3&quot;</span>
+      Grid.Column=<span class="hljs-string">&quot;1&quot;</span>
+      Width=<span class="hljs-string">&quot;100&quot;</span>
+      Margin=<span class="hljs-string">&quot;5&quot;</span>
+      HorizontalAlignment=<span class="hljs-string">&quot;Left&quot;</span>
+      VerticalAlignment=<span class="hljs-string">&quot;Top&quot;</span>
+      IsSnapToTickEnabled=<span class="hljs-string">&quot;True&quot;</span>
+      Maximum=<span class="hljs-string">&quot;255&quot;</span>
+      Minimum=<span class="hljs-string">&quot;0&quot;</span>
+      TickFrequency=<span class="hljs-string">&quot;1&quot;</span>
+      Value=<span class="hljs-string">&quot;{Binding SliderValueB}&quot;</span> /&gt;
+  &lt;/Grid&gt;
+&lt;/UserControl&gt;
+</code></pre>
+<p>As you can see from the preview, it&apos;s just a grid with 4 sliders.</p>
+<p><img src="assets/1531852850948.png" alt="1531852850948"></p>
+<h2 id="the-inodeviewcustomization-interface">The INodeViewCustomization Interface</h2>
+<p>Since our node has a custom UI, we need to create another class which implements the INodeViewCustomization interface. Create a new class named <code>HelloUINodeView.cs</code> and add:</p>
+<pre><code class="lang-csharp">/* dynamo directives */
+using Dynamo.Controls;
+using Dynamo.ViewModels;
+using Dynamo.Wpf;
+
+namespace DynamoWorkshop.ExplicitNode
+{
+  public class HelloUINodeView : INodeViewCustomization&lt;HelloUI&gt;
+  {
+    private DynamoViewModel dynamoViewModel;
+    private HelloUI helloUiNode;
+
+    public void CustomizeView(HelloUI model, NodeView nodeView)
+    {
+      dynamoViewModel = nodeView.ViewModel.DynamoViewModel;
+      helloUiNode = model;
+      var ui = new ColorSelector();
+      nodeView.inputGrid.Children.Add(ui);
+      ui.DataContext = model;
+    }
+
+    public void Dispose()
+    {
+    }
+  }
+}
+</code></pre>
+<p>The code above is very important:</p>
+<ul>
+<li><code>nodeView.inputGrid.Children.Add(ui);</code> is adding our custom control to the node UI</li>
+<li><code>ui.DataContext = model;</code> is binding our HelloUI class as view model of the custom UI</li>
+<li>we are not using the <code>dynamoViewModel</code> but it&apos;s really powerful as it&apos;s the view model of the entire Dynamo application</li>
+</ul>
+<p>If you debug, you&apos;ll see the node with the user control embedded, behaving as before, but without any input or output port.</p>
+<p> If you&apos;ve missed any step you can find this completed part in the folder <code>3 - ExplicitNode Interfaces</code>.</p>
+<p><img src="assets/1531853018374.png" alt="1531853018374"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-GettingStartedWithWPF.html" class="navigation navigation-prev " aria-label="Previous page: 4.1 - Getting started with WPF">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-Functions.html" class="navigation navigation-next " aria-label="Next page: 4.3 - Explicit Node Functions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.2 - Explicit Node Interfaces","level":"1.6.2","depth":2,"next":{"title":"4.3 - Explicit Node Functions","level":"1.6.3","depth":2,"path":"04-ExplicitNodes/03-Functions.md","ref":"./04-ExplicitNodes/03-Functions.md","articles":[]},"previous":{"title":"4.1 - Getting started with WPF","level":"1.6.1","depth":2,"path":"04-ExplicitNodes/01-GettingStartedWithWPF.md","ref":"./04-ExplicitNodes/01-GettingStartedWithWPF.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Intro.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"04-ExplicitNodes/02-Interfaces.md","mtime":"2019-04-04T07:25:39.576Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-04T07:46:14.562Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
