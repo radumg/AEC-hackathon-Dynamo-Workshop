@@ -2,7 +2,7 @@
 
 Dynamo is one of the tools on the AEC that has gained attraction in a very short time for multiple reasons, like its open-source nature, easy to use and its ability to enhance Revit functionality.
 
-Apart from the general *out of the box* use, Dynamo allows us to extend and improve existing functionality, or even add our own custom tools. These can be done through different methods, varying in difficulty.  
+Apart from the general *out of the box* use, Dynamo allows us to extend and improve existing functionality, or even add our own custom tools. This can be done through different methods, varying in difficulty.  
 
 ### Advantages
 

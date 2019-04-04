@@ -6,7 +6,7 @@ This is easiest method to create custom functionality in Dynamo that can be shar
 
 A **Custom Nested Node** (CNN) is nothing more than grouped *OOTB* (out of the box) nodes or even nodes from other packages.
 
-This CNN are saved as files with **.dyf** extension.
+These **CNN** are saved as files with **.dyf** extension.
 
 - [Create](#create)
   - [From Scratch](#from-scratch)
@@ -45,6 +45,6 @@ This is achieved by adding the `Input` and `Output` components, only available w
 ![Ports](assets/03-PortsExample.png)
 
 ## Disadvantages
-- For large logics, the overhead will be the same as they are still using Nodes.
+- For large logics, the computational overhead will be the same as they are still using Nodes.
 - Difficult to debug.
 - When sharing a graph using a CNN, this **MUST** be shared as well, as otherwise the graph will fail.
