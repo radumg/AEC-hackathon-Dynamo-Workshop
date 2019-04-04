@@ -9,7 +9,10 @@ A Zero Touch Node (ZTN), is a custom node written in C#. A ZTN can be obtained b
 - `public` **methods** will appear as action nodes, identified with a red `⚡` icon
 - `public` **properties** will appear as query nodes, identified with a blue `?` icon
 
-By writing your own ZTN you will benefit from
+## Why should I even bother?
+
+Although it might seem daunting at first in particular if you've never coded in C# or used Visual Studio, by writing your own ZTN you will benefit from:
+
 - The .NET framework
 - A solid IDE (Integrated Development Environment)
 - Debugging tools

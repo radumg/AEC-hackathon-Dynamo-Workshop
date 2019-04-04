@@ -35,15 +35,23 @@ Learn to develop nodes with custom UI in Dynamo using Explicit nodes.
 
 ##  Additional Resources
 
-#### C#
+### Visual Studio Templates
+
+One of the most daunting process if you are not familiar with Visual Studio or C#, is how to setup your environment to seamlessly develop for Dynamo. The [ZeroTouch Nodes > Setup](./03-ZeroTouch/01-Setup.md) chapter goes in detail on how to configure Visual Studio an it is a highly recommended reading.
+
+Although is important to understand how and why Dynamo requires a particular setup for Visual Studio, it would be nuts to do it every time you want ot create a new project or even just a quick test. That's where the [Dynamo Development Starter Kit](https://github.com/alvpickmans/Dynamo-Dev-Starter-Kit) can come in handy. This project is a Visual Studio Extension that adds some Dynamo Project Templates to your environment, so setting a new Dynamo project is just a matter of a couple of clicks to have it up an running.
+
+Go to the [project's repository](https://github.com/alvpickmans/Dynamo-Dev-Starter-Kit) to learn more about it, or download the [latest release](https://github.com/alvpickmans/Dynamo-Dev-Starter-Kit/releases/latest) to install it.
+
+### C Sharp
 * C# Interfaces: https://www.tutorialspoint.com/csharp/csharp_interfaces.htm
 * C# Classes : https://www.tutorialspoint.com/csharp/csharp_classes.htm
 * C# Namespaces: https://www.tutorialspoint.com/csharp/csharp_namespaces.htm
 
-#### WPF
+### WPF
 * WPF Tutorial: https://www.tutorialspoint.com//wpf/index.htm
 
-#### Dynamo & Revit API
+### Dynamo & Revit API
 * [Revit API online documentation](http://www.revitapidocs.com/)
 * Dynamo Primer: [http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html)
 * How to Create Your Own Nodes: [https://github.com/DynamoDS/Dynamo/wiki/How-To-Create-Your-Own-Nodes](https://github.com/DynamoDS/Dynamo/wiki/How-To-Create-Your-Own-Nodes)
