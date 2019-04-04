@@ -1,12 +1,13 @@
 ## Development in Dynamo
 
-In Dynamo it is possible to add custom functionalities using special components, these are called custom nodes. They can be really useful for frequently used routines or for adding completely new and advanced features.
+Dynamo is one of the tools on the AEC that has gained attraction in a very short time for multiple reasons, like its open-source nature, easy to use and its ability to enhance Revit functionality.
+
+Apart from the general *out of the box* use, Dynamo allows us to extend and improve existing functionality, or even add our own custom tools. These can be done through different methods, varying in difficulty.  
 
 ### Advantages
 
 * Simplify the graph, keep it clean and intuitive
 * Reusability
-* Modularity, update all custom nodes of the same type at once
 * Better use of conditional statements (if/then) and looping
 * Add brand new functionalities
 * Integrate with external services/libraries
@@ -17,10 +18,10 @@ In Dynamo it is possible to add custom functionalities using special components,
 
 * Less intuitive than visual programming
 * Hard for novice users/learning curve
-* Some custom nodes require compiling DLLs
-* With great power comes great responsibility, custom nodes are more prone to bugs, memory abuse or crashes
+* Might require the use of and IDE (Integrated Development Environment).
+* With great power comes great responsibility, custom development is more prone to bugs, memory abuse or crashes
 
-### Types of custom nodes
+### Developing Custom Nodes
 
 There are different types of custom nodes, for all levels and uses:
 
