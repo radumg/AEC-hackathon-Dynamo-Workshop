@@ -1,4 +1,4 @@
-# 3 - Explicit Node Functions<!-- omit in toc --> 
+# 4.3 - Explicit Node Functions<!-- omit in toc --> 
 
 In this final part we are going to add more bindings to the UI, add an output port, and have our node return something. 
 

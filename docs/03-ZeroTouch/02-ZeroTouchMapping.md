@@ -1,4 +1,4 @@
-# 2 - ZeroTouch mapping<!-- omit in toc --> 
+# 3.2 - ZeroTouch mapping<!-- omit in toc --> 
 
 As mentioned before, Dynamo will automatically map `public` properties and methods to nodes, so let's see a more applied example of this.
 

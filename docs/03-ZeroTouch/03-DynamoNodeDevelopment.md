@@ -1,4 +1,4 @@
-# 3 - Dynamo Node Development<!-- omit in toc --> 
+# 3.3 - Dynamo Node Development<!-- omit in toc --> 
 
 In this part we will develop a few sample nodes exploring inputs, outputs, Dynamo's geometry and handling error/exceptions. Since we wont't be interacting with Revit just yet, development will target Dynamo Sandbox. Let’s dive straight in and see how to add more complex functionalities to our package.
 

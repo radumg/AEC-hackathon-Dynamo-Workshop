@@ -1,4 +1,4 @@
-# Publishing to the Package Manager
+# 4.4 - Publishing to the Package Manager
 
 Publishing a package to the package manager is a very simple process especially given how we have set up our Visual Studio projects. 
 
