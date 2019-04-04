@@ -3,5 +3,6 @@
   "structure": {
     "readme": "Intro.md",
     "summary": "Summary.md"
-  }
+  },
+  "plugins": ["code"]
 }

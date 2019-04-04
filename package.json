@@ -4,8 +4,8 @@
   "description": "Documentation for the training prior to the DynamoHackathon London 2019",
   "main": "index.js",
   "scripts": {
-    "start": "gitbook serve",
-    "build": "gitbook build . ./docs"
+    "start": "gitbook install && gitbook serve",
+    "build": "gitbook install && gitbook build . ./docs"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/alvpickmans/DynamoHackathon-London-Training/issues"
   },
-  "homepage": "https://github.com/alvpickmans/DynamoHackathon-London-Training#readme"
+  "homepage": "https://github.com/alvpickmans/DynamoHackathon-London-Training#readme",
+  "dependencies": {
+    "gitbook-plugin-code": "^0.1.0"
+  }
 }
