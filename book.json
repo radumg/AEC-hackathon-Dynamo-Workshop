@@ -4,5 +4,10 @@
     "readme": "Intro.md",
     "summary": "Summary.md"
   },
-  "plugins": ["code"]
+  "plugins": ["code", "collapsible-chapters", "github"],
+  "pluginsConfig": {
+    "github": {
+        "url": "https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"
+    }
+}
 }
