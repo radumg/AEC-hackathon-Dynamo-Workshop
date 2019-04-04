@@ -1,4 +1,4 @@
-# 2 - Explicit Node Interfaces<!-- omit in toc --> 
+# 4.2 - Explicit Node Interfaces<!-- omit in toc --> 
 
 Let's now see how to use our User Control inside a custom UI node. Open the empty project inside `2 - ExplicitNode Start`, this was set up in the same way we did in the previous lab, the only additional dependency, which can be installed via NuGet, is the WpfUILibrary:
 

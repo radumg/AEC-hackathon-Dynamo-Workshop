@@ -1,4 +1,4 @@
-# Python in Dynamo
+# 2 - Python Scripts in Dynamo
 
 ![Python Icon](assets/00-Python-icon.png)
 
@@ -6,7 +6,7 @@ This section will go through the basics on how to write custom python code withi
 
 Dynamo has a powerful feature, similar to other VPL, which is the ability to write custom python code on its own text editor, allowing to perform large methods and logic in a compressed and more performant manner, by being able to load libraries an modules like ProtoGeometry and Revit utilities.
 
-- [Python in Dynamo](#python-in-dynamo)
+- [2 - Python Scripts in Dynamo](#2---python-scripts-in-dynamo)
   - [Key Features](#key-features)
   - [Disadvantages](#disadvantages)
 

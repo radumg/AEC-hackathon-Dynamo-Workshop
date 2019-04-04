@@ -1,4 +1,4 @@
-# 1 - Getting started with WPF<!-- omit in toc --> 
+# 4.1 - Getting started with WPF<!-- omit in toc --> 
 
 In order to customize a nodes UI, and to affect the its state and the graph an explicit custom node is needed. Explicit custom nodes are more complex and use Windows Presentation Foundation (WPF) a powerful UI framework for building Windows applications.
 

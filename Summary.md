@@ -1,6 +1,6 @@
 # Summary
 
-* [0 - Development in Dynamo](./00-DevelopmentInDynamo/00-Introduction.md)
+* [Development in Dynamo](./00-DevelopmentInDynamo/00-Introduction.md)
   
 * [1 - Custom Nested Nodes](./01-CustomNodes/00-Introduction.md)
 
