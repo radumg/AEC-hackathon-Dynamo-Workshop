@@ -1,0 +1,624 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.3 - Explicit Node Functions · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-PublishNodesToPM.html" />
+    
+    
+    <link rel="prev" href="02-Interfaces.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                <a href="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                    
+                    Development in Dynamo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../01-CustomNodes/00-Introduction.html">
+            
+                <a href="../01-CustomNodes/00-Introduction.html">
+            
+                    
+                    1 - Custom Nested Nodes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../02-PythonScript/00-Introduction.html">
+            
+                <a href="../02-PythonScript/00-Introduction.html">
+            
+                    
+                    2 - Python Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../03-ZeroTouch/00-Introduction.html">
+            
+                <a href="../03-ZeroTouch/00-Introduction.html">
+            
+                    
+                    3 - ZeroTouch Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../03-ZeroTouch/01-Setup.html">
+            
+                <a href="../03-ZeroTouch/01-Setup.html">
+            
+                    
+                    3.1 - Visual Studio Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../03-ZeroTouch/02-ZeroTouchMapping.html">
+            
+                <a href="../03-ZeroTouch/02-ZeroTouchMapping.html">
+            
+                    
+                    3.2 - Zero Touch Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../03-ZeroTouch/03-DynamoNodeDevelopment.html">
+            
+                <a href="../03-ZeroTouch/03-DynamoNodeDevelopment.html">
+            
+                    
+                    3.3 - Dynamo Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../03-ZeroTouch/04-RevitNodeDevelopment.html">
+            
+                <a href="../03-ZeroTouch/04-RevitNodeDevelopment.html">
+            
+                    
+                    3.4 - Revit Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../03-ZeroTouch/05-Conclusion.html">
+            
+                <a href="../03-ZeroTouch/05-Conclusion.html">
+            
+                    
+                    3.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="00-Introduction.html">
+            
+                <a href="00-Introduction.html">
+            
+                    
+                    4 - Explicit Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="01-GettingStartedWithWPF.html">
+            
+                <a href="01-GettingStartedWithWPF.html">
+            
+                    
+                    4.1 - Getting started with WPF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="02-Interfaces.html">
+            
+                <a href="02-Interfaces.html">
+            
+                    
+                    4.2 - Explicit Node Interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.3" data-path="03-Functions.html">
+            
+                <a href="03-Functions.html">
+            
+                    
+                    4.3 - Explicit Node Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="04-PublishNodesToPM.html">
+            
+                <a href="04-PublishNodesToPM.html">
+            
+                    
+                    4.4 - Publishing to the Package Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="05-Conclusion.html">
+            
+                <a href="05-Conclusion.html">
+            
+                    
+                    4.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.3 - Explicit Node Functions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="43---explicit-node-functions">4.3 - Explicit Node Functions<!-- omit in toc --></h1>
+<p>In this final part we are going to add more bindings to the UI, add an output port, and have our node return something. </p>
+<ul>
+<li><a href="#more-bindings">More bindings</a></li>
+<li><a href="#executing-functions">Executing functions</a></li>
+<li><a href="#the-buildoutputast-method">The BuildOutputAst method</a></li>
+<li><a href="#expiring-the-node">Expiring the node</a></li>
+<li><a href="#final-touch">Final touch</a></li>
+<li><a href="#serializing--deserializing-nodes">Serializing / Deserializing nodes</a></li>
+</ul>
+<h2 id="more-bindings">More bindings</h2>
+<p>Add the following fields and properties to <code>HelloUI.cs</code>:</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueA;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueR;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueB;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueG;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueA { <span class="hljs-keyword">get</span> =&gt; _sliderValueA;  <span class="hljs-keyword">set</span> { _sliderValueA = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueA&quot;</span>); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueR { <span class="hljs-keyword">get</span> =&gt; _sliderValueR;  <span class="hljs-keyword">set</span> { _sliderValueR = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueR&quot;</span>); } }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueB { <span class="hljs-keyword">get</span> =&gt; _sliderValueB;  <span class="hljs-keyword">set</span> { _sliderValueB = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueB&quot;</span>); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueG { <span class="hljs-keyword">get</span> =&gt; _sliderValueG;  <span class="hljs-keyword">set</span> { _sliderValueG = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueG&quot;</span>); } }
+</code></pre>
+<p>If you debug your code now you&apos;ll see the binding to the UI sliders.</p>
+<h2 id="executing-functions">Executing functions</h2>
+<p>NodeModels when executed run a method called <code>BuildOutputAst</code> this method takes your inputs and passes them to a function <strong>which has to live in a separate assembly</strong> (in our case a separate project). Let&apos;s create it:</p>
+<p><img src="assets/1531853891415.png" alt="1531853891415"></p>
+<p>Then let&apos;s add the <code>DynamoVisualProgramming.DynamoServices</code> NuGet package and the <code>System.Drawing</code> reference.</p>
+<p>Then create a new static class named <code>Functions.cs</code>:</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> Autodesk.DesignScript.Runtime;
+<span class="hljs-keyword">using</span> System.Drawing;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DynamoWorkshop.ExplicitNode.Functions</span>
+{
+  [IsVisibleInDynamoLibrary(<span class="hljs-keyword">false</span>)]
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Functions</span>
+  {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DSCore.<span class="hljs-function">Color <span class="hljs-title">ColorByARGB</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> g, <span class="hljs-keyword">int</span> b</span>)
+    </span>{
+      <span class="hljs-keyword">return</span> DSCore.Color.ByARGB(a, r, g, b);
+    }
+  }
+}
+</code></pre>
+<h2 id="the-buildoutputast-method">The BuildOutputAst method</h2>
+<p>Now we can implement <code>BuildOutputAst</code> inside of <code>HelloUI.cs</code>. First right click on the<code>DynamoWorkshop.ExplicitNode</code> project and add a reference to <code>DynamoWorkshop.ExplicitNode.Functions</code>.</p>
+<p><img src="assets/1531854050057.png" alt="1531854050057"></p>
+<p><img src="assets/1531854008439.png" alt="1531854008439"></p>
+<p>Then add the <code>BuildOutputAst</code> function to HelloUI.cs:</p>
+<pre><code class="lang-csharp">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> IEnumerable&lt;AssociativeNode&gt; <span class="hljs-title">BuildOutputAst</span>(<span class="hljs-params">List&lt;AssociativeNode&gt; inputAstNodes</span>)
+    </span>{
+      <span class="hljs-keyword">var</span> sliderValueA = AstFactory.BuildDoubleNode(SliderValueA);
+      <span class="hljs-keyword">var</span> sliderValueR = AstFactory.BuildDoubleNode(SliderValueR);
+      <span class="hljs-keyword">var</span> sliderValueG = AstFactory.BuildDoubleNode(SliderValueG);
+      <span class="hljs-keyword">var</span> sliderValueB = AstFactory.BuildDoubleNode(SliderValueB);
+
+      <span class="hljs-keyword">var</span> functionCall =
+        AstFactory.BuildFunctionCall(
+          <span class="hljs-keyword">new</span> Func&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, DSCore.Color&gt;(Functions.Functions.ColorByARGB),
+          <span class="hljs-keyword">new</span> List&lt;AssociativeNode&gt; { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
+
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span>[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(<span class="hljs-number">0</span>), functionCall) };
+    }
+</code></pre>
+<p>And the <code>OutPort</code> attributes on the node:</p>
+<pre><code class="lang-csharp">  [OutPortNames(<span class="hljs-string">&quot;Color&quot;</span>)]
+  [OutPortTypes(<span class="hljs-string">&quot;color&quot;</span>)]
+  [OutPortDescriptions(<span class="hljs-string">&quot;Selected Color&quot;</span>)]
+</code></pre>
+<p>Your <code>HelloUI.cs</code> should look like this:</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> System.Linq;
+<span class="hljs-comment">/* dynamo directives */</span>
+<span class="hljs-keyword">using</span> Dynamo.Graph.Nodes;
+<span class="hljs-keyword">using</span> Newtonsoft.Json;
+<span class="hljs-keyword">using</span> ProtoCore.AST.AssociativeAST;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DynamoWorkshop.ExplicitNode</span>
+{
+  [NodeName(<span class="hljs-string">&quot;HelloUI&quot;</span>)]
+  [NodeDescription(<span class="hljs-string">&quot;Sample Explicit Node&quot;</span>)]
+  [NodeCategory(<span class="hljs-string">&quot;DynamoWorkshop.Explicit Node&quot;</span>)]
+  [OutPortNames(<span class="hljs-string">&quot;Color&quot;</span>)]
+  [OutPortTypes(<span class="hljs-string">&quot;color&quot;</span>)]
+  [OutPortDescriptions(<span class="hljs-string">&quot;Selected Color&quot;</span>)]
+  [IsDesignScriptCompatible]
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">HelloUI</span> : <span class="hljs-title">NodeModel</span>
+  {
+    <span class="hljs-comment">//Json Constructor for Dynamo 2.0 nodes</span>
+    [JsonConstructor]
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">HelloUI</span>(<span class="hljs-params">IEnumerable&lt;PortModel&gt; inPorts, IEnumerable&lt;PortModel&gt; outPorts</span>) : <span class="hljs-title">base</span>(<span class="hljs-params">inPorts, outPorts</span>)
+    </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HelloUI</span>(<span class="hljs-params"></span>)
+    </span>{
+      RegisterAllPorts();
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueA;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueR;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueB;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueG;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueA { <span class="hljs-keyword">get</span> =&gt; _sliderValueA;  <span class="hljs-keyword">set</span> { _sliderValueA = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueA&quot;</span>); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueR { <span class="hljs-keyword">get</span> =&gt; _sliderValueR;  <span class="hljs-keyword">set</span> { _sliderValueR = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueR&quot;</span>); } }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueB { <span class="hljs-keyword">get</span> =&gt; _sliderValueB;  <span class="hljs-keyword">set</span> { _sliderValueB = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueB&quot;</span>); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueG { <span class="hljs-keyword">get</span> =&gt; _sliderValueG;  <span class="hljs-keyword">set</span> { _sliderValueG = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueG&quot;</span>); } }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> IEnumerable&lt;AssociativeNode&gt; <span class="hljs-title">BuildOutputAst</span>(<span class="hljs-params">List&lt;AssociativeNode&gt; inputAstNodes</span>)
+    </span>{
+      <span class="hljs-keyword">var</span> sliderValueA = AstFactory.BuildDoubleNode(SliderValueA);
+      <span class="hljs-keyword">var</span> sliderValueR = AstFactory.BuildDoubleNode(SliderValueR);
+      <span class="hljs-keyword">var</span> sliderValueG = AstFactory.BuildDoubleNode(SliderValueG);
+      <span class="hljs-keyword">var</span> sliderValueB = AstFactory.BuildDoubleNode(SliderValueB);
+
+      <span class="hljs-keyword">var</span> functionCall =
+        AstFactory.BuildFunctionCall(
+          <span class="hljs-keyword">new</span> Func&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, DSCore.Color&gt;(Functions.Functions.ColorByARGB),
+          <span class="hljs-keyword">new</span> List&lt;AssociativeNode&gt; { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
+
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span>[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(<span class="hljs-number">0</span>), functionCall) };
+    }
+  }
+}
+</code></pre>
+<p>And finally, we need to tell Dynamo to load <code>DynamoWorkshop.ExplicitNode.Functions.dll</code> as well, and that&apos;s done by editing <code>pkg.json</code> adding at the end:</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;node_libraries&quot;</span>: [
+    <span class="hljs-string">&quot;DynamoWorkshop.ExplicitNode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;</span>,
+    <span class="hljs-string">&quot;DynamoWorkshop.ExplicitNode.Functions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;</span>
+  ]
+</code></pre>
+<p>If we test the code we can see the OutPort, but it&apos;s not changing when the sliders change. We need to Expire the node for it to happen!</p>
+<p><img src="assets/1531854428895.png" alt="1531854428895"></p>
+<h2 id="expiring-the-node">Expiring the node</h2>
+<p>Fortunately enough, expiring the node is easy. Just call <code>OnNodeModified()</code> to do so. In our case we&apos;ll add that to the setter methods of each or our SliderValues:</p>
+<pre><code class="lang-csharp">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueA { <span class="hljs-keyword">get</span> =&gt; _sliderValueA;  <span class="hljs-keyword">set</span> { _sliderValueA = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueA&quot;</span>); OnNodeModified(); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueR { <span class="hljs-keyword">get</span> =&gt; _sliderValueR;  <span class="hljs-keyword">set</span> { _sliderValueR = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueR&quot;</span>); OnNodeModified(); } }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueB { <span class="hljs-keyword">get</span> =&gt; _sliderValueB;  <span class="hljs-keyword">set</span> { _sliderValueB = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueB&quot;</span>); OnNodeModified(); } }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueG { <span class="hljs-keyword">get</span> =&gt; _sliderValueG;  <span class="hljs-keyword">set</span> { _sliderValueG = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueG&quot;</span>); OnNodeModified(); } }
+</code></pre>
+<p>It could be cleaner, but it&apos;ll work for now.</p>
+<h2 id="final-touch">Final touch</h2>
+<p>As a final touch, let&apos;s preview the color generated by the sliders in the Node UI. This can be done with <code>INodeViewCustomization</code> as it gives us access to the Dynamo <code>NodeView</code>, the class that defines the nodes default appearance.</p>
+<p>In <code>HelloUINodeView.cs</code>, add references to namespaces <code>System.Windows.Media</code> and <code>System.Windows.Shapes</code>. Then, add to <code>CustomizeView</code> method the following event handlers to track when the sliders are moved.</p>
+<pre><code class="lang-csharp">      <span class="hljs-keyword">using</span> System.Windows.Media;
+      <span class="hljs-keyword">using</span> System.Windows.Shapes;
+</code></pre>
+<pre><code class="lang-csharp">      ui.SliderA.ValueChanged += Slider_ValueChanged;
+      ui.SliderR.ValueChanged += Slider_ValueChanged;
+      ui.SliderG.ValueChanged += Slider_ValueChanged;
+      ui.SliderB.ValueChanged += Slider_ValueChanged;
+</code></pre>
+<p>and then add the following method:</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Slider_ValueChanged</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, System.Windows.RoutedPropertyChangedEventArgs&lt;<span class="hljs-keyword">double</span>&gt; e</span>)
+</span>{
+
+  ((Rectangle)_nodeview.grid.FindName(<span class="hljs-string">&quot;nodeBackground&quot;</span>)).Fill = <span class="hljs-keyword">new</span> SolidColorBrush(Color.FromArgb(
+                                                Convert.ToByte(_model.SliderValueA), 
+                                                Convert.ToByte(_model.SliderValueR),
+                                                Convert.ToByte(_model.SliderValueG), 
+                                                Convert.ToByte(_model.SliderValueB)));
+}
+</code></pre>
+<p>The node background color will now change accordingly.</p>
+<p><img src="assets/explicitnode.gif" alt="explicitnode"></p>
+<h2 id="serializing--deserializing-nodes">Serializing / Deserializing nodes</h2>
+<p>If you save the custom node in a definition and load it again you will see that the sliders value persisted, that&apos;s because it&apos;s being serialized with the node.</p>
+<p>Dynamo 2.0 makes it very easy to serialize / deserialize variables on custom nodes. To do that, a variable needs to be <code>public</code>, and it will be automatically saved and loaded.</p>
+<p>To ignore a property or a field, use the <code>[JsonIgnore]</code> attribute and it&apos;ll be skipped.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-Interfaces.html" class="navigation navigation-prev " aria-label="Previous page: 4.2 - Explicit Node Interfaces">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-PublishNodesToPM.html" class="navigation navigation-next " aria-label="Next page: 4.4 - Publishing to the Package Manager">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.3 - Explicit Node Functions","level":"1.6.3","depth":2,"next":{"title":"4.4 - Publishing to the Package Manager","level":"1.6.4","depth":2,"path":"04-ExplicitNodes/04-PublishNodesToPM.md","ref":"./04-ExplicitNodes/04-PublishNodesToPM.md","articles":[]},"previous":{"title":"4.2 - Explicit Node Interfaces","level":"1.6.2","depth":2,"path":"04-ExplicitNodes/02-Interfaces.md","ref":"./04-ExplicitNodes/02-Interfaces.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"04-ExplicitNodes/03-Functions.md","mtime":"2019-04-04T09:30:16.680Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-04T09:31:37.020Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,7 +1,13 @@
 {
-  "root": "./docs",
+  "root": "./",
   "structure": {
-    "readme": "Intro.md",
+    "readme": "README.md",
     "summary": "Summary.md"
-  }
+  },
+  "plugins": ["code", "collapsible-chapters", "github"],
+  "pluginsConfig": {
+    "github": {
+        "url": "https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"
+    }
+}
 }

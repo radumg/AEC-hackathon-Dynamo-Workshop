@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/alvpickmans/DynamoHackathon-London-Training/issues"
   },
-  "homepage": "https://github.com/alvpickmans/DynamoHackathon-London-Training#readme"
+  "homepage": "https://github.com/alvpickmans/DynamoHackathon-London-Training#readme",
+  "dependencies": {
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-collapsible-chapters": "^0.1.8",
+    "gitbook-plugin-github": "^2.0.0"
+  }
 }

@@ -1,0 +1,6 @@
+_config.yml
+.bookignore
+.gitignore
+LICENSE
+package.json
+package-lock.json

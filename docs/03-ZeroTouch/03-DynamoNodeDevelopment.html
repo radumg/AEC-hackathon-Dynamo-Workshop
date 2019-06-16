@@ -1,0 +1,632 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.3 - Dynamo Node Development · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-RevitNodeDevelopment.html" />
+    
+    
+    <link rel="prev" href="02-ZeroTouchMapping.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                <a href="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                    
+                    Development in Dynamo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../01-CustomNodes/00-Introduction.html">
+            
+                <a href="../01-CustomNodes/00-Introduction.html">
+            
+                    
+                    1 - Custom Nested Nodes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../02-PythonScript/00-Introduction.html">
+            
+                <a href="../02-PythonScript/00-Introduction.html">
+            
+                    
+                    2 - Python Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="00-Introduction.html">
+            
+                <a href="00-Introduction.html">
+            
+                    
+                    3 - ZeroTouch Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="01-Setup.html">
+            
+                <a href="01-Setup.html">
+            
+                    
+                    3.1 - Visual Studio Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="02-ZeroTouchMapping.html">
+            
+                <a href="02-ZeroTouchMapping.html">
+            
+                    
+                    3.2 - Zero Touch Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.3" data-path="03-DynamoNodeDevelopment.html">
+            
+                <a href="03-DynamoNodeDevelopment.html">
+            
+                    
+                    3.3 - Dynamo Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="04-RevitNodeDevelopment.html">
+            
+                <a href="04-RevitNodeDevelopment.html">
+            
+                    
+                    3.4 - Revit Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="05-Conclusion.html">
+            
+                <a href="05-Conclusion.html">
+            
+                    
+                    3.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../04-ExplicitNodes/00-Introduction.html">
+            
+                <a href="../04-ExplicitNodes/00-Introduction.html">
+            
+                    
+                    4 - Explicit Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../04-ExplicitNodes/01-GettingStartedWithWPF.html">
+            
+                <a href="../04-ExplicitNodes/01-GettingStartedWithWPF.html">
+            
+                    
+                    4.1 - Getting started with WPF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../04-ExplicitNodes/02-Interfaces.html">
+            
+                <a href="../04-ExplicitNodes/02-Interfaces.html">
+            
+                    
+                    4.2 - Explicit Node Interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../04-ExplicitNodes/03-Functions.html">
+            
+                <a href="../04-ExplicitNodes/03-Functions.html">
+            
+                    
+                    4.3 - Explicit Node Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../04-ExplicitNodes/04-PublishNodesToPM.html">
+            
+                <a href="../04-ExplicitNodes/04-PublishNodesToPM.html">
+            
+                    
+                    4.4 - Publishing to the Package Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../04-ExplicitNodes/05-Conclusion.html">
+            
+                <a href="../04-ExplicitNodes/05-Conclusion.html">
+            
+                    
+                    4.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.3 - Dynamo Node Development</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="33---dynamo-node-development">3.3 - Dynamo Node Development<!-- omit in toc --></h1>
+<p>In this part we will develop a few sample nodes exploring inputs, outputs, Dynamo&apos;s geometry and handling error/exceptions. Since we wont&apos;t be interacting with Revit just yet, development will target Dynamo Sandbox. Let&#x2019;s dive straight in and see how to add more complex functionalities to our package.</p>
+<ul>
+<li><a href="#input--output-io">Input &amp; Output (I/O)</a></li>
+<li><a href="#inputs">Inputs</a></li>
+<li><a href="#outputs">Outputs</a></li>
+<li><a href="#dynamo-geometry">Dynamo Geometry</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
+</ul>
+<h2 id="input--output-io">Input &amp; Output (I/O)</h2>
+<p>Most of your nodes will :</p>
+<ul>
+<li>take one or more inputs</li>
+<li>do something with them</li>
+<li>and then return one or more outputs.</li>
+</ul>
+<p>Let&apos;s look at each of those in a bit more detail. </p>
+<h2 id="inputs">Inputs</h2>
+<p>The first example is what we did in the previous exercise, a simple function that has 1 input text and returns a modified version of it :</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">string</span> <span class="hljs-title">SayHello</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> Name</span>)
+    </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello &quot;</span> + Name + <span class="hljs-string">&quot;!&quot;</span>;
+    }
+</code></pre>
+<p>To accept multiple inputs, simply add more input parameters to your functions.</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">double</span> <span class="hljs-title">AverageNumbers</span>(<span class="hljs-params"><span class="hljs-keyword">double</span> Number1, <span class="hljs-keyword">double</span> Number2</span>)
+</span>{
+  <span class="hljs-keyword">return</span> (Number1 + Number2) / <span class="hljs-number">2</span>;
+}
+</code></pre>
+<p><img src="assets/image_12.png" alt="image alt text"></p>
+<p>As you can clearly understand, the above will only accepts the declared input types, to accept any type you can use the <code>object</code> type. For lists/arrays, again, just follow normal C# conventions.</p>
+<p>What if your input is not one, or two values, but an entire list ?
+Let&apos;s see an example that handles a list as an input and returns that same list but without any of its contents :</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> IList <span class="hljs-title">ClearListContents</span>(<span class="hljs-params">IList list</span>)
+</span>{
+  list.Clear();
+  <span class="hljs-keyword">return</span> list;
+}
+</code></pre>
+<p>And then what happens if you don&apos;t know in advance the structure of the incoming data? What if you want to handle inputs with variable nesting and single items as well? Use the <code>[ArbitraryDimensionArrayImport]</code> attribute &amp; make sure you  have the <code>using Autodesk.DesignScript.Runtime;</code> directive in your file:</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> IList <span class="hljs-title">AddItemToEnd</span>(<span class="hljs-params">[ArbitraryDimensionArrayImport] <span class="hljs-keyword">object</span> item, IList list</span>)
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ArrayList(list) <span class="hljs-comment">//Clone original list</span>
+    {
+        item <span class="hljs-comment">//Add item to the end of cloned list.</span>
+    };
+}
+</code></pre>
+<h2 id="outputs">Outputs</h2>
+<p>Returning multiple values is a little bit more tricky :</p>
+<ul>
+<li>first you need the <code>using Autodesk.DesignScript.Runtime;</code> directive</li>
+<li>then we need to add a <code>MultiReturn</code> attribute to the function</li>
+<li>and finally create a dictionary to store our outputs</li>
+</ul>
+<p>Our first example that illustrates this is a function that takes in a list of integers and splits them into two distinct lists, each containing only odd or even numbers.</p>
+<pre><code class="lang-csharp">[MultiReturn(<span class="hljs-keyword">new</span>[] { <span class="hljs-string">&quot;evens&quot;</span>, <span class="hljs-string">&quot;odds&quot;</span> })]
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Dictionary&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">object</span>&gt; SplitOddEven(List&lt;<span class="hljs-keyword">int</span>&gt; list)
+{
+  <span class="hljs-keyword">var</span> odds = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-keyword">int</span>&gt;();
+  <span class="hljs-keyword">var</span> evens = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-keyword">int</span>&gt;();
+
+  <span class="hljs-comment">//check integers in list if even or odd</span>
+  <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> list)
+  {
+    <span class="hljs-keyword">if</span> (i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)
+    {
+      evens.Add(i);
+    }
+    <span class="hljs-keyword">else</span>
+    {
+      odds.Add(i);
+    }
+  }
+
+  <span class="hljs-comment">//create a new dictionary and return it</span>
+  <span class="hljs-keyword">var</span> d = <span class="hljs-keyword">new</span> Dictionary&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">object</span>&gt;();
+  d.Add(<span class="hljs-string">&quot;evens&quot;</span>, evens);
+  d.Add(<span class="hljs-string">&quot;odds&quot;</span>, odds);
+  <span class="hljs-keyword">return</span> d;
+
+  <span class="hljs-comment">//the above can be simplified in one line with</span>
+  <span class="hljs-comment">//return new Dictionary&lt;string, object&gt; { { &quot;evens&quot;, evens }, { &quot;odds&quot;, odds } };       </span>
+}
+</code></pre>
+<p><img src="assets/1501856889450.png" alt="1501856889450"></p>
+<h2 id="dynamo-geometry">Dynamo Geometry</h2>
+<p>To access native Dynamo geometry and methods, you just need to add the <code>using Autodesk.DesignScript.Geometry;</code> directive, we can now read element&apos;s properties.</p>
+<p>The example below deconstructs a point into its X,Y &amp; Z coordinates</p>
+<pre><code class="lang-csharp">[MultiReturn(<span class="hljs-keyword">new</span>[] { <span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-string">&quot;Y&quot;</span>, <span class="hljs-string">&quot;Z&quot;</span> })]
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Dictionary&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">object</span>&gt; DeconstructPoint(Point point)
+{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Dictionary&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">object</span>&gt; { 
+    { <span class="hljs-string">&quot;X&quot;</span>, point.X }, 
+    { <span class="hljs-string">&quot;Y&quot;</span>, point.Y }, 
+    { <span class="hljs-string">&quot;Z&quot;</span>, point.Z } 
+  };
+}
+</code></pre>
+<p>And this one generates Dynamo geometry, creating a line from two X,Y,Z coordinates pairs.</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Line <span class="hljs-title">LineByCoordinatesPair</span>(<span class="hljs-params"><span class="hljs-keyword">double</span> X1, <span class="hljs-keyword">double</span> Y1, <span class="hljs-keyword">double</span> Z1, <span class="hljs-keyword">double</span> X2, <span class="hljs-keyword">double</span> Y2, <span class="hljs-keyword">double</span> Z2</span>)
+</span>{
+  <span class="hljs-keyword">var</span> p1 = Point.ByCoordinates(X1, Y1, Z1);
+  <span class="hljs-keyword">var</span> p2 = Point.ByCoordinates(X2, Y2, Z2);
+
+  <span class="hljs-keyword">return</span> Line.ByStartPointEndPoint(p1, p2);
+}
+</code></pre>
+<p>But <strong>BE CAREFUL!</strong> Each geometry object that you create in your functions will use Dynamo resources, therefore if it&apos;s not needed or returned by your methods it should be disposed, either like this:</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Line <span class="hljs-title">LineByCoordinatesPair</span>(<span class="hljs-params"><span class="hljs-keyword">double</span> X1, <span class="hljs-keyword">double</span> Y1, <span class="hljs-keyword">double</span> Z1, <span class="hljs-keyword">double</span> X2, <span class="hljs-keyword">double</span> Y2, <span class="hljs-keyword">double</span> Z2</span>)
+</span>{
+  <span class="hljs-keyword">var</span> p1 = Point.ByCoordinates(X1, Y1, Z1);
+  <span class="hljs-keyword">var</span> p2 = Point.ByCoordinates(X2, Y2, Z2);
+  <span class="hljs-keyword">var</span> l = Line.ByStartPointEndPoint(p1, p2);
+  p1.Dispose();
+  p2.Dispose();
+  <span class="hljs-keyword">return</span> l;
+}
+</code></pre>
+<p>Or with a <code>using</code> statement:</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Line <span class="hljs-title">ByCoordinates</span>(<span class="hljs-params"><span class="hljs-keyword">double</span> X1, <span class="hljs-keyword">double</span> Y1, <span class="hljs-keyword">double</span> Z1, <span class="hljs-keyword">double</span> X2, <span class="hljs-keyword">double</span> Y2, <span class="hljs-keyword">double</span> Z2</span>)
+</span>{
+  <span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> p1 = Point.ByCoordinates(X1, Y1, Z1))
+  {
+    <span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> p2 = Point.ByCoordinates(X2, Y2, Z2))
+    {
+      <span class="hljs-keyword">return</span> Line.ByStartPointEndPoint(p1, p2);
+    }
+  }
+}
+</code></pre>
+<h2 id="exceptions">Exceptions</h2>
+<p>When writing any method, it&apos;s good practice to check the validity of your inputs (parameters) first and raising exceptions if anything is invalid, therefore halting executing of that method and not executing any un-necessary code.</p>
+<p>In C#, raising an exception is as simple as :</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(<span class="hljs-string">&quot;This is the message that will accompany the exception.&quot;</span>);
+</code></pre>
+<p>Doing this inside a Dynamo node is gracefully handled by Dynamo, turning the node yellow and displaying the error message. Let&apos;s see an example :</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">string</span> <span class="hljs-title">ThrowExceptionIfStringIsNull</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> text</span>)
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">string</span>.IsNullOrWhiteSpace(text)) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ArgumentNullException(<span class="hljs-string">&quot;text&quot;</span>);
+    <span class="hljs-keyword">return</span> text;
+}
+</code></pre>
+<p>Which will be displayed like this in Dynamo :</p>
+<p><img src="assets/ZT-RaiseException.png" alt="ZT-ArgumentNullException"></p>
+<p>If we were doing something a bit more complicated, we might want to handle errors &amp; exceptions ourselves inside our node and only surface the error to the users when it can&apos;t be ignored, or with more detailed information about it.</p>
+<p>Here&apos;s an example that handles exceptions internally, but also surfaces them when needed. What it does is calculate the sum of all list members, but it skips over null values, which would otherwise cause an <code>Exception</code> to be thrown when trying to add them up.</p>
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">HandleListNullExceptionsInternally</span>(<span class="hljs-params">List&lt;<span class="hljs-keyword">object</span>&gt; list</span>)
+</span>{
+    <span class="hljs-comment">// check input list is not empty</span>
+    <span class="hljs-keyword">if</span> (list == <span class="hljs-keyword">null</span> || list.Count &lt; <span class="hljs-number">1</span>) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ArgumentNullException(<span class="hljs-string">&quot;list&quot;</span>);
+    <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> item <span class="hljs-keyword">in</span> list)
+    {
+        <span class="hljs-keyword">try</span>
+        {
+            <span class="hljs-comment">// it&apos;s safe to throw inside a try block as the exception will be caught below</span>
+            <span class="hljs-keyword">if</span> (item == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullReferenceException();
+
+            <span class="hljs-comment">// if the object cannot be converted to an integer, this will throw an exception as well</span>
+            <span class="hljs-keyword">int</span> intValue = Convert.ToInt32(item);
+
+            <span class="hljs-comment">// this only executes if the above checks did not throw</span>
+            sum += intValue;
+        }
+        <span class="hljs-keyword">catch</span> (Exception)
+        {
+            <span class="hljs-comment">// this block of code would be executed whenever a null is found in the list</span>
+        }
+    }
+
+    <span class="hljs-keyword">return</span> sum;
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-ZeroTouchMapping.html" class="navigation navigation-prev " aria-label="Previous page: 3.2 - Zero Touch Mapping">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-RevitNodeDevelopment.html" class="navigation navigation-next " aria-label="Next page: 3.4 - Revit Node Development">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.3 - Dynamo Node Development","level":"1.5.3","depth":2,"next":{"title":"3.4 - Revit Node Development","level":"1.5.4","depth":2,"path":"03-ZeroTouch/04-RevitNodeDevelopment.md","ref":"./03-ZeroTouch/04-RevitNodeDevelopment.md","articles":[]},"previous":{"title":"3.2 - Zero Touch Mapping","level":"1.5.2","depth":2,"path":"03-ZeroTouch/02-ZeroTouchMapping.md","ref":"./03-ZeroTouch/02-ZeroTouchMapping.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"03-ZeroTouch/03-DynamoNodeDevelopment.md","mtime":"2019-04-04T09:28:48.423Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-04T09:31:37.020Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

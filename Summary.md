@@ -1,11 +1,10 @@
 # Summary
 
-* [0 - Development in Dynamo](./00-DevelopmentInDynamo/00-Introduction.md)
+* [Development in Dynamo](./00-DevelopmentInDynamo/00-Introduction.md)
   
 * [1 - Custom Nested Nodes](./01-CustomNodes/00-Introduction.md)
 
 * [2 - Python Scripts](./02-PythonScript/00-Introduction.md)
-  * [2.1 - Interaction with Dynamo](./02-PythonScript/01-DynamoInteraction.md)
 
 * [3 - ZeroTouch Nodes](./03-ZeroTouch/00-Introduction.md)
   * [3.1 - Visual Studio Setup](./03-ZeroTouch/01-Setup.md)
