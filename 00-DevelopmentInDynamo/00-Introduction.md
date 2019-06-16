@@ -1,4 +1,5 @@
 ## Development in Dynamo
+![Extending Dynamo](assets/extendingDynamo.png)
 
 Dynamo is one of the tools on the AEC that has gained attraction in a very short time for multiple reasons, like its open-source nature, easy to use and its ability to enhance Revit functionality.
 
@@ -42,6 +43,6 @@ There are different types of custom nodes, for all levels and uses:
 
 Around January 2018, the Dynamo team released a new approach of developing in Dynamo, slightly different than creating your own nodes.
 
-**Extensions** and **ViewExtensions** allow the developer to *"tap"* into Dynamo itself and make use of its API to drive custom functionality, respond to events and add your own UI on top od Dynamo. 
+**Extensions** and **ViewExtensions** allow the developer to *"tap"* into Dynamo itself and make use of its API to drive custom functionality, respond to events and add your own UI on top of Dynamo. 
 
 For more info, visit the [blog post](https://dynamobim.org/extending-dynamo-a-london-workshop-on-extensions/) or watch the [recording](https://www.youtube.com/watch?v=qLGsRcIOwzc&feature=youtu.be) from the workshop held in London on February 2018.
