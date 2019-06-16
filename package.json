@@ -4,8 +4,8 @@
   "description": "Documentation for the training prior to the DynamoHackathon London 2019",
   "main": "index.js",
   "scripts": {
-    "start": "gitbook serve",
-    "build": "gitbook build",
+    "start": "gitbook install &&gitbook serve",
+    "build": "gitbook install &&gitbook build",
     "publish": "./publish-gitbook.sh"
   },
   "repository": {
