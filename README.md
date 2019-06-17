@@ -2,6 +2,8 @@
 
 Learn how to develop for Dynamo in C# by building ZeroTouch & Explicit Nodes.
 
+This repository is based on [@teocomi](https://github.com/teocomi)'s original [`Dynamo Unchained`](https://github.com/teocomi/dug-dynamo-unchained) workshop materials.
+
 ## Learning objectives
 
 * Learn about the different types of custom Dynamo nodes
