@@ -19,3 +19,8 @@
   * [4.3 - Explicit Node Functions](./04-ExplicitNodes/03-Functions.md)
   * [4.4 - Publishing to the Package Manager](./04-ExplicitNodes/04-PublishNodesToPM.md)
   * [4.5 - Conclusions](./04-ExplicitNodes/05-Conclusion.md)
+  * 
+* [5 - Extensions](./05-Extension/00-Introduction.md)
+  * [5.1 - Anatomy of an Extension](./05-Extension/01-ExtensionAnatomy.md)
+  * [5.2 - Extension Setup](./05-Extension/02-ExtensionSetup.md)
+  * [5.3 - WPF and MVVM](./05-Extension/03-WPF_And_MVVM.md)

@@ -1,6 +1,14 @@
-# 01 - Anatomy of an Extension
+# 5.1 - Anatomy of an Extension  <!-- omit in toc --> 
 
 Dynamo implemented Extensions and ViewExtensions in a similar fashion as ZeroTouch nodes: they handle *automagically* how a `dll` is loaded and made available to the platform as long as it complies with certain steps and configurations, so extending Dynamo is simple and fun.
+
+- [Extension Architecture](#extension-architecture)
+  - [Naming and Location](#naming-and-location)
+- [Extension's Lifecycle](#extensions-lifecycle)
+- [Dynamo APIs](#dynamo-apis)
+  - [StartUpParams / ViewStartupParams](#startupparams--viewstartupparams)
+  - [ReadyParams / ViewLoadedParams](#readyparams--viewloadedparams)
+- [Extension and ViewExtension](#extension-and-viewextension)
 
 ## Extension Architecture
 
@@ -33,7 +41,7 @@ When Dynamo is initialized it performs several actions to have things up and run
 
 - During initialization Dynamo searches for any Extension that has been declared via its `xml` manifest, calling the `StartUp()` method to initialize it and `Ready()` or `Loaded()` when the extension is successfully initialized.
 - During normal execution, the extension performs any action that has been programed to do.
-- Before Dynamo closes, it calls every ViewExtension `ShutDown()` method.
+- Before Dynamo closes, it calls every extension's `ShutDown()` method, that should be used to properly release any resource the extension is using.
 ![Extension Lifecycle](assets/01-ExtensionLifecycle.png)
 
 ## Dynamo APIs
@@ -66,6 +74,6 @@ public void Loaded(ViewLoadedParams p)
 ```
 ![ReadyParams](assets/01-ReadyParams.png)
 
-## Extension vs. ViewExtension
+## Extension and ViewExtension
 
 As seen on the previous sections, there exist two types of extensions and the naming gives a clear indication of their intended use. **Extensions** are thought to handle logic and back-end actions on a *headless* mode, while **ViewExtensions** allows the developer to interact with Dynamo's UI and add his/her own. We will see these two cases more in depth on the following chapters.
