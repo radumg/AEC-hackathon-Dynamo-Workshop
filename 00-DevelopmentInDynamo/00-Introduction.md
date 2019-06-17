@@ -45,4 +45,6 @@ Around January 2018, the Dynamo team released a new approach of developing in Dy
 
 **Extensions** and **ViewExtensions** allow the developer to *"tap"* into Dynamo itself and make use of its API to drive custom functionality, respond to events and add your own UI on top of Dynamo. 
 
-For more info, visit the [blog post](https://dynamobim.org/extending-dynamo-a-london-workshop-on-extensions/) or watch the [recording](https://www.youtube.com/watch?v=qLGsRcIOwzc&feature=youtu.be) from the workshop held in London on February 2018.
+On this material we will explore what Extensions/ViewExtensions are and write some examples of our own.
+
+For more information, visit the [blog post](https://dynamobim.org/extending-dynamo-a-london-workshop-on-extensions/) or watch the [recording](https://www.youtube.com/watch?v=qLGsRcIOwzc&feature=youtu.be) from the workshop held in London on February 2018.

@@ -24,3 +24,4 @@
   * [5.1 - Anatomy of an Extension](./05-Extension/01-ExtensionAnatomy.md)
   * [5.2 - Extension Setup](./05-Extension/02-ExtensionSetup.md)
   * [5.3 - WPF and MVVM](./05-Extension/03-WPF_And_MVVM.md)
+  * [5.4 - Events](./05-Extension/03-Events.md)

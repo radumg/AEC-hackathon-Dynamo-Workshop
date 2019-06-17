@@ -28,6 +28,9 @@ Learn to develop custom nodes in Dynamo using ZeroTouch.
 ### [Explicit Nodes](./04-ExplicitNodes/00-Introduction.md)
 Learn to develop nodes with custom UI in Dynamo using Explicit nodes.
 
+### [Extensions](./05-Extension/00-Introduction.md)
+Power-up your development by extending Dynamo's capabilities by adding your custom logic and UI on top of Dynamo.
+
 ### Tools we’ll use
 
 * [Visual Studio Community 2017](https://www.visualstudio.com/downloads/)
@@ -61,4 +64,6 @@ Go to the [project's repository](https://github.com/alvpickmans/Dynamo-Dev-Start
 
 ## Acknowledgment
 
-Big part of this material is based and reused from the [AEC Hackathon Dynamo Workshop](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop), which in turn is an extended version from the original [Dynamo User Group Computational Design Workshop](https://github.com/teocomi/dug-dynamo-unchained). 
+Big part of this material is based and reused from the [AEC Hackathon Dynamo Workshop](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop), which in turn is an extended version from the original [Dynamo User Group Computational Design Workshop](https://github.com/teocomi/dug-dynamo-unchained).
+
+I also recaps some of the contents taught during the [Dynamo Developer Workshop](https://github.com/DynamoDS/DeveloperWorkshop) on AU Las Vegas 2019.
