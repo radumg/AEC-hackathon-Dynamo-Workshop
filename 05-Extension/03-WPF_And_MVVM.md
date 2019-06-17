@@ -1,4 +1,4 @@
-# 5.2 - WPF and MVVM <!-- omit in toc --> 
+# 5.3 - WPF and MVVM <!-- omit in toc --> 
 
 One of the most powerful reasons to wanting to create your own Extension/ViewExtension is to be able to add custom User Interfaces or UI on top of Dynamo. On this chapter we will briefly explain the **Model-View-ViewModel** UI design pattern and create an example of a WPF app.
 
